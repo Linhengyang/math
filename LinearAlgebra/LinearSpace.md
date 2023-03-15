@@ -82,7 +82,7 @@ A = LU
 其中 $L$ 是下三角单位矩阵，而 $U$ 是 $A$ 的echelon form。
 
 ## 分支2综述
-分支2脉络中，主线是**子空间**的**基**。**基**的大小就是子空间的**维度**，向量 $\vec{x} \in subspace\ H \subset \mathbb{R^m}$ 被基 $\mathcal{B}$ 唯一表示时的权重，就是向量 $\vec{x}$ 在这个基下的**坐标**$\left[x\right]_\mathcal{B} \in \mathbb{R^p}, if\ dimH = p$。  
+分支2脉络中，主线是**子空间**的**基**。**基**的大小就是子空间的**维度**，向量 $\vec{x} \in subspace\ H \subset \mathbb{R^m}$ 被基 $\mathcal{B}$ 唯一表示时的权重，就是向量 $\vec{x}$ 在这个基下的**坐标**$\left[\vec{x}\right]_\mathcal{B} \in \mathbb{R^p}, if\ dimH = p$。  
   
 考虑映射 $T:H \rightarrow \mathbb{R^p}, dimH=p, \mathcal{B}\ is\ a\ basis\ of\ H$，那么有
 ```math
@@ -138,7 +138,7 @@ T(\vec{x}) = \left[\vec{x}\right]_{\mathcal{B}}
 ```math
 \vec{x} = \sum_{i=1}^{n}c_i\ \vec{b}_i
 ```
-把权重按序表示成列向量 $\left[c_1,\cdots,c_n\right]^T \in \mathbb{R^n}$，即是 $\displaystyle \vec{x}$ 相对基 $\displaystyle base\ \mathcal{B}$ 的坐标，写作 $\displaystyle \left[\vec{x}\right]_{\mathcal{B}}$ 。坐标映射coordinates-mapping $\displaystyle T: V\rightarrow\mathbb{R^n},\ T(\vec{x})=\left[\vec{x}\right]_\mathcal{B}$ 是一个双射线性映射，也是一个同构映射，线性空间 $V$ 和 $\mathbb{R^n}$ 同构。当 $V = \mathbb{R^n}$ 时，根据「用基和坐标表示」的原则，可得
+把权重按序表示成列向量 $\left[c_1,\cdots,c_n\right]^T \in \mathbb{R^n}$，即是 $\vec{x}$ 相对基 $base\ \mathcal{B}$ 的坐标，写作 $\left[\vec{x}\right]_\mathcal{B}$ 。坐标映射coordinates-mapping $\displaystyle T: V \rightarrow \mathbb{R^n},\ T(\vec{x})=\left[\vec{x}\right]_\mathcal{B}$ 是一个双射线性映射，也是一个同构映射，线性空间 $V$ 和 $\mathbb{R^n}$ 同构。当 $V = \mathbb{R^n}$ 时，根据「用基和坐标表示」的原则，可得
 ```math
 \vec{x} = P_{\mathcal{B}}\ \left[\vec{x}\right]_{\mathcal{B}}
 ```
