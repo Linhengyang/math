@@ -129,3 +129,14 @@ T(\vec{x}) = \left[\vec{x}\right]_{\mathcal{B}}
 * 把 $T$ 的“列空间” $Col(T)$ 定义为 $T$ 的**range**，是**codomain**的子空间：对于range中的元素 $\vec{u}$，能从domain中找到对应元素 $\vec{v}$，使得 $T(\vec{v})=\vec{u}$
   
 #### 基/坐标/维度
+在**线性空间下**，**线性组合**、**线性相关/无关**、**张成span**、**极大线性无关组**的定义都如出一辙，从而**基**和**坐标**的定义和性质也如出一辙：  
+考虑线性空间 $V$ 的一个基 $\mathcal{B} = \left[\vec{b}_1,\cdots,\vec{b}_n\right]$，对任意 $\vec{x} \in V$，相对这个基都有唯一表示 $\vec{x} = \sum_{i=1}^{n}c_i\ \vec{b}_i$，把权重按序表示成列向量 $\left[c_i,\cdots,c_n\right]^T \in \mathbb{R^n}$，即是 $\vec{x}$ 相对基 $base\ \mathcal{B}$ 的坐标，写作 $\left[\vec{x}\right]_{\mathcal{B}}$ 。坐标映射coordinates-mapping $T: V\rightarrow\mathbb{R^n},\ T(\vec{x})=\left[\vec{x}\right]_\mathcal{B}$ 是一个双射线性映射，也是一个同构映射，线性空间 $V$ 和 $\mathbb{R^n}$ 同构。当 $V = \mathbb{R^n}$ 时，根据「用基和坐标表示」的原则，可得
+```math
+\vec{x} = P_{\mathcal{B}}\ \left[\vec{x}\right]_{\mathcal{B}}
+```
+而向量 $\vec{x}$ 自身可以看作其在**标准基**下的坐标向量，也就是说，基 $\mathcal{B}$ 作为列向量组组成的矩阵 $P_{\mathcal{B}}$ 成为了两个基之间的**坐标转移矩阵**change-of-coordinates matrix。在这里，矩阵 $P_{\mathcal{B}}$ 是从 $\mathcal{B}$ 到标准基的坐标转移矩阵，而  $P_{\mathcal{B}}^{-1}$ 是从标准基到 $\mathcal{B}$ 的坐标转移矩阵，因为有：
+```math
+\left[\vec{x}\right]_{\mathcal{B}} = P_{\mathcal{B}}^{-1}\ \vec{x}
+```
+  
+要记住坐标是一个列向量，**基**乘以**坐标**得到原向量，是一个matrix-vector product运算。
