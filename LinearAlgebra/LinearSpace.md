@@ -30,4 +30,4 @@
 第二步：解集结构  
 对比 $U$ 的非零行数量 $k$ 和 $n$
 * 当 $k=n$ 时，说明矩阵 $A$ 列向量组 $\mathcal{A}$ 线性无关，它作为 $\mathbb{R^n}$ 的一个基（basis），对于任何 $\vec{b} \in \mathbb{R^{n}}$，在此 basis 下有唯一表示，即 $A\,\vec{x}=\vec{b}$ 只有唯一解，即 $\vec{b}$ 在 $A$ 的列向量组 $\mathcal{A}$ 下的坐标 $\displaystyle \left[\vec{b}\right]_\mathcal{A}\in\mathbb{R^n}$。从 $U\,\vec{x}=P\,\vec{b}$ 也可以看出，$U$ 的每一列都是主元所在列，所以 $\vec{x}$ 只有唯一解。
-* 当 $k \lt n$ 时，因为矩阵的行秩等于列秩，所以 $U$ 的主元所在列数量也是 $k$。$U$ 的主元所在列组成了 $A$ 的列向量组 $\mathcal{A}$ 的一个basis，记为 $\mathcal{B}$。$A$ 的列向量组 $\mathcal{A}$ 在自由元所在列可以构成一个basis $\mathcal{B}$，$span \left\{\mathcal{A}\right\}=span \left\{\mathcal{B}\right\}$，是 $\mathbb{R^m}$ 的一个 $dim = k$ 的子空间
+* 当 $k \lt n$ 时，因为矩阵的行秩等于列秩，所以 $U$ 的主元所在列数量也是 $k$。$U$ 的主元所在列组成了 $A$ 的列向量组 $\mathcal{A}$ 的一个basis，记为 $\mathcal{B}$。$A$ 的列向量组 $\mathcal{A}$ 在自由元所在列可以构成一个basis $\mathcal{B}$，${span} \left\{\mathcal{A}\right\}={span} \left\{\mathcal{B}\right\}$，是 $\mathbb{R^m}$ 的一个 $dim = k$ 的子空间
