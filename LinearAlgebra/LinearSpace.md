@@ -130,7 +130,15 @@ T(\vec{x}) = \left[\vec{x}\right]_{\mathcal{B}}
   
 #### 基/坐标/维度
 在**线性空间下**，**线性组合**、**线性相关/无关**、**张成span**、**极大线性无关组**的定义都如出一辙，从而**基**和**坐标**的定义和性质也如出一辙：  
-考虑线性空间 $V$ 的一个基 $\displaystyle \mathcal{B} = \left[\vec{b}_1,\cdots,\vec{b}_n\right]$，对任意 $\displaystyle \vec{x} \in V$，相对这个基都有唯一表示 $\displaystyle \vec{x} = \sum_{i=1}^{n}c_i\ \vec{b}_i$，把权重按序表示成列向量 $\displaystyle \left[c_1,\cdots,c_n\right]^T \in \mathbb{R^n}$，即是 $\displaystyle \vec{x}$ 相对基 $\displaystyle base\ \mathcal{B}$ 的坐标，写作 $\displaystyle \left[\vec{x}\right]_{\mathcal{B}}$ 。坐标映射coordinates-mapping $\displaystyle T: V\rightarrow\mathbb{R^n},\ T(\vec{x})=\left[\vec{x}\right]_\mathcal{B}$ 是一个双射线性映射，也是一个同构映射，线性空间 $V$ 和 $\mathbb{R^n}$ 同构。当 $V = \mathbb{R^n}$ 时，根据「用基和坐标表示」的原则，可得
+考虑线性空间 $V$ 的一个基
+```math
+\mathcal{B} = \left[\vec{b}_1,\cdots,\vec{b}_n\right]
+```
+对任意 $\vec{x} \in V$，相对这个基都有唯一表示
+```math
+\vec{x} = \sum_{i=1}^{n}c_i\ \vec{b}_i
+```
+把权重按序表示成列向量 $\left[c_1,\cdots,c_n\right]^T \in \mathbb{R^n}$，即是 $\displaystyle \vec{x}$ 相对基 $\displaystyle base\ \mathcal{B}$ 的坐标，写作 $\displaystyle \left[\vec{x}\right]_{\mathcal{B}}$ 。坐标映射coordinates-mapping $\displaystyle T: V\rightarrow\mathbb{R^n},\ T(\vec{x})=\left[\vec{x}\right]_\mathcal{B}$ 是一个双射线性映射，也是一个同构映射，线性空间 $V$ 和 $\mathbb{R^n}$ 同构。当 $V = \mathbb{R^n}$ 时，根据「用基和坐标表示」的原则，可得
 ```math
 \vec{x} = P_{\mathcal{B}}\ \left[\vec{x}\right]_{\mathcal{B}}
 ```
