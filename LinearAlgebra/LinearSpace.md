@@ -33,3 +33,31 @@ $$E_p\ \cdots\ E_1\ A=U$$
 * 当 $k=n$ 时，说明矩阵 $A$ 列向量组 $\mathcal{A}$ 线性无关，它作为 $\mathbb{R^n}$ 的一个基（basis），对于任何 $\vec{b} \in \mathbb{R^{n}}$，在此 basis 下有唯一表示，即 $A\vec{x}=\vec{b}$ 只有唯一解，即 $\vec{b}$ 在 $A$ 的列向量组 $\mathcal{A}$ 下的坐标 $\displaystyle \left[\vec{b}\right]_\mathcal{A}\in\mathbb{R^n}$。从 $U\ \vec{x}=P\ \vec{b}$ 也可以看出，echelon form $U$ 的每一列都是主元所在列，所以 $\vec{x}$ 只有唯一解。
 * 当 $k \lt n$ 时，因为矩阵的行秩等于列秩，所以 $U$ 的主元所在列数量也是 $k$。echelon form $U$ 的主元所在列组成了 $A$ 的列向量组 $\mathcal{A}$ 的一个basis，记为 $\mathcal{B}$。而 $A$ 的列向量组 $\mathcal{A}$ 在自由元所在列可以构成一个basis $\mathcal{B}$，即 $span\displaystyle \left(\mathcal{A}\right) \equiv span \left(\mathcal{B}\right)$，是 $\mathbb{R^m}$ 的一个 $dim = k$ 的子空间。有解的意思即指 $\vec{b} \in span\left(\mathcal{A}\right)$。
 
+### 齐次  
+首先考虑齐次线性方程组 $$A\vec{x}=\vec{0}$$
+echelon form下是 $$U\vec{x}=\vec{0}$$
+想象下 $U\vec{x}=\vec{0}$ 的形式，因为 $U$ 是echelon form, 再考虑它的reduced echelon form，此时每行/每列都最多只有一个主元，所以每一行可以写成：
+$$x_{pivot\_q} + \sum_{j=1}^{n-k} coef_{j}\ x_{free\_j} = 0, q \in (1,\cdots,k)$$
+移项，得：
+$$x_{pivot\_q} = \sum_{j=1}^{n-k} coef_{j}\ x_{free\_j}, q \in (1,\cdots,k)$$
+即：
+$$\vec{x}_{pivot} = C\ \vec{x}_{free}, C \in \mathbb{R^{k, n-k}}$$
+那么，此时考虑解向量
+$$\vec{x} = 
+\begin{bmatrix}
+\vec{x}_{pivot}\\\vec{x}_{free}
+\end{bmatrix} = 
+\begin{bmatrix}
+C\ \vec{x}_{pivot}\\I\ \vec{x}_{free}
+\end{bmatrix} = 
+\begin{bmatrix}
+C\\I
+\end{bmatrix}\ \vec{x}_{free}
+$$
+记 $\begin{bmatrix}
+C\\I
+\end{bmatrix} \equiv Q, \ \ Q \in \mathbb{R^{n, n-k}}$。考虑独热部分，所以 $rank(Q) = n-k$，同时$\vec{x}_{free}$取遍 $\mathbb{R^{n-k}}$，所以此时解集 $set$ (又称 $A$ 的零空间 $Nul(A)$ )是由 $Q$ 的列向量组 $\mathcal{Q}$ 张成的线性空间，即 $\mathbb{R}^{n}$ 的一个 $dim = n-k$的subspace。
+
+### 非齐次
+特解+系数矩阵的零空间，即为非齐次线性方程组的解集。
+
