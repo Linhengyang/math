@@ -138,7 +138,9 @@ T(\vec{x}) = \left[\vec{x}\right]_{\mathcal{B}}
 ```math
 \vec{x} = \sum_{i=1}^{n}c_i\ \vec{b}_i
 ```
-把权重按序表示成列向量 $\left[c_1,\cdots,c_n\right]^T \in \mathbb{R^n}$，即是 $\vec{x}$ 相对基 $base\ \mathcal{B}$ 的坐标，写作**坐标**$\left[\vec{x}\right]_\mathcal{B} \in \mathbb{R^n}$。   
+把权重按序表示成列向量 $\left[c_1,\cdots,c_n\right]^T$，即是 $\vec{x}$ 相对基 $base\ \mathcal{B}$ 的坐标，写作
+$\left[\vec{x}\right]_\mathcal{B} \in \mathbb{R^n}$。  
+  
 坐标映射coordinates-mapping
 ```math
 T:V \rightarrow \mathbb{R^n},\ T(\vec{x})=\left[\vec{x}\right]_\mathcal{B}
@@ -147,7 +149,7 @@ T:V \rightarrow \mathbb{R^n},\ T(\vec{x})=\left[\vec{x}\right]_\mathcal{B}
 ```math
 \vec{x} = P_{\mathcal{B}}\ \left[\vec{x}\right]_{\mathcal{B}}
 ```
-而向量 $\vec{x}$ 自身可以看作其在**标准基**下的坐标向量，也就是说，基 $\mathcal{B}$ 作为列向量组组成的矩阵 $P_{\mathcal{B}}$ 成为了两个基之间的**坐标转移矩阵**change-of-coordinates matrix。在这里，矩阵 $P_{\mathcal{B}}$ 是从 $\mathcal{B}$ 到标准基的坐标转移矩阵，而  $P_{\mathcal{B}}^{-1}$ 是从标准基到 $\mathcal{B}$ 的坐标转移矩阵，因为有：
+而向量 $\vec{x}$ 自身可以看作其在**标准基**下的坐标向量，也就是说，基 $\mathcal{B}$ 作为列向量组组成的矩阵 $P_{\mathcal{B}}$ 成为了两个基之间的**坐标转移矩阵(change-of-coordinates matrix)**。在这里，矩阵 $P_{\mathcal{B}}$ 是从 $\mathcal{B}$ 到标准基的坐标转移矩阵，而  $P_{\mathcal{B}}^{-1}$ 是从标准基到 $\mathcal{B}$ 的坐标转移矩阵，因为有：
 ```math
 \left[\vec{x}\right]_{\mathcal{B}} = P_{\mathcal{B}}^{-1}\ \vec{x}
 ```
