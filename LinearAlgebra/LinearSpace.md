@@ -103,4 +103,29 @@ T(\vec{x}) = \left[\vec{x}\right]_{\mathcal{B}}
 * 包含 $0$ 向量
 * 对 $V$ 的加法和数乘封闭  
 
-由此也引入了向量组张成的子空间 $span(\mathcal{B})$。在这里把矩阵 $A$ 的零空间Null Space $Nul(A)$ 和列空间 Col Space $Col(A)$重新理解一遍（其实没什么变化）
+由此也引入了向量组张成的子空间 $span(\mathcal{B})$。在这里把矩阵 $A$ 的零空间Null Space $Nul(A)$ 和列空间 Col Space $Col(A)$重新理解一遍（其实没什么变化）。  
+
+但是如果从映射的视角出发：  
+考虑映射 $T:\mathbb{R^n} \rightarrow \mathbb{R^m},\ with\ matrix\ A \in \mathbb{R^{m,n}}$，那么
+1. 它的零空间 $Nul(A)$是 $domain\ \mathbb{R^n}$ 的一个子空间，代表这个子空间中的向量在映射 $T$ 下都被映射到了 $codomain\ \mathbb{R^m}$ 的 $\vec{0}$。
+2. 它的列空间 $Col(A)$是 $codomain\ \mathbb{R^m}$ 的一个子空间，可以记作 $span(\left[\vec{a}_1, \vec{a}_2, \cdots, \vec{a}_n\right])$，代表映射T的值域 $range$ 。  
+  
+通过探讨映射 $T$ 是否是单射，可以得出：
+1. $rank\ A = n$
+2. $A$ 的列向量组线性无关
+3. $A\vec{x} = \vec{0}$ 只有0解  
+  
+这三个相互等价的条件时，$T$ 是单射，即 $Nul(A) = \{\vec{0}\}$ 。
+  
+通过探讨映射 $T$ 是否是满射，可以得出：
+1. $rank\ A = m$
+2. $A$ 的列向量组张成 $\mathbb{R^m}$（记住 $dim\ \mathbb{R^m} = m$）
+  
+这两个相互等价的条件时，$T$ 是满射，即 $Col(A) = \mathbb{R^m}$ 。
+  
+#### 线性映射
+如果将线性映射的概念从**数值向量空间**之间的映射，推广到**线性空间**之间的映射 $T$，那么相应地，
+* 把 $T$ 的“零空间” $Nul(T)$ 定义为 $T$ 的**kernel**，是**domain**的子空间：$T$ 把kernel中的元素 $\vec{v}$ 映射到codomain的 $\vec{0}$ 元素
+* 把 $T$ 的“列空间” $Col(T)$ 定义为 $T$ 的**range**，是**codomain**的子空间：对于range中的元素 $\vec{u}$，能从domain中找到对应元素 $\vec{v}$，使得 $T(\vec{v})=\vec{u}$
+  
+#### 基/坐标/维度
