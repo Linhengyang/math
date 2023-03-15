@@ -138,7 +138,8 @@ T(\vec{x}) = \left[\vec{x}\right]_{\mathcal{B}}
 ```math
 \vec{x} = \sum_{i=1}^{n}c_i\ \vec{b}_i
 ```
-把权重按序表示成列向量 $\left[c_1,\cdots,c_n\right]^T \in \mathbb{R^n}$，即是 $\vec{x}$ 相对基 $base\ \mathcal{B}$ 的坐标，写作 $ \left[\vec{x}\right]_\mathcal{B} $ 。坐标映射coordinates-mapping
+把权重按序表示成列向量 $\left[c_1,\cdots,c_n\right]^T \in \mathbb{R^n}$，即是 $\vec{x}$ 相对基 $base\ \mathcal{B}$ 的坐标，写作**坐标**$\left[\vec{x}\right]_\mathcal{B} \in \mathbb{R^n}$。   
+坐标映射coordinates-mapping
 ```math
 T:V \rightarrow \mathbb{R^n},\ T(\vec{x})=\left[\vec{x}\right]_\mathcal{B}
 ```
