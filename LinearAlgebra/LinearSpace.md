@@ -33,7 +33,8 @@ $$E_p\ \cdots\ E_1\ A=U$$
 * 当 $k=n$ 时，说明矩阵 $A$ 列向量组 $\mathcal{A}$ 线性无关，它作为 $\mathbb{R^n}$ 的一个基（basis），对于任何 $\vec{b} \in \mathbb{R^{n}}$，在此 basis 下有唯一表示，即 $A\vec{x}=\vec{b}$ 只有唯一解，即 $\vec{b}$ 在 $A$ 的列向量组 $\mathcal{A}$ 下的坐标 $\displaystyle \left[\vec{b}\right]_\mathcal{A}\in\mathbb{R^n}$。从 $U\ \vec{x}=P\ \vec{b}$ 也可以看出，echelon form $U$ 的每一列都是主元所在列，所以 $\vec{x}$ 只有唯一解。
 * 当 $k \lt n$ 时，因为矩阵的行秩等于列秩，所以 $U$ 的主元所在列数量也是 $k$。echelon form $U$ 的主元所在列组成了 $A$ 的列向量组 $\mathcal{A}$ 的一个basis，记为 $\mathcal{B}$。而 $A$ 的列向量组 $\mathcal{A}$ 在自由元所在列可以构成一个basis $\mathcal{B}$，即 $span\displaystyle \left(\mathcal{A}\right) \equiv span \left(\mathcal{B}\right)$，是 $\mathbb{R^m}$ 的一个 $dim = k$ 的子空间。有解的意思即指 $\vec{b} \in span\left(\mathcal{A}\right)$。
 
-### 齐次  
+### 矩阵方程解集
+#### 齐次  
 首先考虑齐次线性方程组 $$A\vec{x}=\vec{0}$$
 echelon form下是 $$U\vec{x}=\vec{0}$$
 想象下 $U\vec{x}=\vec{0}$ 的形式，因为 $U$ 是echelon form, 再考虑它的reduced echelon form，此时每行/每列都最多只有一个主元，所以每一行可以写成：
@@ -69,21 +70,21 @@ C\\I
 ```
 考虑独热部分，所以 $rank(Q) = n-k$，同时 $\vec{x}_{free}$ 取遍 $\mathbb{R^{n-k}}$，所以此时解集 $set$ (又称 $A$ 的零空间 $Nul(A)$ )是由 $Q$ 的列向量组 $\mathcal{Q}$ 张成的线性空间，即 $\mathbb{R}^{n}$ 的一个 $dim = n-k$的subspace。
 
-### 非齐次
+#### 非齐次
 特解+系数矩阵的零空间，即为非齐次线性方程组的解集。
 
 ---
 ### LU分解  
-当矩阵 $A$ 转化为 echelon form $U$ 的初等行变换操作中，没有「两行互换」时，$E_p\ \cdots\ E_1$都是下三角单位矩阵（主对角线元素都是1），从而 $P = E_p\ \cdots\ E_1$ 以及 $P^{-1}$都是下三角单位矩阵，将其记作 $L$，即得到
+当矩阵 $A$ 转化为 echelon form $U$ 的初等行变换操作中，没有「两行互换」时，$E_p,\cdots,E_1$都是下三角单位矩阵（主对角线元素都是1），从而 $P = E_p\ \cdots\ E_1$ 以及 $P^{-1}$都是下三角单位矩阵，将其记作 $L$，即得到
 $$
 A = LU
 $$
 其中 $L$ 是下三角单位矩阵，而 $U$ 是 $A$ 的echelon form。
 
 ## 分支2综述
-分支1脉络中，主线是**子空间**的**基**。**基**的大小就是子空间的**维度**，向量 $\vec{x} \in subspace\ H \subset \mathbb{R^m}$ 被基 $\mathcal{B}$ 唯一表示时的权重，就是向量 $\vec{x}$ 在这个基下的**坐标**$\left[x\right]_\mathcal{B} \in \mathbb{R^p}, if\ dimH = p$。  
+分支2脉络中，主线是**子空间**的**基**。**基**的大小就是子空间的**维度**，向量 $\vec{x} \in subspace\ H \subset \mathbb{R^m}$ 被基 $\mathcal{B}$ 唯一表示时的权重，就是向量 $\vec{x}$ 在这个基下的**坐标**$\left[x\right]_\mathcal{B} \in \mathbb{R^p}, if\ dimH = p$。  
   
-考虑映射 $T:H \rightarrow \mathbb{R^p}, dimH=p, \mathcal{B}\ is\ basis\ of\ H$，那么有
+考虑映射 $T:H \rightarrow \mathbb{R^p}, dimH=p, \mathcal{B}\ is\ a\ basis\ of\ H$，那么有
 ```math
 T(\vec{x}) = \left[\vec{x}\right]_{\mathcal{B}}
 ```
@@ -92,4 +93,14 @@ T(\vec{x}) = \left[\vec{x}\right]_{\mathcal{B}}
 矩阵 $A$ 的**列空间**和**零空间**的**维度**和**基**，都已经知道怎么计算。  
   
 一个子空间 $H$ 的任一组**基**都是能互相表示(等价)的，而且能够张成 $H$ 的 $dimH$ 个向量，就是 $H$ 的一组基。
+  
+### 线性空间
+完整的**线性空间** $V$ 的定义：
+* 一个非空集合 $V$，两个运算（加法和数乘）
+* 十条法则  
+  
+完整的**子空间** $H$ 的定义:
+* 包含 $0$ 向量
+* 对 $V$ 的加法和数乘封闭  
 
+由此也引入了向量组张成的子空间 $span(\mathcal{B})$。在这里把矩阵 $A$ 的零空间Null Space $Nul(A)$ 和列空间 Col Space $Col(A)$重新理解一遍（其实没什么变化）
