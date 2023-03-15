@@ -128,7 +128,7 @@ T(\vec{x}) = \left[\vec{x}\right]_{\mathcal{B}}
 * 把 $T$ 的“零空间” $Nul(T)$ 定义为 $T$ 的**kernel**，是**domain**的子空间：映射 $T$ 把kernel中的元素 $\vec{v}$ 映射到codomain的 $\vec{0}$ 元素
 * 把 $T$ 的“列空间” $Col(T)$ 定义为 $T$ 的**range**，是**codomain**的子空间：对于range中的元素 $\vec{u}$，能从domain中找到对应元素 $\vec{v}$，使得 $T(\vec{v})=\vec{u}$
   
-#### 基/坐标/维度
+#### 基/坐标
 在**线性空间下**，**线性组合**、**线性相关/无关**、**张成span**、**极大线性无关组**的定义都如出一辙，从而**基**和**坐标**的定义和性质也如出一辙：  
 考虑线性空间 $V$ 的一个基
 ```math
@@ -154,4 +154,6 @@ T:V \rightarrow \mathbb{R^n},\ T(\vec{x})=\left[\vec{x}\right]_\mathcal{B}
 \left[\vec{x}\right]_{\mathcal{B}} = P_{\mathcal{B}}^{-1}\ \vec{x}
 ```
   
-要记住坐标是一个列向量，**基**乘以**坐标**得到原向量，是一个matrix-vector product运算。
+要记住坐标是一个列向量，**基**乘以**坐标**得到原向量，是一个matrix-vector product运算。  
+  
+#### 维度
