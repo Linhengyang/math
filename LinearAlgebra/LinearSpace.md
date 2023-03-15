@@ -37,14 +37,20 @@ $$E_p\ \cdots\ E_1\ A=U$$
 首先考虑齐次线性方程组 $$A\vec{x}=\vec{0}$$
 echelon form下是 $$U\vec{x}=\vec{0}$$
 想象下 $U\vec{x}=\vec{0}$ 的形式，因为 $U$ 是echelon form, 再考虑它的reduced echelon form，此时每行/每列都最多只有一个主元，所以每一行可以写成：
-$$x_{pivot\_q} + \sum_{j=1}^{n-k} coef_{j}\ x_{free\_j} = 0, q \in (1,\cdots,k)$$
+```math
+x_{pivot\_q} + \sum_{j=1}^{n-k} coef_{j}\ x_{free\_j} = 0, q \in (1,\cdots,k)
+```
 移项，得：
-$$x_{pivot\_q} = \sum_{j=1}^{n-k} coef_{j}\ x_{free\_j}, q \in (1,\cdots,k)$$
+```math
+x_{pivot\_q} = \sum_{j=1}^{n-k} coef_{j}\ x_{free\_j}, q \in (1,\cdots,k)
+```
 即：
-$$\vec{x}\_{pivot} = C\vec{x}\_{free}, C \in \mathbb{R^{k, n-k}}$$
+```math
+\vec{x}_{pivot} = C\vec{x}_{free}, C \in \mathbb{R^{k, n-k}}
+```
 那么，此时考虑解向量
-
-$$\vec{x} = 
+```math
+\vec{x} = 
 \begin{bmatrix}
 \vec{x}_{pivot}\\\vec{x}_{free}
 \end{bmatrix} = 
@@ -54,7 +60,7 @@ C\ \vec{x}_{pivot}\\I\ \vec{x}_{free}
 \begin{bmatrix}
 C\\I
 \end{bmatrix}\ \vec{x}_{free}
-$$
+```
 记 $\begin{bmatrix}
 C\\I
 \end{bmatrix} \equiv Q, \ \ Q \in \mathbb{R^{n, n-k}}$。考虑独热部分，所以 $rank(Q) = n-k$，同时$\vec{x}_{free}$取遍 $\mathbb{R^{n-k}}$，所以此时解集 $set$ (又称 $A$ 的零空间 $Nul(A)$ )是由 $Q$ 的列向量组 $\mathcal{Q}$ 张成的线性空间，即 $\mathbb{R}^{n}$ 的一个 $dim = n-k$的subspace。
