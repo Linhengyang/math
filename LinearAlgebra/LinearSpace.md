@@ -84,9 +84,9 @@ $$
 分支1脉络中，主线是**子空间**的**基**。**基**的大小就是子空间的**维度**，向量 $\vec{x} \in subspace\ H \subset \mathbb{R^m}$ 被基 $\mathcal{B}$ 唯一表示时的权重，就是向量 $\vec{x}$ 在这个基下的**坐标**$\left[x\right]_\mathcal{B} \in \mathbb{R^p}, if\ dimH = p$。  
   
 考虑映射 $T:H \rightarrow \mathbb{R^p}, dimH=p, \mathcal{B}\ is\ basis\ of\ H$，那么有
-$$
+```math
 T(\vec{x}) = \left[\vec{x}\right]_{\mathcal{B}}
-$$
+```
 即将一个 $H$ 中的向量映射到 基basis下的坐标向量。易证这是一个保持**加法**和**数乘**运算的**同构映射**。所以 $H$ “像是” $\mathbb{R^p}$，尽管 $H$ 中的元素的分量数目可能是超过 $p$的。  
   
 矩阵 $A$ 的**列空间**和**零空间**的**维度**和**基**，都已经知道怎么计算。  
