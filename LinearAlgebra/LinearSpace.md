@@ -41,8 +41,9 @@ $$x_{pivot\_q} + \sum_{j=1}^{n-k} coef_{j}\ x_{free\_j} = 0, q \in (1,\cdots,k)$
 移项，得：
 $$x_{pivot\_q} = \sum_{j=1}^{n-k} coef_{j}\ x_{free\_j}, q \in (1,\cdots,k)$$
 即：
-$$\vec{x}_{pivot} = C\ \vec{x}_{free}, C \in \mathbb{R^{k, n-k}}$$
+$$\vec{x}\_{pivot} = C\vec{x}\_{free}, C \in \mathbb{R^{k, n-k}}$$
 那么，此时考虑解向量
+
 $$\vec{x} = 
 \begin{bmatrix}
 \vec{x}_{pivot}\\\vec{x}_{free}
