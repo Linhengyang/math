@@ -110,6 +110,7 @@ T(\vec{x}) = \left[\vec{x}\right]_{\mathcal{B}}
 矩阵 $A \in \mathbb{R^{m,n}}$ 的**行空间Row Space**：  
 行向量组张成的空间，是 $\mathbb{R^n}$ 的一个子空间。矩阵 $A$ 的echelon form $U$ 的非零行是它的一个**基**（注意这里是 $U$ 的非零行，跟列空间不同，列空间的基是从 $A$ 中选 $U$ 的主元所在列）。
 
+---
 在这里把矩阵 $A$ 的**零空间Null Space** $Nul(A)$ 和列空间**Col Space** $Col(A)$重新理解一遍（其实没什么变化）。  
 
 但是如果从映射的视角出发：  
@@ -117,8 +118,6 @@ T(\vec{x}) = \left[\vec{x}\right]_{\mathcal{B}}
 1. 它的零空间 $Nul(A)$是 $domain\ \mathbb{R^n}$ 的一个子空间，代表这个子空间中的向量在映射 $T$ 下都被映射到了 $codomain\ \mathbb{R^m}$ 的 $\vec{0}$。
 2. 它的列空间 $Col(A)$是 $codomain\ \mathbb{R^m}$ 的一个子空间，可以记作 $span(\left[\vec{a}_1, \vec{a}_2, \cdots, \vec{a}_n\right])$，代表映射T的值域 $range$ 。  
   
----
-
 通过探讨映射 $T$ 是否是单射，可以得出：
 * $rank\ A = n$
 * $A$ 的列向量组线性无关
