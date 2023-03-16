@@ -187,10 +187,14 @@ Consider\ \mathcal{B}\ as\ set(\vec{b}_1,\cdots,\vec{b}_n),\ P_\mathcal{C \lefta
 ```
 坐标转移映射都是可逆的，即**坐标转移矩阵**都是**可逆**的，有 $P_\mathcal{B \leftarrow C} = P_\mathcal{C \leftarrow B}^{-1}$ 。
   
+---
 
 #### 矩阵(方阵)相似
 **坐标**概念的建立，有一个很大的意义在于，原**线性空间** $V,\ dimV = n$ 中的向量可能不方便用数字表示，无法参与进一步的分析（比如研究 $V$ 到自身的线性映射）。但是如果去研究与之**同构**的 $\mathbb{R^n}$，即**坐标向量**和**坐标空间**，就方便了。特别地，如果研究从 $V$ 到 $V$ 的线性映射，就可以转而研究从坐标空间 $\mathbb{R^n}$ 到 $\mathbb{R^n}$ 的线性映射，即一个形状为(n,n)的方阵。  
-甚至有时候，一个**基** $\mathcal{B}$ 得到的坐标空间 $\mathbb{R^n}\_{\mathcal{B}}$ 可能还「不够好」，我们会换一个**基** $\mathcal{C}$，即换一个坐标空间 $\mathbb{R^n}\_{\mathcal{C}}$。更具体地说，一个线性映射 $T:\mathbb{R^n}\_{\mathcal{B}}\rightarrow\mathbb{R^n}\_{\mathcal{B}},\ matrix\ T\in \mathbb{R^{n,n}}$，与另一个线性映射 $S:\mathbb{R^n}\_{\mathcal{C}}\rightarrow\mathbb{R^n}\_{\mathcal{C}},\ matrix\ S\in \mathbb{R^{n,n}}$，是 $V$ 的两个不同基下的**坐标空间**里各自的线性映射，但其实它们都是 $V$ 到 $V$ 上的一个线性映射在不同**同构**的坐标空间里的“翻版”，此谓两个映射**相似**，或者说两个**矩阵相似**。用数学来表示，即：  
+  
+甚至有时候，一个**基** $\mathcal{B}$ 得到的坐标空间 $\mathbb{R^n}\_{\mathcal{B}}$ 可能还「不够好」，我们会换一个**基** $\mathcal{C}$，即换一个坐标空间 $\mathbb{R^n}\_{\mathcal{C}}$。  
+  
+更具体地说，一个线性映射 $T:\mathbb{R^n}\_{\mathcal{B}}\rightarrow\mathbb{R^n}\_{\mathcal{B}},\ matrix\ T\in \mathbb{R^{n,n}}$，与另一个线性映射 $S:\mathbb{R^n}\_{\mathcal{C}}\rightarrow\mathbb{R^n}\_{\mathcal{C}},\ matrix\ S\in \mathbb{R^{n,n}}$，是 $V$ 的两个不同基下的**坐标空间**里各自的线性映射，但其实它们都是 $V$ 到 $V$ 上的一个线性映射在不同**同构**的坐标空间里的“翻版”，此谓两个映射**相似**，或者说两个**矩阵相似**。用数学来表示，即：  
 ```math
 V(dimV = n,\ base\ \mathcal{B}\ \&\ \mathcal{C}),\ V\cong\mathbb{R^n}_{\mathcal{B}},\ V\cong\mathbb{R^n}_{\mathcal{C}}
 ```
