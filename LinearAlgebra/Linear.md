@@ -206,14 +206,12 @@ F:V\rightarrow V,\ \ F(\vec{x})=\vec{y},\ \vec{x}\in V,\ \vec{y} \in V
 ```
 考虑 $F$ 在两个坐标空间的“翻版”，即如下两个线性映射：
 ```math
-F_\mathcal{B}:\mathbb{R^n}_{\mathcal{B}}\rightarrow\mathbb{R^n}_{\mathcal{B}},\ matrix\ T\in \mathbb{R^{n,n}},\ T\left[\vec{x}\right]_\mathcal{B} = \left[\vec{y}\right]_\mathcal{B}
-\\
+F_\mathcal{B}:\mathbb{R^n}_{\mathcal{B}}\rightarrow\mathbb{R^n}_{\mathcal{B}},\ matrix\ T\in \mathbb{R^{n,n}},\ T\left[\vec{x}\right]_\mathcal{B} = \left[\vec{y}\right]_\mathcal{B} \\
 F_\mathcal{C}:\mathbb{R^n}_{\mathcal{C}}\rightarrow\mathbb{R^n}_{\mathcal{C}},\ matrix\ S\in \mathbb{R^{n,n}},\ S\left[\vec{x}\right]_\mathcal{C} = \left[\vec{y}\right]_\mathcal{C}
 ```
 因为有坐标转移映射
 ```math
-\left[\vec{x}\right]_\mathcal{C}=P_\mathcal{C \leftarrow B}\left[\vec{x}\right]_\mathcal{B},\ P_\mathcal{C \leftarrow B}\in\mathbb{R^{n,n}}
-\\
+\left[\vec{x}\right]_\mathcal{C}=P_\mathcal{C \leftarrow B}\left[\vec{x}\right]_\mathcal{B},\ P_\mathcal{C \leftarrow B}\in\mathbb{R^{n,n}} \\
 \left[\vec{y}\right]_\mathcal{B}=P_\mathcal{B \leftarrow C}\left[\vec{y}\right]_\mathcal{C},\ P_\mathcal{B \leftarrow C}\in\mathbb{R^{n,n}}
 ```
 代入，得到：
