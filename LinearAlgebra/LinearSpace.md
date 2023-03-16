@@ -171,7 +171,7 @@ T:V \rightarrow \mathbb{R^n},\ T(\vec{x})=\left[\vec{x}\right]_\mathcal{B}
 ```math
 \left[\vec{x}\right]_\mathcal{B},\ \left[\vec{x}\right]_\mathcal{C}\ \in\mathbb{R^n}
 ```
-从 $\left[\vec{x}\right]_\mathcal{B}$ 到 $\left[\vec{x}\right]_\mathcal{C}$，存在**唯一**的**坐标转移映射** $T,\ matrix\ P_\mathcal{C \leftarrow B} \in \mathbb{R^n}$，使得下式成立：
+从 $\mathcal{B}$ 下的坐标向量到 $\mathcal{C}$ 下的坐标向量，存在**唯一**的**坐标转移映射** $T,\ matrix\ P_\mathcal{C \leftarrow B} \in \mathbb{R^n}$，使得下式成立：
 ```math
 \left[\vec{x}\right]_\mathcal{C} = P_\mathcal{C \leftarrow B}\ \left[\vec{x}\right]_\mathcal{B}
 ```
