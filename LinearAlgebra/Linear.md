@@ -194,7 +194,38 @@ Consider\ \mathcal{B}\ as\ set(\vec{b}_1,\cdots,\vec{b}_n),\ P_\mathcal{C \lefta
   
 甚至有时候，一个**基** $\mathcal{B}$ 得到的坐标空间 $\mathbb{R^n}\_{\mathcal{B}}$ 可能还「不够好」，我们会换一个**基** $\mathcal{C}$，即换一个坐标空间 $\mathbb{R^n}\_{\mathcal{C}}$。  
   
-更具体地说，一个线性映射 $T:\mathbb{R^n}\_{\mathcal{B}}\rightarrow\mathbb{R^n}\_{\mathcal{B}},\ matrix\ T\in \mathbb{R^{n,n}}$，与另一个线性映射 $S:\mathbb{R^n}\_{\mathcal{C}}\rightarrow\mathbb{R^n}\_{\mathcal{C}},\ matrix\ S\in \mathbb{R^{n,n}}$，是 $V$ 的两个不同基下的**坐标空间**里各自的线性映射，但其实它们都是 $V$ 到 $V$ 上的一个线性映射在不同**同构**的坐标空间里的“翻版”，此谓两个映射**相似**，或者说两个**矩阵相似**。用数学来表示，即：  
+更具体地说，一个线性映射 $T:\mathbb{R^n}\_{\mathcal{B}}\rightarrow\mathbb{R^n}\_{\mathcal{B}},\ matrix\ T\in \mathbb{R^{n,n}}$，与另一个线性映射 $S:\mathbb{R^n}\_{\mathcal{C}}\rightarrow\mathbb{R^n}\_{\mathcal{C}},\ matrix\ S\in \mathbb{R^{n,n}}$，是 $V$ 的两个不同基下的**坐标空间**里各自的线性映射，但其实它们都是 $V$ 到 $V$ 上的一个线性映射在不同**同构**的坐标空间里的“翻版”，此谓两个映射**相似**，或者说两个**矩阵相似**。  
+  
+用数学来表示，即：  
 ```math
 V(dimV = n,\ base\ \mathcal{B}\ \&\ \mathcal{C}),\ V\cong\mathbb{R^n}_{\mathcal{B}},\ V\cong\mathbb{R^n}_{\mathcal{C}}
 ```
+现在，有一个 $V$ 到 $V$ 的线性映射
+```math
+F:V\rightarrow V,\ \ F(\vec{x})=\vec{y},\ \vec{x}\in V,\ \vec{y} \in V
+```
+考虑 $F$ 在两个坐标空间的“翻版”，即如下两个线性映射：
+```math
+F_\mathcal{B}:\mathbb{R^n}_{\mathcal{B}}\rightarrow\mathbb{R^n}_{\mathcal{B}},\ matrix\ T\in \mathbb{R^{n,n}},\ T\left[\vec{x}\right]_\mathcal{B} = \left[\vec{y}\right]_\mathcal{B}
+\\
+F_\mathcal{C}:\mathbb{R^n}_{\mathcal{C}}\rightarrow\mathbb{R^n}_{\mathcal{C}},\ matrix\ S\in \mathbb{R^{n,n}},\ S\left[\vec{x}\right]_\mathcal{C} = \left[\vec{y}\right]_\mathcal{C}
+```
+因为有坐标转移映射
+```math
+\left[\vec{x}\right]_\mathcal{C}=P_\mathcal{C \leftarrow B}\left[\vec{x}\right]_\mathcal{B},\ P_\mathcal{C \leftarrow B}\in\mathbb{R^{n,n}}
+\\
+\left[\vec{y}\right]_\mathcal{B}=P_\mathcal{B \leftarrow C}\left[\vec{y}\right]_\mathcal{C},\ P_\mathcal{B \leftarrow C}\in\mathbb{R^{n,n}}
+```
+代入，得到：
+```math
+T\left[\vec{x}\right]_\mathcal{B}=\left[\vec{y}\right]_\mathcal{B}=P_\mathcal{B \leftarrow C}\left[\vec{y}\right]_\mathcal{C}=P_\mathcal{B \leftarrow C}S\left[\vec{x}\right]_\mathcal{C}=P_\mathcal{B \leftarrow C}SP_\mathcal{C \leftarrow B}\left[\vec{x}\right]_\mathcal{B}
+```
+即
+```math
+T\left[\vec{x}\right]_\mathcal{B} \equiv P_\mathcal{B \leftarrow C}SP_\mathcal{C \leftarrow B}\left[\vec{x}\right]_\mathcal{B}
+```
+记 $P_\mathcal{B \leftarrow C} = P$，得到：
+```math
+T = P\ S\ P^{-1}
+```
+去掉一切推导归纳来看，对于矩阵 $A,B \in \mathbb{R^{n,n}}$，如果存在**可逆矩阵** $P$，使得 $A = P\ B\ P^{-1}$ 成立，则称矩阵 $A$ 和 $B$ **相似**。
