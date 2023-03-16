@@ -167,7 +167,7 @@ T:V \rightarrow \mathbb{R^n},\ T(\vec{x})=\left[\vec{x}\right]_\mathcal{B}
 \vec{x} = P_{\mathcal{B}}\ \left[\vec{x}\right]_{\mathcal{B}}
 ```
 这里 $P_{\mathcal{B}}$ 就是 $\mathcal{B}$ 作为列向量组组成的矩阵。然而对于一般的线性空间 $V$，很可能没办法把基 $\mathcal{B}$ 写成矩阵的形式。  
-* 对于一般的线性空间 $V, dimV = n$，考虑它的两个基 $\mathcal{B}$ 和 $\mathcal{C}$，那么对于 $V$ 中的任何一个 $\vec{x} \in V$，它在两个基下有不同的坐标，分别是 $\displaystyle \left[\vec{x}\right]_\mathcal{B}\in\mathbb{R^n}$ 和 $\ \left[\vec{x}\right]_\mathcal{C}\in\mathbb{R^n}$ 。从 $\displaystyle \left[\vec{x}\right]_\mathcal{B}$ 到 $\displaystyle \left[\vec{x}\right]_\mathcal{C}$，存在**唯一**的**坐标转移映射** $T,\ matrix\ P_\mathcal{C \leftarrow B} \in \mathbb{R^n}$，使得下式成立：
+* 对于一般的线性空间 $V, dimV = n$，考虑它的两个基 $\mathcal{B}$ 和 $\mathcal{C}$，那么对于 $V$ 中的任何一个 $\vec{x} \in V$，它在两个基下有不同的坐标，分别是 $\displaystyle \left[\vec{x}\right]_\mathcal{B}\in\mathbb{R^n}$ 和 $\ \left[\vec{x}\right]_\mathcal{C}\in\mathbb{R^n}$。从 $\displaystyle \left[\vec{x}\right]_\mathcal{B}$ 到 $\displaystyle \left[\vec{x}\right]_\mathcal{C}$，存在**唯一**的**坐标转移映射** $T,\ matrix\ P_\mathcal{C \leftarrow B} \in \mathbb{R^n}$，使得下式成立：
 ```math
 \left[\vec{x}\right]_\mathcal{C} = P_\mathcal{C \leftarrow B}\ \left[\vec{x}\right]_\mathcal{B}
 ```
@@ -179,3 +179,5 @@ Consider\ \mathcal{B}\ as\ set(\vec{b}_1,\cdots,\vec{b}_n),\ P_\mathcal{C \lefta
 \end{bmatrix} \in \mathbb{R^n}
 ```
 坐标转移映射都是可逆的，即**坐标转移矩阵**都是可逆的，有 $P_\mathcal{B \leftarrow C} = P_\mathcal{C \leftarrow B}^{-1}$ 。
+
+测试 $\displaystyle \left[\vec{b}\right]_\mathcal{A}\in\mathbb{R^n}$。测试
