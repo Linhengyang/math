@@ -167,7 +167,7 @@ T:V \rightarrow \mathbb{R^n},\ T(\vec{x})=\left[\vec{x}\right]_\mathcal{B}
 \vec{x} = P_{\mathcal{B}}\ \left[\vec{x}\right]_{\mathcal{B}}
 ```
 这里 $P_{\mathcal{B}}$ 就是 $\mathcal{B}$ 作为列向量组组成的矩阵。然而对于一般的线性空间 $V$，很可能没办法把基 $\mathcal{B}$ 写成矩阵的形式。  
-* 对于一般的线性空间 $V, dimV = n$，考虑它的两个基 $\mathcal{B}$ 和 $\mathcal{C}$，那么对于 $V$ 中的任何一个 $\vec{x} \in V$，它在两个基下有不同的坐标，分别是
+对于一般的线性空间 $V, dimV = n$，考虑它的两个基 $\mathcal{B}$ 和 $\mathcal{C}$，那么对于 $V$ 中的任何一个 $\vec{x} \in V$，它在两个基下有不同的坐标，分别是
 ```math
 \left[\vec{x}\right]_\mathcal{B},\ \left[\vec{x}\right]_\mathcal{C}\ \in\mathbb{R^n}
 ```
@@ -175,7 +175,7 @@ T:V \rightarrow \mathbb{R^n},\ T(\vec{x})=\left[\vec{x}\right]_\mathcal{B}
 ```math
 \left[\vec{x}\right]_\mathcal{C} = P_\mathcal{C \leftarrow B}\ \left[\vec{x}\right]_\mathcal{B}
 ```
-* 坐标转移矩阵 $P_\mathcal{C \leftarrow B}$ 的列向量，是基 $\mathcal{B}$ 里的向量分别按序在另一个基 $\mathcal{C}$ 下的坐标向量，即
+坐标转移矩阵 $P_\mathcal{C \leftarrow B}$ 的列向量，是基 $\mathcal{B}$ 里的向量分别按序在另一个基 $\mathcal{C}$ 下的坐标向量，即
 ```math
 Consider\ \mathcal{B}\ as\ set(\vec{b}_1,\cdots,\vec{b}_n),\ P_\mathcal{C \leftarrow B}=
 \begin{bmatrix}
