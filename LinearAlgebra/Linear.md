@@ -150,7 +150,7 @@ $\left[\vec{x}\right]_\mathcal{B} \in \mathbb{R^n}$。
 ```math
 T:V \rightarrow \mathbb{R^n},\ T(\vec{x})=\left[\vec{x}\right]_\mathcal{B}
 ```
-是一个双射线性映射，也是一个同构映射，线性空间 $V$ 和 $\mathbb{R^n}$ 同构。  
+是一个双射线性映射，也是一个关于加法和数乘的**同构**映射，线性空间 $V$ 和 $\mathbb{R^n}$ 同构。同构意味着坐标映射保持加法和数乘运算，即意味着保持线性相关/无关的关系。
 
 ---
 
@@ -185,7 +185,7 @@ Consider\ \mathcal{B}\ as\ set(\vec{b}_1,\cdots,\vec{b}_n),\ P_\mathcal{C \lefta
 \left[\vec{b}_1\right]_\mathcal{C},\ \cdots\ \left[\vec{b}_n\right]_\mathcal{C}
 \end{bmatrix} \in \mathbb{R^n}
 ```
-坐标转移映射都是可逆的，即**坐标转移矩阵**都是可逆的，有 $P_\mathcal{B \leftarrow C} = P_\mathcal{C \leftarrow B}^{-1}$ 。
+坐标转移映射都是可逆的，即**坐标转移矩阵**都是**可逆**的，有 $P_\mathcal{B \leftarrow C} = P_\mathcal{C \leftarrow B}^{-1}$ 。
   
 
 #### 矩阵(方阵)相似
