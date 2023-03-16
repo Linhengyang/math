@@ -147,16 +147,15 @@ $\left[\vec{x}\right]_\mathcal{B} \in \mathbb{R^n}$。
 ```math
 T:V \rightarrow \mathbb{R^n},\ T(\vec{x})=\left[\vec{x}\right]_\mathcal{B}
 ```
-是一个双射线性映射，也是一个同构映射，线性空间 $V$ 和 $\mathbb{R^n}$ 同构。当 $V = \mathbb{R^n}$ 时，根据「用基和坐标表示」的原则，可得
+是一个双射线性映射，也是一个同构映射，线性空间 $V$ 和 $\mathbb{R^n}$ 同构。  
+当 $V = \mathbb{R^n}$ 时，根据「坐标是一个列向量，**基**以**坐标**为权重作**线性组合**得到原向量」的原则，可得此时这是一个matrix-vector product运算：
 ```math
-\vec{x} = P_{\mathcal{B}}\ \left[\vec{x}\right]_{\mathcal{B}}
+\vec{x} = P_{\mathcal{B}}\ \left[\vec{x}\right]_{\mathcal{B}},\ P_{\mathcal{B}} = \left[\vec{b}_1,\cdots,\vec{b}_n\right]
 ```
 而向量 $\vec{x}$ 自身可以看作其在**标准基**下的坐标向量，也就是说，基 $\mathcal{B}$ 作为列向量组组成的矩阵 $P_{\mathcal{B}}$ 成为了两个基之间的**坐标转移矩阵(change-of-coordinates matrix)**。在这里，矩阵 $P_{\mathcal{B}}$ 是从 $\mathcal{B}$ 到标准基的坐标转移矩阵，而  $P_{\mathcal{B}}^{-1}$ 是从标准基到 $\mathcal{B}$ 的坐标转移矩阵，因为有：
 ```math
 \left[\vec{x}\right]_{\mathcal{B}} = P_{\mathcal{B}}^{-1}\ \vec{x}
 ```
-  
-要记住坐标是一个列向量，**基**乘以**坐标**得到原向量，是一个matrix-vector product运算。  
   
 对于**有限维线性空间**，即可以由有限个向量张成的线性空间，其**维度**、**基**的定义和性质与前文如出一辙。  
 对于无限维线性空间，线性代数课程中不作过多研究，仅记住定义它的维度是无限。  
