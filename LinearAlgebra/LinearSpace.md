@@ -162,3 +162,20 @@ T:V \rightarrow \mathbb{R^n},\ T(\vec{x})=\left[\vec{x}\right]_\mathcal{B}
 对于无限维线性空间，线性代数课程中不作过多研究，仅记住定义它的维度是无限。  
 
 #### 坐标映射(坐标变换)
+前面已经讲述过，当**线性空间** $V, dimV = n$ 就是 $\mathbb{R^n}$ 时，对于它的一个**基** $\mathcal{B}$ ，有
+```math
+\vec{x} = P_{\mathcal{B}}\ \left[\vec{x}\right]_{\mathcal{B}}
+```
+这里 $P_{\mathcal{B}}$ 就是 $\mathcal{B}$ 作为列向量组组成的矩阵。然而对于一般的线性空间 $V$，很可能没办法把基 $\mathcal{B}$ 写成矩阵的形式。  
+对于一般的线性空间 $V, dimV = n$，考虑它的两个基 $\mathcal{B}$ 和 $\mathcal{C}$，那么对于 $V$ 中的任何一个 $\vec{x} \in V$，它在两个基下有不同的坐标 $\displaystyle \left[\vec{x}\right]_\mathcal{B}\in\mathbb{R^n},\ \left[\vec{x}\right]_\mathcal{C}\in\mathbb{R^n}$ 。从 $\displaystyle \left[\vec{x}\right]_\mathcal{B}$ 到 $\displaystyle \left[\vec{x}\right]_\mathcal{C}$，存在**唯一**的**坐标转移映射** $T,\ with\ matrix\ P_\mathcal{C \leftarrow B} \in \mathbb{R^n}$，使得下式成立：
+```math
+\left[\vec{x}\right]_\mathcal{C} = P_\mathcal{C \leftarrow B}\ \left[\vec{x}\right]_\mathcal{B}
+```
+其中 $P_\mathcal{C \leftarrow B}$ 的列向量，是基 $\mathcal{B}$ 里的向量分别按序在另一个基 $\mathcal{C}$ 下的坐标向量，即
+```math
+Consider\ \mathcal{B}\ as\ set(\vec{b}_1,\cdots,\vec{b}_n),\ P_\mathcal{C \leftarrow B}=
+\begin{bmatrix}
+\left[\vec{b}_1\right]_\mathcal{C},\ \cdots\ \left[\vec{b}_n\right]_\mathcal{C}
+\end{bmatrix} \in \mathbb{R^n}
+```
+坐标转移映射都是可逆的，即**坐标转移矩阵**都是可逆的，有 $P_\mathcal{B \leftarrow C} = P_\mathcal{C \leftarrow B}^{-1}$ 。
