@@ -239,5 +239,3 @@ T\left[\vec{x}\right]_\mathcal{B} \equiv P_\mathcal{B \leftarrow C}SP_\mathcal{C
 T = P\ S\ P^{-1}
 ```
 去掉一切推导归纳来看，对于矩阵 $A,B \in \mathbb{R^{n,n}}$，如果存在**可逆矩阵** $P$，使得 $A = P\ B\ P^{-1}$ 成立，则称矩阵 $A$ 和 $B$ **相似**。
-
-测试
