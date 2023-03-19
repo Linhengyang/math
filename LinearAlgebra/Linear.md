@@ -243,9 +243,9 @@ T = P\ S\ P^{-1}
 #### 相似的意义
 我们稍微联系一下特征向量和特征值的意义，就可以发现**相似**的意义。  
 
-首先复习一下**特征向量**和**值**的概念。考虑**坐标空间** 
+首先复习一下**特征向量**和**特征值**的概念。考虑**坐标空间** 
 ```math
-\mathbb{R^n}_\mathcal{B},\ with\ basis\ \mathcal{B} = set\left(\vec{b_1}, \cdots,\vec{b_n}\right)
+\mathbb{R^n}_\mathcal{B},\ with\ \ basis\ \ \mathcal{B} = set\left(\vec{b_1}, \cdots,\vec{b_n}\right)
 ```
 在这个坐标空间中，有一个线性映射 $A$
 ```math
@@ -257,10 +257,11 @@ A\left[\vec{e}\right]_{\mathcal{B}} = \lambda \left[\vec{e}\right]_{\mathcal{B}}
 ```
 则称向量坐标 $\left[\vec{e}\right]_{\mathcal{B}}$ 和实数 $\lambda \in \mathbb{R}$ 分别是矩阵A的**特征向量**和**特征值**。  
 
-我们来推导下同构坐标空间中，$A$ 的**相似**矩阵 $A'$ 的特征向量和特征值。  
+我们来推导下**同构坐标空间**中，映射(或矩阵) $A$ 的**相似**映射(矩阵) $A'$ 的特征向量和特征值。  
+  
 考虑同构坐标空间 $\mathbb{R^n}_{\mathcal{C}}$ ,
 ```math
-\mathbb{R^n}_\mathcal{C},\ with\ basis\ \mathcal{C} = set\left(\vec{c_1}, \cdots,\vec{c_n}\right)
+\mathbb{R^n}_\mathcal{C},\ with\ \ basis\ \ \mathcal{C} = set\left(\vec{c_1}, \cdots,\vec{c_n}\right)
 ```
 写出坐标转移矩阵：
 ```math
@@ -269,7 +270,7 @@ P_{\mathcal{B}\leftarrow \mathcal{C}} = \left[\left[\vec{c_1}\right]_\mathcal{B}
 ```math
 P_{\mathcal{C}\leftarrow \mathcal{B}}  = P_{\mathcal{B}\leftarrow \mathcal{C}}^{-1}
 ```
-利用前面的**相似**的概念，$A$ 和 $A'$相似，那么可以得出坐标空间 $\mathbb{R^n}_{\mathcal{C}}$ 中的线性映射 $A'$，有：
+利用前面的**相似**的概念，矩阵 $A$ 和 $A'$相似，那么可以得出坐标空间 $\mathbb{R^n}_{\mathcal{C}}$ 中的线性映射 $A'$，有：
 ```math
 A\left[\vec{x}\right]_\mathcal{B} = P_{\mathcal{B}\leftarrow \mathcal{C}}A'P_{\mathcal{B}\leftarrow \mathcal{C}}^{-1}\left[\vec{x}\right]_\mathcal{B}\tag0
 ```
@@ -279,11 +280,11 @@ A\left[\vec{x}\right]_\mathcal{B} = P_{\mathcal{B}\leftarrow \mathcal{C}}A'\left
 ```
 也就是说，在各自坐标空间下，线性映射 $A$ 和 $A'$ 的结果只差一个坐标转移。  
   
-如果说，矩阵 $A$ 的 n 个特征向量 $ set\left(\vec{e_1},\cdots,\vec{e_n}\right) $ 和特征值 $set\left(\lambda_1,\cdots,\lambda_n\right)$ 都已知，即
+如果说，矩阵 $A$ 的 n 个特征向量 $set\left(\vec{e_1},\cdots,\vec{e_n}\right)$ 和特征值 $set\left(\lambda_1,\cdots,\lambda_n\right)$ 都已知，即
 ```math
 A \left[\vec{e_i}\right]_\mathcal{B} = \lambda_i \left[\vec{e_i}\right]_\mathcal{B},\ i = 1,\cdots,n\tag{2.1}
 ```
-(2)代入(1)式，得到
+(2.1)代入(1)式，得到
 ```math
 \lambda_i \left[\vec{e_i}\right]_\mathcal{B} = A \left[\vec{e_i}\right]_\mathcal{B}=P_{\mathcal{B}\leftarrow \mathcal{C}}A'\left[\vec{e_i}\right]_\mathcal{C}
 ```
