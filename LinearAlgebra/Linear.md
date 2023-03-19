@@ -239,3 +239,163 @@ T\left[\vec{x}\right]_\mathcal{B} \equiv P_\mathcal{B \leftarrow C}SP_\mathcal{C
 T = P\ S\ P^{-1}
 ```
 去掉一切推导归纳来看，对于矩阵 $A,B \in \mathbb{R^{n,n}}$，如果存在**可逆矩阵** $P$，使得 $A = P\ B\ P^{-1}$ 成立，则称矩阵 $A$ 和 $B$ **相似**。
+
+#### 相似的意义
+我们稍微联系一下特征向量和特征值的意义，就可以发现**相似**的意义。  
+
+首先复习一下**特征向量**和**特征值**的概念。考虑**坐标空间** 
+```math
+\mathbb{R^n}_\mathcal{B},\ with\ \ basis\ \ \mathcal{B} = set\left(\vec{b_1}, \cdots,\vec{b_n}\right)
+```
+在这个坐标空间中，有一个线性映射 $A$
+```math
+A:\mathbb{R^n}_\mathcal{B}\rightarrow\mathbb{R^n}_\mathcal{B},\ \left[\vec{x}\right]_\mathcal{B}\rightarrow A\left[\vec{x}\right]_\mathcal{B}
+```
+如果对**向量坐标** $\left[\vec{e}\right]_{\mathcal{B}}$ 和实数 $\lambda \in \mathbb{R}$ 有下式成立：
+```math
+A\left[\vec{e}\right]_{\mathcal{B}} = \lambda \left[\vec{e}\right]_{\mathcal{B}}
+```
+则称向量坐标 $\left[\vec{e}\right]_{\mathcal{B}}$ 和实数 $\lambda \in \mathbb{R}$ 分别是矩阵A的**特征向量**和**特征值**。  
+
+我们来推导下**同构坐标空间**中，映射(或矩阵) $A$ 的**相似**映射(矩阵) $A'$ 的特征向量和特征值。  
+  
+考虑同构坐标空间 $\mathbb{R^n}_{\mathcal{C}}$ ,
+```math
+\mathbb{R^n}_\mathcal{C},\ with\ \ basis\ \ \mathcal{C} = set\left(\vec{c_1}, \cdots,\vec{c_n}\right)
+```
+写出坐标转移矩阵：
+```math
+P_{\mathcal{B}\leftarrow \mathcal{C}} = \left[\left[\vec{c_1}\right]_\mathcal{B},\cdots,\left[\vec{c_n}\right]_\mathcal{B}\right]
+```
+```math
+P_{\mathcal{C}\leftarrow \mathcal{B}}  = P_{\mathcal{B}\leftarrow \mathcal{C}}^{-1}
+```
+利用前面的**相似**的概念，矩阵 $A$ 和 $A'$相似，那么可以得出坐标空间 $\mathbb{R^n}_{\mathcal{C}}$ 中的线性映射 $A'$，有：
+```math
+A\left[\vec{x}\right]_\mathcal{B} = P_{\mathcal{B}\leftarrow \mathcal{C}}A'P_{\mathcal{B}\leftarrow \mathcal{C}}^{-1}\left[\vec{x}\right]_\mathcal{B}\tag0
+```
+恒成立。把它写成另一个形式
+```math
+A\left[\vec{x}\right]_\mathcal{B} = P_{\mathcal{B}\leftarrow \mathcal{C}}A'\left[\vec{x}\right]_\mathcal{C}\tag1
+```
+也就是说，在各自坐标空间下，线性映射 $A$ 和 $A'$ 的结果只差一个坐标转移。  
+  
+如果说，矩阵 $A$ 的 n 个特征向量 $set\left(\vec{e_1},\cdots,\vec{e_n}\right)$ 和特征值 $set\left(\lambda_1,\cdots,\lambda_n\right)$ 都已知，即
+```math
+A \left[\vec{e_i}\right]_\mathcal{B} = \lambda_i \left[\vec{e_i}\right]_\mathcal{B},\ i = 1,\cdots,n\tag{2.1}
+```
+(2.1)代入(1)式，得到
+```math
+\lambda_i \left[\vec{e_i}\right]_\mathcal{B} = A \left[\vec{e_i}\right]_\mathcal{B}=P_{\mathcal{B}\leftarrow \mathcal{C}}A'\left[\vec{e_i}\right]_\mathcal{C}
+```
+即
+```math
+P_{\mathcal{B}\leftarrow \mathcal{C}}^{-1}\lambda_i \left[\vec{e_i}\right]_\mathcal{B} = A'\left[\vec{e_i}\right]_\mathcal{C}
+```
+即
+```math
+\lambda_i P_{\mathcal{B}\leftarrow \mathcal{C}}^{-1} \left[\vec{e_i}\right]_\mathcal{B} = A'\left[\vec{e_i}\right]_\mathcal{C}
+```
+即
+```math
+A'\left[\vec{e_i}\right]_\mathcal{C}=\lambda_i \left[\vec{e_i}\right]_\mathcal{C},\ i = 1,\cdots,n\tag{2.2}
+```
+(2.2)和(2.1)式对比，说明了一个很有意思的道理：「转换坐标空间之后，**原特征向量在新基下的坐标向量，依旧是原矩阵的相似矩阵的特征向量**」。  
+
+重点来了，假如说，现在 $A$ 的 **n 个特征向量 $set\left(\vec{e_1},\cdots,\vec{e_n}\right)$ 能组成一个基**的时候，即考虑同构坐标空间 $\mathbb{R^n}_{\mathcal{E}}\ \ with\ \ basis\ \ set\left(\vec{e_1},\cdots,\vec{e_n}\right)$ ，将基 $\mathcal{E}$ 代入(2.2)式，这时有
+```math
+A'\left[\vec{e_i}\right]_\mathcal{E}=\lambda_i \left[\vec{e_i}\right]_\mathcal{E},\ i = 1,\cdots,n\tag{3}
+```
+而基向量在基下的坐标是可求的，即
+```math
+\begin{cases}
+\left[\vec{e_1}\right]_\mathcal{E} =
+\left[
+    \begin{matrix}1\\
+    \vdots\\
+    0
+    \end{matrix}\right]
+\\
+\vdots\\
+\left[\vec{e_n}\right]_\mathcal{E} =
+\left[
+    \begin{matrix}0\\
+    \vdots\\
+    1
+    \end{matrix}\right]
+\end{cases}
+\tag4
+```
+将(4)代入(3)式，得到了 n 个 n元一次方程组，共 $n^2$ 个方程，足够求出 $A'$ 。事实上，将 $A'$ 写作列向量组的形式 $\left[\vec{a'_1},\cdots,\vec{a'_n}\right]$，即得：
+```math
+\left[\vec{a'_1},\cdots,\vec{a'_n}\right]
+\left[
+    \begin{matrix}0\\
+    \vdots\\
+    1\\
+    \vdots\\
+    0
+    \end{matrix}
+\right]
+    \begin{matrix}\\
+    \ 
+    \\
+    i_{th}\ row\\
+    \\
+    \ 
+    \end{matrix}
+\ \ \ =\ \ \ 
+\lambda_i
+\left[
+    \begin{matrix}0\\
+    \vdots\\
+    1\\
+    \vdots\\
+    0
+    \end{matrix}
+\right]
+    \begin{matrix}\\
+    \ 
+    \\
+    i_{th}\ row\\
+    \\
+    \ 
+    \end{matrix}
+,\ \ \ i = 1,\cdots,n
+```
+即得：
+```math
+\vec{a'_i} = 
+\left[
+    \begin{matrix}0\\
+    \vdots\\
+    \lambda_{i}\\
+    \vdots\\
+    0
+    \end{matrix}
+\right]
+    \begin{matrix}\\
+    \ 
+    \\
+    i_{th}\ row\\
+    \\
+    \ 
+    \end{matrix}
+,\ \ \ i = 1,\cdots,n
+```
+即 $A' = diag\left(\lambda_1,\cdots,\lambda_n\right)$。回到(0)式，考虑基 $\mathcal{B}$ 是标准基，那么从 $\mathbb{R^n}\_{\mathcal{E}}$ 到 $\mathbb{R^n}\_{\mathcal{B}}$ 的坐标转移矩阵 $P_{\mathcal{B}\leftarrow \mathcal{E}}$，
+```math
+P_{\mathcal{B}\leftarrow \mathcal{E}} = \left[\left[\vec{e_1}\right]_\mathcal{B},\cdots,\left[\vec{e_n}\right]_\mathcal{B}\right]
+```
+即
+```math
+\begin{cases}
+P = \left[\vec{e_1},\cdots,\vec{e_n}\right],\ \vec{e_i}\ \ are\ \ eigenvectors\ \ of\ \ A,\ i=1,\cdots,n\\
+A = PA'P^{-1},\ \ A' = diag\left(\lambda_1,\cdots\lambda_n\right)
+\end{cases}
+\tag5
+```
+  
+去掉一切推导归纳总结：如果 矩阵 $A$ 的 **n 个特征向量线性无关**（即能组成一个基），那么在这个**新基的坐标空间**中，矩阵 $A$ 的相似矩阵 $A'$ 是一个**对角矩阵**，对角线上是 n 个特征值。n个特征向量作为列向量组构成的矩阵 $P$ 是新基到标准基的**坐标转移矩阵**，即上面的(5)式。  
+  
+到这里，可以看出，如果能一个矩阵的**特征向量**和**特征值**已知的话，因为大部分时候 **n 个特征向量是线性无关**的，那么此时，就得到了一个式子，将这个矩阵分解成特征向量和对角矩阵的乘积，又叫**对角化**。所以下一章开始，我们将重点求解一个矩阵的特征向量和特征值，并判断这 n 个特征向量是否线性无关。
