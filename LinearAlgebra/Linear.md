@@ -300,9 +300,9 @@ P_{\mathcal{B}\leftarrow \mathcal{C}}^{-1}\lambda_i \left[\vec{e_i}\right]_\math
 ```math
 A'\left[\vec{e_i}\right]_\mathcal{C}=\lambda_i \left[\vec{e_i}\right]_\mathcal{C},\ i = 1,\cdots,n\tag{2.2}
 ```
-(2.2)和(2.1)式对比，说明了一个很有意思的道理：「转换坐标空间之后，原特征向量在新基下的坐标向量，依旧是原矩阵的相似矩阵的特征向量」。  
+(2.2)和(2.1)式对比，说明了一个很有意思的道理：「转换坐标空间之后，**原特征向量在新基下的坐标向量，依旧是原矩阵的相似矩阵的特征向量**」。  
 
-当 $A$ 的 n 个特征向量 $ set\left(\vec{e_1},\cdots,\vec{e_n}\right) $ 能组成一个**基**的时候，即考虑同构坐标空间 $\mathbb{R^n}_{\mathcal{E}}\ with\ basis\ set\left(\vec{e_1},\cdots,\vec{e_n}\right)$ ，将基 $\mathcal{E}$ 代入(*)式，这时有
+当 $A$ 的 n 个特征向量 $set\left(\vec{e_1},\cdots,\vec{e_n}\right)$ 能组成一个**基**的时候，即考虑同构坐标空间 $\mathbb{R^n}_{\mathcal{E}}\ \ with\ \ basis\ \ set\left(\vec{e_1},\cdots,\vec{e_n}\right)$ ，将基 $\mathcal{E}$ 代入(2.2)式，这时有
 ```math
 A'\left[\vec{e_i}\right]_\mathcal{E}=\lambda_i \left[\vec{e_i}\right]_\mathcal{E},\ i = 1,\cdots,n\tag{3}
 ```
@@ -383,15 +383,17 @@ A'\left[\vec{e_i}\right]_\mathcal{E}=\lambda_i \left[\vec{e_i}\right]_\mathcal{E
     \end{matrix}
 ,\ \ \ i = 1,\cdots,n
 ```
-即 $A' = diag\left(\lambda_1,\cdots,\lambda_n\right)$。回到(0)式，考虑基 $\mathcal{B}$ 是标准基，那么从 $\mathbb{R^n}_{\mathcal{E}}$ 到 $\mathbb{R^n}_{\mathcal{B}}$ 的坐标转移矩阵 $P_{\mathcal{B}\leftarrow \mathcal{E}}$，
+即 $A' = diag\left(\lambda_1,\cdots,\lambda_n\right)$。回到(0)式，考虑基 $\mathcal{B}$ 是标准基，那么从 $\mathbb{R^n}\_{\mathcal{E}}$ 到 $\mathbb{R^n}\_{\mathcal{B}}$ 的坐标转移矩阵 $P_{\mathcal{B}\leftarrow \mathcal{E}}$，
 ```math
 P_{\mathcal{B}\leftarrow \mathcal{E}} = \left[\left[\vec{e_1}\right]_\mathcal{B},\cdots,\left[\vec{e_n}\right]_\mathcal{B}\right]
 ```
 即
 ```math
+\begin{cases}
 P = \left[\vec{e_1},\cdots,\vec{e_n}\right],\ \vec{e_i}\ \ are\ \ eigenvectors\ \ of\ \ A,\ i=1,\cdots,n\\
 A = PA'P^{-1},\ \ A' = diag\left(\lambda_1,\cdots\lambda_n\right)
+\end{cases}
 \tag5
 ```
   
-去掉一切推导归纳总结：如果 矩阵 $A$ 的 **n 个特征向量线性无关**（即能组成一个基），那么在这个新基的坐标空间中，矩阵 $A$ 的相似矩阵 $A'$ 是一个**对角矩阵**，对角线上是 n 个特征值。n个特征向量作为列向量组构成的矩阵 $P$ 是新基到标准基的坐标转移矩阵，即上面的(5)式。
+去掉一切推导归纳总结：如果 矩阵 $A$ 的 **n 个特征向量线性无关**（即能组成一个基），那么在这个**新基的坐标空间**中，矩阵 $A$ 的相似矩阵 $A'$ 是一个**对角矩阵**，对角线上是 n 个特征值。n个特征向量作为列向量组构成的矩阵 $P$ 是新基到标准基的**坐标转移矩阵**，即上面的(5)式。
