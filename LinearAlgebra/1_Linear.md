@@ -33,8 +33,8 @@ $$E_p\ \cdots\ E_1\ A=U$$
 
 第二步：解集结构  
 对比 $U$ 的非零行数量 $k$ 和 $n$
-* 当 $k=n$ 时，说明矩阵 $A$ 列向量组 $\mathcal{A}$ 线性无关，它作为 $\mathbb{R^n}$ 的一个基（basis），对于任何 $\vec{b} \in \mathbb{R^{n}}$，在此 basis 下有唯一表示，即 $A\vec{x}=\vec{b}$ 只有唯一解，即 $\vec{b}$ 在 $A$ 的列向量组 $\mathcal{A}$ 下的坐标 $\displaystyle \left[\vec{b}\right]_\mathcal{A}\in\mathbb{R^n}$。从 $U\ \vec{x}=P\ \vec{b}$ 也可以看出，echelon form $U$ 的每一列都是主元所在列，所以 $\vec{x}$ 只有唯一解。
-* 当 $k \lt n$ 时，因为矩阵的行秩等于列秩，所以 $U$ 的主元所在列数量也是 $k$。echelon form $U$ 的主元所在列组成了 $A$ 的列向量组 $\mathcal{A}$ 的一个basis，记为 $\mathcal{B}$。而 $A$ 的列向量组 $\mathcal{A}$ 在自由元所在列可以构成一个basis $\mathcal{B}$，即 $span\displaystyle \left(\mathcal{A}\right) \equiv span \left(\mathcal{B}\right)$，是 $\mathbb{R^m}$ 的一个 $dim = k$ 的子空间。有解的意思即指 $\vec{b} \in span\left(\mathcal{A}\right)$。
+* 当 $k=n$ 时，说明矩阵 $A$ 列向量组 $\mathcal{A}$ 线性无关，它作为 $span\left(\mathcal{A}\right)$ 的一个基（basis），对于任何 $\vec{b} \in span\left(\mathcal{A}\right)$，在此 basis 下有唯一表示，即 $A\vec{x}=\vec{b}$ 只有唯一解，即 $\vec{b}$ 在 $A$ 的列向量组 $\mathcal{A}$ 下的坐标 $\displaystyle \left[\vec{b}\right]_\mathcal{A}\in\mathbb{R^n}$。从 $U\ \vec{x}=P\ \vec{b}$ 也可以看出，echelon form $U$ 的每一列都是主元所在列，所以 $\vec{x}$ 只有唯一解。
+* 当 $k \lt n$ 时，因为矩阵的行秩等于列秩，所以 $U$ 的主元所在列数量也是 $k$。echelon form $U$ 的主元所在列组成了 $A$ 的列向量组 $\mathcal{A}$ 的一个basis，记为 $\mathcal{B}$，则有 $span\displaystyle \left(\mathcal{A}\right) \equiv span \left(\mathcal{B}\right)$，是 $\mathbb{R^m}$ 的一个 $dim = k$ 的子空间。有解的意思即指 $\vec{b} \in span\left(\mathcal{A}\right)$。向量 $\vec{b}$ 被 $\mathcal{B}$表示是唯一的，而由于 $A$ 的列向量组在自由元所在列，也可以被 $\mathcal{B}$ 线性表示，于是向量 $\vec{b}$ 被 $\mathcal{A}$表示就不是唯一的（有点绕，具体分析看下文就行），解集结构分析如下：
 
 #### 齐次  
 首先考虑齐次线性方程组 $$A\vec{x}=\vec{0}$$
@@ -257,6 +257,8 @@ A\left[\vec{e}\right]_{\mathcal{B}} = \lambda \left[\vec{e}\right]_{\mathcal{B}}
 ```
 则称向量坐标 $\left[\vec{e}\right]_{\mathcal{B}}$ 和实数 $\lambda \in \mathbb{R}$ 分别是矩阵A的**特征向量**和**特征值**。  
 
+---
+
 我们来推导下**同构坐标空间**中，映射(或矩阵) $A$ 的**相似**映射(矩阵) $A'$ 的特征向量和特征值。  
   
 考虑同构坐标空间 $\mathbb{R^n}_{\mathcal{C}}$ ,
@@ -398,4 +400,6 @@ A = PA'P^{-1},\ \ A' = diag\left(\lambda_1,\cdots\lambda_n\right)
   
 去掉一切推导归纳总结：如果 矩阵 $A$ 的 **n 个特征向量线性无关**（即能组成一个基），那么在这个**新基的坐标空间**中，矩阵 $A$ 的相似矩阵 $A'$ 是一个**对角矩阵**，对角线上是 n 个特征值。n个特征向量作为列向量组构成的矩阵 $P$ 是新基到标准基的**坐标转移矩阵**，即上面的(5)式。  
   
+---
+
 到这里，可以看出，如果能一个矩阵的**特征向量**和**特征值**已知的话，因为大部分时候 **n 个特征向量是线性无关**的，那么此时，就得到了一个式子，将这个矩阵分解成特征向量和对角矩阵的乘积，又叫**对角化**。所以下一章开始，我们将重点求解一个矩阵的特征向量和特征值，并判断这 n 个特征向量是否线性无关。
