@@ -17,10 +17,10 @@
 1. 矩阵的秩 $rankA$
 2. 矩阵的列向量组的序
   
-初等行变换有三型，都有其对应的初等矩阵(即由单位矩阵作一次相应的初等行变换的结果)
-* replacement: row(i) 换成 row(i) + k * row(j), j != i
-* interchange: row(i) 和 row(j) 两行互换, j != i
-* scale by **r**: row(i) 换成 r * row(i), r != 0
+初等行变换有三型，都有其对应的**初等矩阵**(即由单位矩阵作一次相应的初等行变换的结果)
+* replacement:即 $row(i)$ 换成 $row(i) + k * row(j),\ \ j \neq i$
+* interchange:即 $row(i)$ 和 $row(j),\ \ j \neq i$ 两行互换
+* scale by **r**:即 $row(i)$ 换成 $r * row(i),\ \ r \neq 0$
   
 用初等矩阵 $E_i$ 左乘来理解初等行变换, 可以得到：
 $$E_p\ \cdots\ E_1\ A=U$$
