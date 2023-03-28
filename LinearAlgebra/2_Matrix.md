@@ -64,17 +64,10 @@ det\left(A\right) = det\left(E_p\right) det\left(E_{p-1}\right) \cdots det\left(
 ```math
 det\left(E\right) =
 \begin{cases}
-\begin{matrix}
-1\\
--1\\
-r\\
-\end{matrix}
+1 & if\ \ \ E\ \ \ is\ \ \ row\ \ \ replacement\\
+-1 & if\ \ \ E\ \ \ is\ \ \ interchange\\
+r & if\ \ \ E\ \ \ is\ \ \ scale\ \ \ by\ \ \ r \neq 0
 \end{cases}
-\begin{matrix}
-if\ \ \ E\ \ \ is\ \ \ row\ \ \ replacement\\
-if\ \ \ E\ \ \ is\ \ \ interchange\\
-if\ \ \ E\ \ \ is\ \ \ scale\ \ \ by\ \ \ r \neq 0
-\end{matrix}
 ```
 从行列式的矩阵乘积展开可以得出：
 1. **当 $A$ 可逆时，行列式 $det\left(A\right) \neq 0$**，因为可逆矩阵（invertible/nonsingular）一定和单位矩阵 $I$ 行等价。
