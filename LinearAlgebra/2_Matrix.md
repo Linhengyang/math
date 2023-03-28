@@ -15,9 +15,9 @@
 行列式的定义：行列式是一个从数域 $K$ 上的n阶矩阵到数域 $K$的映射，即 $F: M_n\left(K\right) \rightarrow K$，对 $A \in M_n\left(K\right)$，记它的行列式为 $det\left(A\right)$，或者是 $|A|$。  
   
 ### 行列式的完全展开  
-对于$A \in M_n\left(K\right)$，它的行列式的完全展开表达，是 $n!$ 个乘积项的和：
+对于 $A \in M_n\left(K\right)$，它的行列式的完全展开表达，是 $n!$ 个乘积项的和：
 ```math
-A = \left(a_{ij}\right),\ det\left(A\right) = \sum_{j_1 j_2 \cdots j_n}(-1)^{\tau\left(j_1 j_2 \cdots j_n\right)}a_{1j_1}a_{2j_2} \cdots a_{nj_n}
+A = \left(a_{ij}\right),\ det\left(A\right) = \sum_{j_1\ j_2 \cdots\ j_n}(-1)^{\tau\left(j_1\ j_2\ \cdots\ j_n\right)}a_{1j_1}\ a_{2j_2}\ \cdots\ a_{nj_n}
 ```
 其中 $j_1 j_2 \cdots j_n$ 代表一个 $1,2,\cdots n$ 的n元排列，总共有 $n!$ 项。符号 $\tau\left(j_1 j_2 \cdots j_n\right)$ 代表该排列的逆序数。  
   
@@ -31,12 +31,12 @@ det\left(A\right) = det\left(A^{T}\right)
 ```
   
 ### 行列式的代数余子式展开（cofactor expansion）
-对于$A \in M_n\left(K\right)$，它的行列式的代数余子式展开表达，是 $n$ 个项的和：
+对于 $A \in M_n\left(K\right)$，它的行列式的代数余子式展开表达，是 $n$ 个项的和。考虑
 ```math
 A = \left(a_{ij}\right),\ \ C_{ij} = (-1)^{i+j}det(A_{ij})
 ```
 这里 $A_{ij}$ 是矩阵 $A$ 去掉 $i$ 行和 $j$ 列之后的子矩阵，项 $C_{ij}$ 被称作矩阵 $A$ 的**代数余子式**。可以看出**代数余子式展开是一种递归展开**。  
-它也可以视作：
+其展开式表达为：
 1. 行列式按 $i$ 行展开
 ```math
 det\left(A\right) = a_{i1}C_{i1}+a_{i2}C_{i2}+\cdots+a_{in}C_{in}
@@ -52,7 +52,7 @@ det\left(A\right) = a_{1j}C_{1j}+a_{2j}C_{2j}+\cdots+a_{nj}C_{nj}
 ```math
 A, B \in M_n\left(K\right), \ \ \ det\left(AB\right) = det\left(A\right)det\left(B\right)
 ```
-已经知道，任意一个矩阵 $A$ 都和它的简约阶梯型(reduced echelon form)矩阵 $U$ 行等价，即互相可以用初等行变换转化，也即可以通过左乘相应的初等矩阵转化，即：
+已经知道，任意一个矩阵 $A$ 都和它的简约阶梯型(reduced echelon form)矩阵 $U$ 行等价，即互相可以用初等行变换转化，即可以通过左乘相应的初等矩阵转化，即：
 ```math
 A = E_p E_{p-1} \cdots E_{1} U
 ```
@@ -61,17 +61,19 @@ A = E_p E_{p-1} \cdots E_{1} U
 det\left(A\right) = det\left(E_p\right) det\left(E_{p-1}\right) \cdots det\left(E_1\right) det\left(U\right)
 ```
 这里 $U$ 和 $E$ 的行列式都很好求：
-```math
+$$
 det\left(E\right) =
 \begin{cases}
- 1\ \ \ if\ \ \ E\ \ \ is\ \ \ row\ \ \ replacement\\
- -1\ \ \ if\ \ \ E\ \ \ is\ \ \ interchange\\
- r\ \ \ if\ \ \ E\ \ \ is\ \ \ scale\ \ \ by\ \ \ r \neq 0\\
+\begin{matrix}
+1\ \ \ if\ \ \ E\ \ \ is\ \ \ row\ \ \ replacement\\
+-1\ \ \ if\ \ \ E\ \ \ is\ \ \ interchange\\
+r\ \ \ if\ \ \ E\ \ \ is\ \ \ scale\ \ \ by\ \ \ r \neq 0\\
+\end{matrix}
 \end{cases}
-```
+$$
 从行列式的矩阵乘积展开可以得出：
-1. 当 $A$ 可逆时，行列式 $det\left(A\right) \neq 0$，因为可逆矩阵（invertible/nonsingular）一定和单位矩阵 $I$ 行等价
-2. 当 $A$ 不可逆时，行列式 $det\left(A\right) = 0$，因为不可逆矩阵（singular）的阶梯型矩阵 $U$ 一定有零行  
+1. **当 $A$ 可逆时，行列式 $det\left(A\right) \neq 0$**，因为可逆矩阵（invertible/nonsingular）一定和单位矩阵 $I$ 行等价。
+2. **当 $A$ 不可逆时，行列式 $det\left(A\right) = 0$**，因为不可逆矩阵（singular）的阶梯型矩阵 $U$ 一定有零行。
   
 ### 行列式的几何意义
 一个 $R^n$ 中的集合 $S$，在 $R^n \rightarrow R^n$ 的线性映射 $T$ 下，“体积”变换前后的伸缩系数，即：
