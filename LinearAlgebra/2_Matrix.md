@@ -61,7 +61,7 @@ A = E_p E_{p-1} \cdots E_{1} U
 det\left(A\right) = det\left(E_p\right) det\left(E_{p-1}\right) \cdots det\left(E_1\right) det\left(U\right)
 ```
 这里 $U$ 和 $E$ 的行列式都很好求：
-$$
+```math
 det\left(E\right) =
 \begin{cases}
 \begin{matrix}
@@ -70,7 +70,7 @@ det\left(E\right) =
 r\ \ \ if\ \ \ E\ \ \ is\ \ \ scale\ \ \ by\ \ \ r \neq 0\\
 \end{matrix}
 \end{cases}
-$$
+```
 从行列式的矩阵乘积展开可以得出：
 1. **当 $A$ 可逆时，行列式 $det\left(A\right) \neq 0$**，因为可逆矩阵（invertible/nonsingular）一定和单位矩阵 $I$ 行等价。
 2. **当 $A$ 不可逆时，行列式 $det\left(A\right) = 0$**，因为不可逆矩阵（singular）的阶梯型矩阵 $U$ 一定有零行。
