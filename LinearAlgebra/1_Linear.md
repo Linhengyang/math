@@ -307,7 +307,7 @@ P_{\mathcal{B}\leftarrow \mathcal{C}}^{-1}\lambda_i \left[\vec{e_i}\right]_\math
 ```math
 A'\left[\vec{e_i}\right]_\mathcal{C}=\lambda_i \left[\vec{e_i}\right]_\mathcal{C},\ i = 1,\cdots,n\tag{2.2}
 ```
-(2.2)和(2.1)式对比，说明了一个很有意思的道理：「转换坐标空间之后，**原特征向量在新基下的坐标向量，依旧是原矩阵的相似矩阵的特征向量**」。  
+(2.2)和(2.1)式对比，说明了一个很有意思的道理：「转换坐标空间之后，**原特征向量在新基下的坐标向量，依旧是原矩阵的相似矩阵的特征向量，且对应的特征值不变**」。  
 
 重点来了，假如说，现在 $A$ 有 **n 个特征向量 $set\left(\vec{e_1},\cdots,\vec{e_n}\right)$ 能组成一个基**的时候，即考虑同构坐标空间 $\mathbb{R^n}_{\mathcal{E}}\ \ with\ \ basis\ \ set\left(\vec{e_1},\cdots,\vec{e_n}\right)$ ，将基 $\mathcal{E}$ 代入(2.2)式，这时有
 ```math
