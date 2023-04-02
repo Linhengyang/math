@@ -7,9 +7,10 @@
     3. 仅知矩阵 $A$，特征值和特征向量都未知，求解其特征值和特征向量(即求解特征方程)
 * 矩阵的对角化判断和计算
 
+正文：  
 这块内容首先介绍了**行列式**，然后介绍了**矩阵**的**特征向量**和**特征值**，然后接下来有两个线性代数这门课程的超级重点：
-* 重点1：从上一章Linear最后的**线性映射(矩阵)的相似**开始，配合**特征向量**和**特征值**，引出了**对角化**，并给出了**对角化**的第一个充要条件
-* 重点2：引入**特征方程**和**特征多项式**之后，首先介绍**相似**矩阵的**特征向量/特征值/特征方程**，然后切换成代数的视角思考**对角化**的必要条件和充分条件：通过探讨不同特征值的特征向量的线性无关性质，以及**特征值**的**几何重数**和**代数重数**，给出**对角化**的第二个充要条件
+* 重点1：从上一章Linear最后的**线性映射(矩阵)的相似**开始，配合**特征向量**和**特征值**，引出了**对角化**，并给出了**对角化**的第一个充要条件。这块在上一章Linear已经谈过了，不再赘述。
+* 重点2：引入**特征方程**和**特征多项式**之后，首先介绍**相似**矩阵的**特征向量/特征值/特征方程**，然后切换成代数的视角思考**对角化**的必要条件和充分条件：通过探讨不同特征值的特征向量的线性无关性质，以及**特征值**的**几何重数**和**代数重数**，给出**对角化**的第二个充要条件。
 
 ## 行列式
 行列式的定义：行列式是一个从数域 $K$ 上的n阶矩阵到数域 $K$的映射，即 $F: M_n\left(K\right) \rightarrow K$，对 $A \in M_n\left(K\right)$，记它的行列式为 $det\left(A\right)$，或者是 $|A|$。  
@@ -88,3 +89,147 @@ r & if\ \ \ E\ \ \ is\ \ \ scale\ \ \ by\ \ \ r \neq 0
 \left.
 \right\}
 ```
+
+## 特征向量/特征值/特征方程/特征多项式/特征子空间
+这一块围绕着**特征向量**和**特征值**，给出很多冠以特征的名词概念。注意这里还不涉及相似和对角化。
+  
+* **特征向量**：对于数域 $K$ 上的方阵 $A \in M_{n}(K)$，若**非零**向量 $\vec{x}$ 满足 $A\vec{x}=\lambda\vec{x},\ \ \lambda\in K$，则 $\vec{x}$ 是**矩阵 $A$ 关于特征值 $\lambda$ 的特征向量**（eigenvector of $A$ corresponding to $\lambda$）。
+* **特征值**：对于数域 $K$ 上的方阵 $A \in M_{n}(K)$，若 $A\vec{x}=\lambda\vec{x},\ \ \lambda\in K$ 存在**非零解** $\vec{x}$，则 $\lambda$ 是矩阵 $A$ 的**特征值**，$\vec{x}$ 是**矩阵 $A$ 关于特征值 $\lambda$ 的特征向量**（eigenvector of $A$ corresponding to $\lambda$）。
+  
+从定义可以看出，特征值和特征向量是成对出现的。给定一个矩阵，求解它的**特征值**和**特征向量**成为了这块的主线。写出求解的矩阵方程，
+```math
+A\vec{x}=\lambda\vec{x}
+```
+有非零解，即：
+```math
+(A-\lambda I)\vec{x}=\vec{0}
+```
+有非零解。这些非零解是**矩阵 $A$ 关于特征值 $\lambda$ 的所有特征向量**，加上零向量，就组成了：
+* 矩阵 $(A-\lambda I)$ 的零空间
+* 矩阵方程 $(A-\lambda I)\vec{x}=\vec{0}$ 的解空间
+
+现在它们有一个新的定义：矩阵 $A$ 关于特征值 $\lambda$ 的 **特征（子）空间**。
+
+### 求解特征值和特征向量
+
+#### 特殊
+上/下三角矩阵的特征值是对角线元素，特征向量是标准基。  
+  
+
+#### 通用
+矩阵方程 $(A-\lambda I)\vec{x}=\vec{0}$ 有非零解，等价于 $det(A-\lambda I)=0$，由此得到两个概念：
+* **特征方程** $det(A-\lambda I)=0$：一元n次方程，未知元是 $\lambda$，它在数域 $K$ 上的解，给出了矩阵 $A$ 的所有特征值。
+* **特征多项式** $det(A-\lambda I)$：一元n阶多项式，未知元是 $\lambda$，在数域 $K$ 上对它作因式分解，所有**一次因式**给出了矩阵 $A$ 的所有特征值。对于特征值 $\lambda_{i}$，**一次因子** $(\lambda - \lambda_{i})$ 在**特征多项式**中的**重数**，被称为**特征值 $\lambda_{i}$ 的代数重数**。
+
+求解特征方程（因式分解特征多项式），可以给出矩阵 $A$ 的所有特征值。  
+对每一个特征值 $\lambda_{i}$：  
+1. **一次因子** $(\lambda - \lambda_{i})$ 在**特征多项式**中的**重数**，被称为**特征值 $\lambda_{i}$ 的代数重数**。
+2. 矩阵方程 $(A-\lambda_{i} I)\vec{x}=\vec{0}$ 的解空间，被称作**矩阵 $A$ 关于特征值 $\lambda_i$ 的特征（子）空间**。解空间除去零向量，就得到了矩阵 $A$ 关于特征值 $\lambda_i$ 的所有**特征向量**。解空间的**维度**，被称为**特征值 $\lambda_{i}$ 的几何重数**。  
+  
+至此，矩阵的特征值和特征向量的通用解法完毕。通过一些一元n次多项式的知识，可以得到如下结论：  
+1. 在复数域上，一元n次多项式一定可以分解成一次因式，所以任何矩阵一定有复数域上的特征值。考虑重数的话，任何矩阵在复数域上都有n个特征值。
+2. 在数域K上，考虑重数的话，一元n次多项式最多有n个解，所以任何矩阵在数域K上最多有n个特征值（考虑重数），那么不考虑重数的话，不同的特征值数量只会更少。  
+
+### 相似矩阵
+在上一章Linear中已经讨论了矩阵**相似**的定义和意义。在这里重新复习一下：  
+#### 相似的定义
+对于矩阵 $A,B \in \mathbb{R^{n,n}}$，如果存在**可逆矩阵** $P$，使得 $A = P\ B\ P^{-1}$ 成立，则称矩阵 $A$ 和 $B$ **相似**。  
+
+#### 相似矩阵的特征多项式/特征值/特征向量
+结合相似和特征值/特征向量的定义，容易得到下面这些结论：
+1. **相似的矩阵有相同的特征多项式**。
+```math
+det(A-\lambda I)=det(PBP^{-1}-\lambda I)=det(P(B-\lambda I)P^{-1})=det(P)det(B-\lambda I)det(P^{-1})=det(B-\lambda I)
+```
+
+2. **相似的矩阵有相同的特征值（以及对应的代数重数也相同）**。  
+        显然，因为它们有相同的特征多项式，所以其因式分解也相同  
+
+3. 相似的矩阵有相同的特征向量（坐标变化意义下的）。
+```math
+A\vec{x}=\lambda\vec{x} \leftrightarrow PBP^{-1}\vec{x}=\lambda\vec{x} \leftrightarrow BP^{-1}\vec{x}=\lambda P^{-1}\vec{x} \leftrightarrow 
+B\left[\vec{x}\right]_\mathcal{B} = \lambda \left[\vec{x}\right]_\mathcal{B}
+```
+```math
+basis\ \mathcal{B}\ is\ column\ vectors\ of\ P
+```
+
+### 对角化
+正如上一章Linear最后讨论地那样，如果矩阵 $A$ 有 n 个线性无关的特征向量，那么以这 n 个线性无关的特征向量作为 $\mathbb{R}^{n}$ 的**基**，矩阵 $A$ 的相似矩阵 $D$ 是一个**对角矩阵**，对角线上是 n 个特征向量对应的**特征值**，n个特征向量作为列向量组构成了矩阵 $P$，即：
+```math
+\begin{cases}
+P = \left[\vec{e_1},\cdots,\vec{e_n}\right],\ \vec{e_i}\ \ are\ \ eigenvectors\ \ of\ \ A,\ i=1,\cdots,n\\
+A = PDP^{-1},\ \ D = diag\left(\lambda_1,\cdots\lambda_n\right)
+\end{cases}
+```
+此即为**对角化**。  
+  
+我们得到了一个对角化的充分条件，其实它也是对角化的一个必要条件。因为当 $A = PDP^{-1}$时，令 $P = \left[\vec{p_1},\cdots,\vec{p_n}\right]$。则有：
+```math
+A\vec{p}_i = PDP^{-1}\vec{p}_i=\left[\vec{p_1},\cdots,\vec{p_n}\right]
+\left[
+\begin{matrix}
+\lambda_1,0,\cdots 0\\
+0,\lambda_2,\cdots 0\\
+\vdots\\
+0,0,\cdots \lambda_n\\
+\end{matrix}
+\right]
+\left[
+\begin{matrix}
+0\\
+\vdots\\
+1\\
+\vdots\\
+0
+\end{matrix}
+\right]
+\begin{matrix}
+\ \\
+\ \\
+i_{th}\\
+\ \\
+\ 
+\end{matrix}=
+\lambda_i \vec{p}_i
+```
+那么可以看出， $\vec{p}_i$ 都是矩阵 $A$ 的特征向量。这里
+```math
+P^{-1}\vec{p}_i=\left[
+\begin{matrix}
+0\\
+\vdots\\
+1\\
+\vdots\\
+0
+\end{matrix}
+\right]
+\begin{matrix}
+\ \\
+\ \\
+i_{th}\\
+\ \\
+\ 
+\end{matrix}
+```
+是因为考虑
+```math
+P^{-1}P = I \leftrightarrow P^{-1}\left[\vec{p_1},\cdots,\vec{p_n}\right]=I \leftrightarrow \left[P^{-1}\vec{p_1},\ P^{-1}\vec{p_2},\cdots P^{-1}\vec{p_n}\right] = I \leftrightarrow 
+P^{-1}\vec{p}_i=\left[
+\begin{matrix}
+0\\
+\vdots\\
+1\\
+\vdots\\
+0
+\end{matrix}
+\right]
+\begin{matrix}
+\ \\
+\ \\
+i_{th}\\
+\ \\
+\ 
+\end{matrix}
+```
+#### 矩阵 $A$ 可对角化的充要条件1： $A$ 有 $n$ 个线性无关的特征向量
