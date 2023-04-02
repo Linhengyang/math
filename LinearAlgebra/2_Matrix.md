@@ -97,13 +97,13 @@ r & if\ \ \ E\ \ \ is\ \ \ scale\ \ \ by\ \ \ r \neq 0
 * **特征值**：对于数域 $K$ 上的方阵 $A \in M_{n}(K)$，若 $A\vec{x}=\lambda\vec{x},\ \ \lambda\in K$ 存在**非零解** $\vec{x}$，则 $\lambda$ 是矩阵 $A$ 的**特征值**，$\vec{x}$ 是**矩阵 $A$ 关于特征值 $\lambda$ 的特征向量**（eigenvector of $A$ corresponding to $\lambda$）。
   
 从定义可以看出，特征值和特征向量是成对出现的。给定一个矩阵，求解它的**特征值**和**特征向量**成为了这块的主线。写出求解的矩阵方程，
-$$
+```math
 A\vec{x}=\lambda\vec{x}
-$$
+```
 有非零解，即：
-$$
+```math
 (A-\lambda I)\vec{x}=\vec{0}
-$$
+```
 有非零解。这些非零解是**矩阵 $A$ 关于特征值 $\lambda$ 的所有特征向量**，加上零向量，就组成了：
 * 矩阵 $(A-\lambda I)$ 的零空间
 * 矩阵方程 $(A-\lambda I)\vec{x}=\vec{0}$ 的解空间
