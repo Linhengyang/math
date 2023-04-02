@@ -45,7 +45,7 @@ A\vec{x}=\vec{b}
 ### 矩阵乘法
 用线性组合的观点理解矩阵乘法，即对于：
 ```math
-A \in \mathbb{R}^{m,n}\\
+A \in \mathbb{R}^{m,n},\ \ \ 
 B \in \mathbb{R}^{n,p},\ B=\left[\vec{b}_{1},\ \vec{b}_{2},\ \cdots, \vec{b}_{n}\right]\\
 ```
 有
@@ -62,7 +62,19 @@ Row_i(A\ B)=Row_i(A)\ B
 ```
 
 ## 主干1综述
-主干1脉络中, 主线是矩阵方程 $A\vec{x}=\vec{b}$ 的求解，其中 $A \in \mathbb{R^{m,n}}$。
+用**线性映射**重新理解**矩阵**之后，可以根据映射的性质，很快给出系数矩阵相应的结论，具体来说，考虑线性映射
+```math
+T:\mathbb{R^n}\rightarrow\mathbb{R^m}\ \ \ with\ \ \ matrix\ \ \ A\ \in\ \mathbb{R}^{m,n},\ A = \left[\vec{a}_1,\ \vec{a}_2,\cdots\vec{a}_n\right]
+```
+那么
+* T是满射，等价于 $A$ 的列向量组**张成（span）** $\mathbb{R}^{m}$，等价于 $A$ 的列向量组的秩等于 $m$。
+* T是单射，等价于 $A$ 的列向量组**线性无关**，等价于 $A$ 的列向量组的秩等于 $n$。
+* T是双射（有可逆映射），等价于 $A$ 的列向量组的秩等于 $n$ 等于 $m$，等价于 $A$ 是方阵，且列向量组线性无关。
+
+由此得到了**逆映射**/**可逆矩阵**/**逆矩阵**的概念。  
+  
+
+主干1脉络中, 主线是矩阵方程 $A\vec{x}=\vec{b}$ 的通用求解，其中 $A \in \mathbb{R^{m,n}}$。
 记系数矩阵 $A$ 的echelon form(阶梯型)是 $U$。  
 求解过程中, 初等行变换（左乘初等矩阵）的操作，将 $A$ 转化 $U$，甚至 $A$ 的reduced echelon form(简约阶梯型)形式。  
   
