@@ -172,6 +172,7 @@ A\vec{p}_i = PDP^{-1}\vec{p}_i=\left[\vec{p_1},\cdots,\vec{p_n}\right]
 \lambda_1,0,\cdots 0\\
 0,\lambda_2,\cdots 0\\
 \vdots\\
+\vdots\\
 0,0,\cdots \lambda_n\\
 \end{matrix}
 \right]
