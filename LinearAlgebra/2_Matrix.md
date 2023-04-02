@@ -131,8 +131,103 @@ A\vec{x}=\lambda\vec{x}
 2. 在数域K上，考虑重数的话，一元n次多项式最多有n个解，所以任何矩阵在数域K上最多有n个特征值（考虑重数），那么不考虑重数的话，不同的特征值数量只会更少。  
 
 ### 相似矩阵
-在上一章Linear中已经讨论了矩阵**相似**的定义和意义。结合相似和特征值/特征向量的定义，容易得到下面这些结论：
-1. 相似的矩阵有相同的特征多项式。
-2. 相似的矩阵有相同的特征值（以及对应的代数重数也相同）。
-3. 相似的矩阵有相同的特征向量（坐标变化意义下的）。
+在上一章Linear中已经讨论了矩阵**相似**的定义和意义。在这里重新复习一下：  
+相似：对于矩阵 $A,B \in \mathbb{R^{n,n}}$，如果存在**可逆矩阵** $P$，使得 $A = P\ B\ P^{-1}$ 成立，则称矩阵 $A$ 和 $B$ **相似**。  
 
+结合相似和特征值/特征向量的定义，容易得到下面这些结论：
+1. 相似的矩阵有相同的特征多项式。
+```math
+det(A-\lambda I)=det(PBP^{-1}-\lambda I)=det(P(B-\lambda I)P^{-1})=det(P)det(B-\lambda I)det(P^{-1})=det(B-\lambda I)
+```
+
+2. 相似的矩阵有相同的特征值（以及对应的代数重数也相同）。  
+显然，因为它们有相同的特征多项式，所以其因式分解也相同  
+
+3. 相似的矩阵有相同的特征向量（坐标变化意义下的）。
+```math
+A\vec{x}=\lambda\vec{x} \leftrightarrow PBP^{-1}\vec{x}=\lambda\vec{x} \leftrightarrow BP^{-1}\vec{x}=\lambda P^{-1}\vec{x} \leftrightarrow 
+B\left[\vec{x}\right]_\mathcal{B} = \lambda \left[\vec{x}\right]_\mathcal{B}
+```
+```math
+basis\ \mathcal{B}\ is\ column\ vectors\ of\ P
+```
+
+### 对角化
+正如上一章Linear最后讨论地那样，如果矩阵 $A$ 有 n 个线性无关的特征向量，那么以这 n 个线性无关的特征向量作为 $\mathbb{R}^{n}$ 的**基**，矩阵 $A$ 的相似矩阵 $D$ 是一个**对角矩阵**，对角线上是 n 个特征向量对应的特征值。n个特征向量作为列向量组构成的矩阵 $P$ 是新基到标准基的**坐标转移矩阵**，即：
+```math
+\begin{cases}
+P = \left[\vec{e_1},\cdots,\vec{e_n}\right],\ \vec{e_i}\ \ are\ \ eigenvectors\ \ of\ \ A,\ i=1,\cdots,n\\
+A = PDP^{-1},\ \ D = diag\left(\lambda_1,\cdots\lambda_n\right)
+\end{cases}
+```
+此即为**对角化**。  
+  
+我们得到了一个对角化的充分条件，其实它也是对角化的一个必要条件。因为当 $A = PDP^{-1}$时，令 $P = \left[\vec{p_1},\cdots,\vec{p_n}\right]$。则有：
+```math
+A\vec{p}_i = PDP^{-1}\vec{p}_i=\left[\vec{p_1},\cdots,\vec{p_n}\right]
+\left[
+\begin{matrix}
+\lambda_1,0,\cdots 0\\
+0,\lambda_2,\cdots 0\\
+\vdots\\
+0,0,\cdots \lambda_n\\
+\end{matrix}
+\right]
+\left[
+\begin{matrix}
+0\\
+\vdots\\
+1\\
+\vdots\\
+0
+\end{matrix}
+\right]
+\begin{matrix}
+\ \\
+\ \\
+i_{th}\\
+\ \\
+\ 
+\end{matrix}=
+\lambda_i \vec{p}_i
+```
+这里
+```math
+P^{-1}\vec{p}_i=\left[
+\begin{matrix}
+0\\
+\vdots\\
+1\\
+\vdots\\
+0
+\end{matrix}
+\right]
+\begin{matrix}
+\ \\
+\ \\
+i_{th}\\
+\ \\
+\ 
+\end{matrix}
+```
+是因为考虑
+```math
+P^{-1}P = I \leftrightarrow P^{-1}\left[\vec{p_1},\cdots,\vec{p_n}\right]=I \leftrightarrow \left[P^{-1}\vec{p_1},\ P^{-1}\vec{p_2},\cdots P^{-1}\vec{p_n}\right] = I \leftrightarrow 
+P^{-1}\vec{p}_i=\left[
+\begin{matrix}
+0\\
+\vdots\\
+1\\
+\vdots\\
+0
+\end{matrix}
+\right]
+\begin{matrix}
+\ \\
+\ \\
+i_{th}\\
+\ \\
+\ 
+\end{matrix}
+```
+#### 矩阵 $A$ 可对角化的充要条件1： $A$ 有 $n$ 个线性无关的特征向量
