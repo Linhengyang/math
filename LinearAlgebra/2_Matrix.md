@@ -174,23 +174,19 @@ A = PDP^{-1},\ \ D = diag\left(\lambda_1,\cdots\lambda_n\right)
 A\vec{p}_i =
 PDP^{-1}\vec{p}_i = 
 \left[\vec{p_1},\cdots,\vec{p_n}\right]
-\left[
-\begin{matrix}
+\begin{bmatrix}
 \lambda_1 & 0 & \cdots & 0\\
 0 & \lambda_2 & \cdots & 0\\
 \vdots\\
 0 & 0 & \cdots & \lambda_n\\
-\end{matrix}
-\right]
-\left[
-\begin{matrix}
+\end{bmatrix}
+\begin{bmatrix}
 0 \\
 \vdots \\
 1 \\
 \vdots \\
 0 \\
-\end{matrix}
-\right]
+\end{bmatrix}
 \begin{matrix}
 \ \\
 \ \\
