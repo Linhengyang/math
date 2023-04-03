@@ -316,7 +316,16 @@ s_1 \lambda_2 \vec{b}_1+s_2 \lambda_2 \vec{b}_2+\cdots+s_q \lambda_2 \vec{b}_q=\
 
 #### 矩阵 $A$ 的每个特征值 $\lambda_i$ ，它的几何重数 小于等于 代数重数
 
-对于矩阵 $A$ 和它的一个特征值 $\lambda_i$，其几何重数为 $d$。那也就是说，矩阵 $A$ 关于特征值 $\lambda_i$ 的特征子空间的维数是 $d$。从该特征子空间中取 $d$ 个线性无关的向量 $set\left(\vec{e}_1,\vec{e}_2,\cdots \vec{e}_d\right)$，然后将它扩充为 $\mathbb{R}^d$ 的一个基  $\mathcal{B} = set\left(\vec{e}_1,\vec{e}_2,\cdots \vec{e}_d, \vec{b}_1,\vec{b}_2,\cdots \vec{b}_{n-d}\right)$，那么坐标转移矩阵 $P_\mathcal{E \leftarrow B} = \left[\vec{e}_1,\vec{e}_2,\cdots \vec{e}_d, \vec{b}_1,\vec{b}_2,\cdots \vec{b}_{n-d}\right]$，简写为 $P$。  
+对于矩阵 $A$ 和它的一个特征值 $\lambda_i$，其几何重数为 $d$。那也就是说，矩阵 $A$ 关于特征值 $\lambda_i$ 的特征子空间的维数是 $d$。从该特征子空间中取 $d$ 个线性无关的向量 $set\left(\vec{e}_1,\vec{e}_2,\cdots \vec{e}_d\right)$，然后将它扩充为 $\mathbb{R}^d$ 的一个基
+```math
+\mathcal{B} = set\left(\vec{e}_1,\vec{e}_2,\cdots \vec{e}_d, \vec{b}_1,\vec{b}_2,\cdots \vec{b}_{n-d}\right)
+```
+那么坐标转移矩阵
+```math
+P_\mathcal{E \leftarrow B} = \left[\vec{e}_1,\vec{e}_2,\cdots \vec{e}_d, \vec{b}_1,\vec{b}_2,\cdots \vec{b}_{n-d}\right]
+```
+简写为 $P$。  
+  
 上述工作的目的是求出 矩阵 $A$ 以 $P$ 为坐标转移矩阵的相似矩阵 $X$，即求出矩阵 $X$ 满足 $A=PXP^{-1}$：  
 ```math
 A = PXP^{-1}
@@ -337,8 +346,13 @@ A\left[\vec{e}_1,\vec{e}_2,\cdots \vec{e}_d, \vec{b}_1,\vec{b}_2,\cdots \vec{b}_
 ```math
 \left[\lambda_i\vec{e}_1,\lambda_i\vec{e}_2,\cdots \lambda_i\vec{e}_d, A\vec{b}_1,A\vec{b}_2,\cdots A\vec{b}_{n-d}\right] = PX
 ```
-把未知矩阵 $X$ 写成 $\left[\vec{x}_1, \vec{x}_2, \cdots \vec{x}_d, \vec{x}_{d+1},\cdots \vec{x}_n
-\right]$ 代入，得到：
+把未知矩阵 $X$ 写成列向量组的形式，即：
+$$
+X=
+\left[\vec{x}_1, \vec{x}_2, \cdots \vec{x}_d, \vec{x}_{d+1},\cdots \vec{x}_n
+\right]
+$$
+代入得到：
 ```math
 \left[\lambda_i\vec{e}_1,\lambda_i\vec{e}_2,\cdots \lambda_i\vec{e}_d, A\vec{b}_1,A\vec{b}_2,\cdots A\vec{b}_{n-d}\right]
 =
@@ -376,11 +390,11 @@ j=1,2,\cdots d
 \vdots\\
 1 \\
 \vdots\\
-0
+0\\
 \end{matrix}
 \right]
 \begin{matrix}
-\  \\
+\ \\
 \ \\
 j_{th}\ row \\
 \ \\
@@ -388,7 +402,11 @@ j_{th}\ row \\
 \end{matrix}
 \ \ \ ,j = 1,2,\cdots d
 ```
-这是因为 $set\left(\vec{e}_1,\vec{e}_2,\cdots \vec{e}_d, \vec{b}_1,\vec{b}_2,\cdots \vec{b}_{n-d}\right)$ 线性无关，所以只有一种线性表出 $\lambda_i\vec{e}_j$ 的系数权重。  
+这是因为基
+$$
+set\left(\vec{e}_1,\vec{e}_2,\cdots \vec{e}_d, \vec{b}_1,\vec{b}_2,\cdots \vec{b}_{n-d}\right)
+$$
+线性无关，所以只有一种线性表出 $\lambda_i\vec{e}_j$ 的系数权重。  
 这样，就得到了矩阵 $X$ 的部分（前 $d$ 列）表示，即：
 ```math
 X = 
@@ -422,19 +440,20 @@ X =
 \end{matrix}
 \right]
 \begin{matrix}
-\  \\
+\ \\
 \ \\
 d_{th} \\
 \ \\
 \ \\
-\end{matrix}\ \ \ ,
+\end{matrix}
+\ \ \ ,
 \vec{x}_{d+1},
 \cdots
 \vec{x}_{n}
 \right]
 ```
 整理一下，即：
-```maths
+```math
 A = P
 \left[
 \begin{matrix}
