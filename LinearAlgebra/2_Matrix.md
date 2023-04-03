@@ -442,8 +442,8 @@ X =
 \begin{matrix}
 \ \\
 \ \\
-d_{th} \\
 \ \\
+d_{th} \\
 \ \\
 \end{matrix}
 \ \ \ ,
