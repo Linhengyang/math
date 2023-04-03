@@ -176,20 +176,19 @@ PDP^{-1}\vec{p}_i =
 \left[\vec{p_1},\cdots,\vec{p_n}\right]
 \left[
 \begin{matrix}
-\lambda_1,0,\cdots 0\\
-0,\lambda_2,\cdots 0\\
+\lambda_1 & 0 & \cdots & 0\\
+0 & \lambda_2 & \cdots & 0\\
 \vdots\\
-\vdots\\
-0,0,\cdots \lambda_n\\
+0 & 0 & \cdots & \lambda_n\\
 \end{matrix}
 \right]
 \left[
 \begin{matrix}
-0\\
-\vdots\\
-1\\
-\vdots\\
-0
+0 \\
+\vdots \\
+1 \\
+\vdots \\
+0 \\
 \end{matrix}
 \right]
 \begin{matrix}
@@ -197,7 +196,7 @@ PDP^{-1}\vec{p}_i =
 \ \\
 i_{th}\\
 \ \\
-\ 
+\ \\
 \end{matrix}=
 \lambda_i \vec{p}_i
 ```
