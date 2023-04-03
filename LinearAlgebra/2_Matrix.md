@@ -171,11 +171,14 @@ A = PDP^{-1},\ \ D = diag\left(\lambda_1,\cdots\lambda_n\right)
   
 我们得到了一个对角化的充分条件，其实它也是对角化的一个必要条件。因为当 $A = PDP^{-1}$时，令 $P = \left[\vec{p_1},\cdots,\vec{p_n}\right]$。则有：
 ```math
-A\vec{p}_i = PDP^{-1}\vec{p}_i=\left[\vec{p_1},\cdots,\vec{p_n}\right]
+A\vec{p}_i =
+PDP^{-1}\vec{p}_i = 
+\left[\vec{p_1},\cdots,\vec{p_n}\right]
 \left[
 \begin{matrix}
 \lambda_1,0,\cdots 0\\
 0,\lambda_2,\cdots 0\\
+\vdots\\
 \vdots\\
 0,0,\cdots \lambda_n\\
 \end{matrix}
