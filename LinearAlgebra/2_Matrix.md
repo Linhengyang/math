@@ -441,9 +441,9 @@ X =
 \right]
 \begin{matrix}
 \ \\
-\ \\
-\ \\
+\vdots \\
 d_{th} \\
+\vdots \\
 \ \\
 \end{matrix}
 \ \ \ ,
