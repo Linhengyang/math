@@ -408,7 +408,7 @@ set\left(\vec{e}_1,\vec{e}_2,\cdots \vec{e}_d, \vec{b}_1,\vec{b}_2,\cdots \vec{b
 ```
 线性无关，所以只有一种线性表出 $\lambda_i\vec{e}_j$ 的系数权重。  
 这样，就得到了矩阵 $X$ 的部分（前 $d$ 列）表示，即：
-$$
+```math
 X = 
 \left[
 \left[
@@ -457,7 +457,7 @@ d_{th} \\
 \cdots
 \vec{x}_{n}
 \right]
-$$
+```
 整理一下，即：
 ```math
 A = P
