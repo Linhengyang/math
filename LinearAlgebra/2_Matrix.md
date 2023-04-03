@@ -347,11 +347,11 @@ A\left[\vec{e}_1,\vec{e}_2,\cdots \vec{e}_d, \vec{b}_1,\vec{b}_2,\cdots \vec{b}_
 \left[\lambda_i\vec{e}_1,\lambda_i\vec{e}_2,\cdots \lambda_i\vec{e}_d, A\vec{b}_1,A\vec{b}_2,\cdots A\vec{b}_{n-d}\right] = PX
 ```
 把未知矩阵 $X$ 写成列向量组的形式，即：
-$$
+```math
 X=
 \left[\vec{x}_1, \vec{x}_2, \cdots \vec{x}_d, \vec{x}_{d+1},\cdots \vec{x}_n
 \right]
-$$
+```
 代入得到：
 ```math
 \left[\lambda_i\vec{e}_1,\lambda_i\vec{e}_2,\cdots \lambda_i\vec{e}_d, A\vec{b}_1,A\vec{b}_2,\cdots A\vec{b}_{n-d}\right]
@@ -403,9 +403,9 @@ j_{th}\ row \\
 \ \ \ ,j = 1,2,\cdots d
 ```
 这是因为基
-$$
+```math
 set\left(\vec{e}_1,\vec{e}_2,\cdots \vec{e}_d, \vec{b}_1,\vec{b}_2,\cdots \vec{b}_{n-d}\right)
-$$
+```
 线性无关，所以只有一种线性表出 $\lambda_i\vec{e}_j$ 的系数权重。  
 这样，就得到了矩阵 $X$ 的部分（前 $d$ 列）表示，即：
 ```math
