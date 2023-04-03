@@ -287,4 +287,190 @@ i_{th}\\
 
 #### 矩阵 $A$ 的、属于不同特征值的、线性无关的特征向量集合，它们的并集仍然是线性无关的
 
+只需证明 两个不同特征值 的情况。多个不同特征值的情况用数学归纳法可马上得到。  
+  
+对于矩阵 $A$，它有两个不同的特征值 $\lambda_1$ 和 $\lambda_2$，因为不能同时为 $0$，考虑 $\lambda_1 \neq 0$ 。特征向量集合 $set\left(\vec{a}_1,\ \vec{a}_2,\ \cdots \vec{a}_p\right)$ 和 $set\left(\vec{b}_1,\ \vec{b}_2,\ \cdots \vec{b}_q\right)$ 分别是属于特征值 $\lambda_1$ 和 $\lambda_2$ 的线性无关的特征向量组成的集合。那么考虑等式
+```math
+k_1\vec{a}_1+k_2\vec{a}_2+\cdots+k_p\vec{a}_p+
+s_1\vec{b}_1+s_2\vec{b}_2+\cdots+s_q\vec{b}_q=\vec{0}
+\tag0
+```
+等价于
+```math
+k_1 \lambda_1 \vec{a}_1+k_2 \lambda_1 \vec{a}_2+\cdots+k_p \lambda_1 \vec{a}_p+
+s_1 \lambda_1 \vec{b}_1+s_2 \lambda_1 \vec{b}_2+\cdots+s_q \lambda_1 \vec{b}_q=\vec{0}
+\tag1
+```
+0式 两边左乘 矩阵 $A$，得到
+```math
+k_1A\vec{a}_1+k_2A\vec{a}_2+\cdots+k_pA\vec{a}_p+
+s_1A\vec{b}_1+s_2A\vec{b}_2+\cdots+s_qA\vec{b}_q=\vec{0}
+```
+即得
+```math
+k_1 \lambda_1 \vec{a}_1+k_2 \lambda_1 \vec{a}_2+\cdots+k_p \lambda_1 \vec{a}_p+
+s_1 \lambda_2 \vec{b}_1+s_2 \lambda_2 \vec{b}_2+\cdots+s_q \lambda_2 \vec{b}_q=\vec{0}
+\tag2
+```
+2式 - 1式，再根据 $\lambda_1 \neq \lambda_2$，可以马上得出 $s_1=s_2=\cdots =s_q=0$，然后可以马上得出 $k_1=k_2=\cdots =k_p=0$，于是 $set\left(\vec{a}_1,\ \vec{a}_2,\ \cdots \vec{a}_p,\ \vec{b}_1,\ \vec{b}_2,\ \cdots \vec{b}_q\right)$ 是线性无关的。QED.  
+
 #### 矩阵 $A$ 的每个特征值 $\lambda_i$ ，它的几何重数 小于等于 代数重数
+
+对于矩阵 $A$ 和它的一个特征值 $\lambda_i$，其几何重数为 $d$。那也就是说，矩阵 $A$ 关于特征值 $\lambda_i$ 的特征子空间的维数是 $d$。从该特征子空间中取 $d$ 个线性无关的向量 $set\left(\vec{e}_1,\vec{e}_2,\cdots \vec{e}_d\right)$，然后将它扩充为 $\mathbb{R}^d$ 的一个基  $\mathcal{B} = set\left(\vec{e}_1,\vec{e}_2,\cdots \vec{e}_d, \vec{b}_1,\vec{b}_2,\cdots \vec{b}_{n-d}\right)$，那么坐标转移矩阵 $P_\mathcal{E \leftarrow B} = \left[\vec{e}_1,\vec{e}_2,\cdots \vec{e}_d, \vec{b}_1,\vec{b}_2,\cdots \vec{b}_{n-d}\right]$，简写为 $P$。  
+上述工作的目的是求出 矩阵 $A$ 以 $P$ 为坐标转移矩阵的相似矩阵 $X$，即求出矩阵 $X$ 满足 $A=PXP^{-1}$：  
+```math
+A = PXP^{-1}
+```
+等价于
+```math
+AP = PX
+```
+即
+```math
+A\left[\vec{e}_1,\vec{e}_2,\cdots \vec{e}_d, \vec{b}_1,\vec{b}_2,\cdots \vec{b}_{n-d}\right] = PX
+```
+即
+```math
+\left[A\vec{e}_1,A\vec{e}_2,\cdots A\vec{e}_d, A\vec{b}_1,A\vec{b}_2,\cdots A\vec{b}_{n-d}\right] = PX
+```
+即
+```math
+\left[\lambda_i\vec{e}_1,\lambda_i\vec{e}_2,\cdots \lambda_i\vec{e}_d, A\vec{b}_1,A\vec{b}_2,\cdots A\vec{b}_{n-d}\right] = PX
+```
+把未知矩阵 $X$ 写成 $\left[\vec{x}_1, \vec{x}_2, \cdots \vec{x}_d, \vec{x}_{d+1},\cdots \vec{x}_n
+\right]$ 代入，得到：
+```math
+\left[\lambda_i\vec{e}_1,\lambda_i\vec{e}_2,\cdots \lambda_i\vec{e}_d, A\vec{b}_1,A\vec{b}_2,\cdots A\vec{b}_{n-d}\right]
+=
+\left[
+P\vec{x}_1,\ 
+P\vec{x}_2,\ 
+\cdots
+P\vec{x}_d,\ 
+\cdots 
+P\vec{x}_n
+\right]
+```
+考虑前 $d$ 列相等，得到：
+```math
+\lambda_i\vec{e}_j
+=
+P\vec{x}_j\ \ ,
+j=1,2,\cdots d
+```
+即
+```math
+\lambda_i\vec{e}_j
+=
+\left[\vec{e}_1,\vec{e}_2,\cdots \vec{e}_d, \vec{b}_1,\vec{b}_2,\cdots \vec{b}_{n-d}\right]\vec{x}_j\ \ ,
+j=1,2,\cdots d
+\tag{*}
+```
+方程（*）只有唯一一个解，即:
+```math
+\vec{x}_j=
+\lambda_i
+\left[
+\begin{matrix}
+0 \\
+\vdots\\
+1 \\
+\vdots\\
+0
+\end{matrix}
+\right]
+\begin{matrix}
+\  \\
+\ \\
+j_{th}\ row \\
+\ \\
+\ \\
+\end{matrix}
+\ \ \ ,j = 1,2,\cdots d
+```
+这是因为 $set\left(\vec{e}_1,\vec{e}_2,\cdots \vec{e}_d, \vec{b}_1,\vec{b}_2,\cdots \vec{b}_{n-d}\right)$ 线性无关，所以只有一种线性表出 $\lambda_i\vec{e}_j$ 的系数权重。  
+这样，就得到了矩阵 $X$ 的部分（前 $d$ 列）表示，即：
+```math
+X = 
+\left[
+\left[
+\begin{matrix}
+\lambda_i \\
+\vdots\\
+0 \\
+\vdots\\
+0
+\end{matrix}
+\right],
+\left[
+\begin{matrix}
+0 \\
+\lambda_i \\
+\vdots\\
+\vdots\\
+0
+\end{matrix}
+\right],
+\cdots
+\left[
+\begin{matrix}
+0 \\
+\vdots\\
+\lambda_i \\
+\vdots\\
+0
+\end{matrix}
+\right]
+\begin{matrix}
+\  \\
+\ \\
+d_{th} \\
+\ \\
+\ \\
+\end{matrix}\ \ \ ,
+\vec{x}_{d+1},
+\cdots
+\vec{x}_{n}
+\right]
+```
+整理一下，即：
+```maths
+A = P
+\left[
+\begin{matrix}
+\lambda_i I_d & B \\
+0 & C
+\end{matrix}
+\right]
+P^{-1}
+```
+因为**相似的矩阵有相同的特征多项式**，所以得到：
+```math
+det(A-\lambda I) = 
+det(
+\left[
+\begin{matrix}
+\lambda_i I_d & B \\
+0 & C
+\end{matrix}
+\right]-\lambda I
+)=
+det(
+\left[
+\begin{matrix}
+(\lambda_i-\lambda) I_d & B \\
+0 & C-\lambda I_{n-d}
+\end{matrix}
+\right]
+)=
+det(
+(\lambda_i-\lambda) I_d
+)\ 
+det(
+C-\lambda I_{n-d}
+)=
+(\lambda_i-\lambda)^{d}\ det(
+C-\lambda I_{n-d}
+)
+```
+所以 $(\lambda_i-\lambda)^{d}$ 是 特征多项式 $det(A-\lambda I)$ 的子式，所以 $\lambda$ 的几何重数 $d \le r$，这里 $r$ 是 $\lambda$ 的代数重数，即一次因式 $(\lambda_i-\lambda)$ 在特征多项式 $det(A-\lambda I)$ 里的最高次幂。QED.
