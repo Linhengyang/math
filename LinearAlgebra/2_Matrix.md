@@ -499,4 +499,17 @@ C-\lambda I_{n-d}
 C-\lambda I_{n-d}
 )
 ```
-所以 $(\lambda_i-\lambda)^{d}$ 是 特征多项式 $det(A-\lambda I)$ 的子式，所以 $\lambda$ 的几何重数 $d \le r$，这里 $r$ 是 $\lambda$ 的代数重数，即一次因式 $(\lambda_i-\lambda)$ 在特征多项式 $det(A-\lambda I)$ 里的最高次幂。QED.
+所以 $(\lambda_i-\lambda)^{d}$ 是 特征多项式 $det(A-\lambda I)$ 的子式，所以 $\lambda$ 的几何重数 $d \le r$，这里 $r$ 是 $\lambda$ 的代数重数，即一次因式 $(\lambda_i-\lambda)$ 在特征多项式 $det(A-\lambda I)$ 里的最高次幂。QED.  
+  
+从这个证明也可以看出，矩阵 $A$ 知道多少个特征向量，就能确定多少个对角线元素。容易证明：  
+对于一个不能彻底对角化的矩阵 $A$ 来说，如果能确定 $A$ 的 $m$ 个不同的特征值 $\lambda_1, \lambda_2,\cdots \lambda_m$，对应的几何重数 $r_1,r_2,\cdots r_m$，有 $r = n - (r_1+r_2+\cdots+r_m) > 0$，那么 $A$ 的**相似约当标准型**是：
+```math
+\begin{bmatrix}
+\lambda_1 I_{r_1} & 0 & \cdots & 0 & B_1\\
+0 & \lambda_2 I_{r_2} & \cdots & 0 & B_2\\
+\vdots & \ddots\\
+0 & 0 & \cdots & \lambda_m I_{r_m} & B_m\\
+\vec{0} & \vec{0} & \cdots & \vec{0} & C\\
+\end{bmatrix}
+```
+矩阵 $C$ 是一个 $r$ 行 $r$ 列 的矩阵，它的行列式就是 $A$ 的特征多项式因式中不能化成一次因式的部分。
