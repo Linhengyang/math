@@ -66,7 +66,7 @@ Row_i(A\ B)=Row_i(A)\ B
 ```math
 T:\mathbb{R^n}\rightarrow\mathbb{R^m}\ \ \ with\ \ \ matrix\ \ \ A\ \in\ \mathbb{R}^{m,n},\ A = \left[\vec{a}_1,\ \vec{a}_2,\cdots\vec{a}_n\right]
 ```
-那么
+（当前暂时用**向量组的极大线性无关组的向量个数**作为**秩**的定义），那么
 * T是满射，等价于 $A$ 的列向量组**张成（span）** $\mathbb{R}^{m}$，等价于 $A$ 的列向量组的秩等于 $m$。
 * T是单射，等价于 $A$ 的列向量组**线性无关**，等价于 $A$ 的列向量组的秩等于 $n$。
 * T是双射（有可逆映射），等价于 $A$ 的列向量组的秩等于 $n$ 等于 $m$，等价于 $A$ 是方阵，且列向量组线性无关。
