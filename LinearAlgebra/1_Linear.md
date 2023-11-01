@@ -110,7 +110,8 @@ $$E_p\ \cdots\ E_1\ A=U$$
 第二步：解集结构  
 对比 $U$ 的非零行数量 $k$ 和 $n$
 * 当 $k=n$ 时，说明矩阵 $A$ 列向量组 $\mathcal{A}$ 线性无关，它作为 $span\left(\mathcal{A}\right)$ 的一个基（basis），对于任何 $\vec{b} \in span\left(\mathcal{A}\right)$，在此 basis 下有唯一表示，即 $A\vec{x}=\vec{b}$ 只有唯一解，即 $\vec{b}$ 在 $A$ 的列向量组 $\mathcal{A}$ 下的坐标 $\displaystyle \left[\vec{b}\right]_\mathcal{A}\in\mathbb{R^n}$。从 $U\ \vec{x}=P\ \vec{b}$ 也可以看出，echelon form $U$ 的每一列都是主元所在列，所以 $\vec{x}$ 只有唯一解。
-* 当 $k \lt n$ 时，因为非零行都在零行上面，所以每一行非零行都有主元，同时有主元的行都是非零行，所以主元数量就是 $k$，所以 $U$ 的主元所在列的数量也是 $k$。echelon form $U$ 的主元所在列组成了 $A$ 的列向量组 $\mathcal{A}$ 的一个basis，记为 $\mathcal{B}$，则有 $span\displaystyle \left(\mathcal{A}\right) \equiv span \left(\mathcal{B}\right)$，是 $\mathbb{R^m}$ 的一个 $dim = k$ 的子空间。有解的意思即指 $\vec{b} \in span\left(\mathcal{A}\right)$。向量 $\vec{b}$ 被 $\mathcal{B}$表示是唯一的，而由于 $A$ 的列向量组在自由元所在列，也可以被 $\mathcal{B}$ 线性表示，于是向量 $\vec{b}$ 被 $\mathcal{A}$表示就不是唯一的（有点绕，具体分析看下文就行），解集结构分析如下：
+* 当 $k \lt n$ 时，因为非零行都在零行上面，所以每一行非零行都有主元，同时有主元的行都是非零行，所以主元数量就是 $k$，所以 $U$ 的主元所在列的数量也是 $k$。echelon form $U$ 的主元所在列组成了 $A$ 的列向量组 $\mathcal{A}$ 的一个**极大线性无关组**，记为 $\mathcal{B}$。（这段论述，论述了如何给出向量组的极大线性无关组，同时也证明了一个不是很重要的结论：矩阵的列秩等于行秩。）
+* 则有 $span\displaystyle \left(\mathcal{A}\right) \equiv span \left(\mathcal{B}\right)$，是 $\mathbb{R^m}$ 的一个 $dim = k$ 的子空间。有解的意思即指 $\vec{b} \in span\left(\mathcal{A}\right)$。向量 $\vec{b}$ 被 $\mathcal{B}$表示是唯一的，而由于 $A$ 的列向量组在自由元所在列，也可以被 $\mathcal{B}$ 线性表示，于是向量 $\vec{b}$ 被 $\mathcal{A}$表示就不是唯一的（有点绕，具体分析看下文就行），解集结构分析如下：
 
 #### 齐次  
 首先考虑齐次线性方程组 $$A\vec{x}=\vec{0}$$
