@@ -71,7 +71,7 @@ Row_i(A\ B)=Row_i(A)\ B
 For\ \vec{x} \in \mathbb{R}^{n}, \mathbb{R}^{n}\ is\ domain, \mathbb{R}^{m}\ is\ codomain
 ```
 映射
-```
+```math
 Mapping\ T:\mathbb{R^n}\rightarrow\mathbb{R^m},\
 \vec{x}\rightarrowT(\vec{x})\
 we\ have\ image\ of\ \vec{x}\ as\ T(\vec{x}),\ \ \ set(T(\vec{x} \forall \vec{x}\in\mathbb{R}^{n}))\ as\ range\ of\ T
