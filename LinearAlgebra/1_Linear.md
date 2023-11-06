@@ -79,6 +79,7 @@ we\ have\ image\ of\ \vec{x}\ as\ T(\vec{x}),\ \ set\{T(\vec{x}) \forall \ \ \ve
 当映射 T 保持加法和数乘运算时，即：  
 * $\forall\ \vec{u},\ \vec{v}\ \in\ domain,\ T(\vec{u}+\vec{v})=T(\vec{u})+T(\vec{v})$  
 * $\forall\ c\ \in\ \mathbb{R},\ \vec{u}\ \in\ domain,\ T(c\cdot\vec{u})=c\cdot T(\vec{u})$  
+  
 那么此时 T 是一个**线性映射**。  
 可以证明，任何一个线性映射 T 一定和一个矩阵 $A\in\mathbb{R}^{m,n}$ 一一对应，而且**映射的像就是矩阵乘以向量元素的结果**。也就是说，矩阵可以理解为线性映射。  
 
