@@ -65,6 +65,15 @@ Col_j(A\ B)=A\ Col_j(B)
 Row_i(A\ B)=Row_i(A)\ B
 ```
 
+### 线性映射
+线性映射是一种保持了**加法**和**数乘**运算的映射，即：  
+```math
+For\ \vec{x} \in \mathbb{R}^{n}, \mathbb{R}^{n}\ is\ domain, \mathbb{R}^{m}\ is\ codomain  
+Mapping\ T:\mathbb{R^n}\rightarrow\mathbb{R^m}  
+\vec{x}\rightarrowT(\vec{x})  
+we\ have\ image\ of\ \vec{x}\ as\ T(\vec{x}).\ \ \ set(T(\vec{x} \forall \vec{x}\in\mathbb{R}^{n}))\ as\ range\ of\ T
+```
+
 ## 主干1综述
 用**线性映射**重新理解**矩阵**之后，可以根据映射的性质，很快给出系数矩阵相应的结论，具体来说，考虑线性映射
 ```math
