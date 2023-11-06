@@ -72,11 +72,13 @@ For\ \vec{x} \in \mathbb{R}^{n}, \mathbb{R}^{n}\ is\ domain,\ \mathbb{R}^{m}\ is
 ```
 映射
 ```math
-Mapping\ T:\mathbb{R^n}\rightarrow\mathbb{R^m},\\
+Mapping\ \ \ T:\mathbb{R^n}\rightarrow\mathbb{R^m},\\
 \vec{x}\ \rightarrow\ T(\vec{x}),\\
-we\ have\ image\ of\ \vec{x}\ as\ T(\vec{x}),\ \ set\{T(\vec{x}) \forall \vec{x}\in\mathbb{R}^{n}\}\ as\ range\ of\ T
+we\ have\ image\ of\ \vec{x}\ as\ T(\vec{x}),\ \ set\{T(\vec{x}) \forall \ \ \vec{x}\in\mathbb{R}^{n}\}\ as\ range\ of\ T
 ```
-
+当映射 T 保持加法和数乘运算时，即：  
+* $\forall\ \vec{u},\ \vec{v}\ \in\ domain,\ T(\vec{u}+\vec{v})=T(\vec{u})+T(\vec{v})$
+* $\forall\ c\ \in\ \mathbb{R},\ \vec{u}\ \in\ domain,\ T(c\cdot\vec{u})=c\cdot T(\vec{u})
 ## 主干1综述
 用**线性映射**重新理解**矩阵**之后，可以根据映射的性质，很快给出系数矩阵相应的结论，具体来说，考虑线性映射
 ```math
