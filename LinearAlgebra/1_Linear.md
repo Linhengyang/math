@@ -131,7 +131,7 @@ $$E_p\ \cdots\ E_1\ A=U$$
 * 当 $k \lt n$ 时，因为非零行都在零行上面，所以每一行非零行都有主元，同时有主元的行都是非零行，所以主元数量就是 $k$，所以 $U$ 的主元所在列的数量也是 $k$，echelon form $U$ 的主元所在列组成了 $A$ 的列向量组 $\mathcal{A}$ 的一个极大线性无关组，定义为 $A$ 的列向量组 $\mathcal{A}$ 的一个**基**，记为 $\mathcal{B}$。  
 -- 这里，定义向量组的**基**并给出了计算方法，即对矩阵作初等行变换至阶梯型，此时主元所在列的位置，就是原矩阵的列向量组的一个基的位置。  
 -- 这里，证明了一个不是很重要的结论：矩阵的列秩等于行秩，良定义为**矩阵的秩**。  
--- 这里，引入概念**矩阵的列空间**，即矩阵 $A$ 的列向量组 $\mathcal{A}$ 生成的空间 $span\displaystyle \left(\mathcal{A}\right)$，是 $\mathbb{R}^{m}$ 的子空间。可以看出 $span\displaystyle \left(\mathcal{A}\right) \equiv span \left(\mathcal{B}\right)$。定义向量组的基为它们所生成的**子空间的基**，并定义基的向量个数为**生成子空间的维度**，记为 $dim\ span\displaystyle \left(\mathcal{A}\right)$。
+-- 这里，引入概念**矩阵的列空间**，即矩阵 $A$ 的列向量组 $\mathcal{A}$ 生成的空间 $span\displaystyle \left(\mathcal{A}\right)$，是 $\mathbb{R}^{m}$ 的子空间。可以看出 $span\displaystyle \left(\mathcal{A}\right) \equiv span \left(\mathcal{B}\right)$。定义向量组的基 $\mathcal{B}$ 为它们所生成的**子空间的基**，并定义基的向量个数为**生成子空间的维度**，记为 $size\ of\ \mathcal{B} = dim\ span\displaystyle \left(\mathcal{A}\right)$。
 * 当 $k=n$ 时，说明矩阵 $A$ 列向量组 $\mathcal{A}$ 线性无关，它作为 $span\left(\mathcal{A}\right)$ 的一个基（basis），对于任何 $\vec{b} \in span\left(\mathcal{A}\right)$，在此 basis 下有唯一表示，即 $A\vec{x}=\vec{b}$ 只有唯一解，即 $\vec{b}$ 在 $A$ 的列向量组 $\mathcal{A}$ 下的坐标 $\displaystyle \left[\vec{b}\right]_\mathcal{A}\in\mathbb{R^n}$。从 $U\ \vec{x}=P\ \vec{b}$ 也可以看出，echelon form $U$ 的每一列都是主元所在列，所以 $\vec{x}$ 只有唯一解。
 
   
