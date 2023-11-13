@@ -215,8 +215,8 @@ A = P^{-1}U = LU
 **同构映射**是指**保持结构的双射**，即：  
 考虑定义了 $+$ 运算的群 $G$ 和定义了 $\times$ 运算的群 $F$，有 $\vec{a}, \vec{b} \in G, T(\vec{a}), T(\vec{b}) \in F$。若 $one-one \  Mapping \  T:G \rightarrow F$，满足 $T(\vec{a} + \vec{b}) = T(\vec{a}) \times T(\vec{b})$，称 $T$ 是一个同构映射，群 $G$ 和 $F$ 同构，记作 $G \cong F$。  
   
-同理，线性空间之间的**同构**指同一个域上定义的两个线性空间之间存在保持向量加法和数乘的双射。  
-域F上两个有限维的线性空间同构的充分必要条件是它们的维数相同。  
+同理，线性空间之间的**同构**指：同一个域上定义的两个线性空间之间，存在保持向量加法和数乘的双射。  
+域F上两个有限维的线性空间 $G$ 和 $F$，则 $G$ 和 $F$ 同构 $\leftrightarrow$ $G$ 和 $F$ 维数相同。   
   
 #### 子空间和坐标空间之间的同构关系
 考虑 $dim H = p$，向量 $\vec{x} \in subspace\ H \subset \mathbb{R^m}$ 被其基 $\mathcal{B}$ 唯一表示时的权重，就是向量 $\vec{x}$ 在这个基下的**坐标向量**，简称**坐标** $\left[\vec{x}\right]_\mathcal{B} \in \mathbb{R^p}$。  
