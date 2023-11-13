@@ -213,7 +213,7 @@ A = P^{-1}U = LU
 
 ### 同构/同构映射
 **同构映射**是指**保持结构的双射**，即：  
-考虑定了 $+$ 运算的群 $G$ 和定义了 $\times$ 运算的群 $F$，若 $one-one Mapping T:G \rightarrow F$，满足 $T(\vec{a} + \vec{b}) = T(\vec{a}) \times T(\vec{b})$。这里 $\vec{a}, \vec{b} \in G$，$T(\vec{a}), T(\vec{b}) \in F$。称 $T$ 是一个同构映射，群 $G$ 和 $F$ 同构，记作 $G\congF$。  
+考虑定义了 $+$ 运算的群 $G$ 和定义了 $\times$ 运算的群 $F$，有 $\vec{a}, \vec{b} \in G, T(\vec{a}), T(\vec{b}) \in F$。若 $one-one \  Mapping \  T:G \rightarrow F$，满足 $T(\vec{a} + \vec{b}) = T(\vec{a}) \times T(\vec{b})$，称 $T$ 是一个同构映射，群 $G$ 和 $F$ 同构，记作 $G \cong F$。  
   
 同理，线性空间之间的**同构**指同一个域上定义的两个线性空间之间存在保持向量加法和数乘的双射。  
 域F上两个有限维的线性空间同构的充分必要条件是它们的维数相同。  
