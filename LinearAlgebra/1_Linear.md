@@ -230,7 +230,8 @@ T(\vec{x}) = \left[\vec{x}\right]_{\mathcal{B}}
 即将一个 $H$ 中的向量映射到 基basis下的坐标向量。易证这是一个保持**加法**和**数乘**运算的**同构映射**，即 $H \cong \mathbb{R^p}$。形象地理解，有 $H$ “像是” $\mathbb{R^p}$，尽管 $H$ 中的元素的分量数目可能是超过 $p$的。  
     
 ### 矩阵的零空间和列空间/线性映射的kernel和range
-在前述中已经介绍了矩阵 $A$ 的**列空间Col(A)**和**零空间Nul(A)**。在这里，引入概念矩阵 $A \in \mathbb{R^{m,n}}$ 的**行空间Row(A)**，即 $A$ 的行向量组张成的空间，是 $\mathbb{R^n}$ 的一个子空间。  
+在前述中已经介绍了矩阵 $A$ 的**列空间Col(A)**和**零空间Nul(A)**。  
+在这里，引入概念矩阵 $A \in \mathbb{R^{m,n}}$ 的**行空间Row(A)**，即 $A$ 的行向量组张成的空间，是 $\mathbb{R^n}$ 的一个子空间。
 矩阵 $A$ 的echelon form $U$ 的非零行是它的一个**基**（注意这里是 $U$ 的非零行，跟列空间不同，列空间的基是从 $A$ 中选 $U$ 的主元所在列）。  
 
 矩阵 $A$ 的**列空间**和**零空间**的**维度**和**基**，都已经知道怎么计算：
@@ -240,17 +241,19 @@ T(\vec{x}) = \left[\vec{x}\right]_{\mathcal{B}}
 如果从线性映射的视角出发：  
 考虑线性映射 $T:\mathbb{R^n} \rightarrow \mathbb{R^m},\ with\ matrix\ A \in \mathbb{R^{m,n}}$，那么
 1. 它的零空间 $Nul(A)$是 $domain\ \mathbb{R^n}$ 的一个子空间，代表这个子空间中的向量在映射 $T$ 下都被映射到了 $codomain\ \mathbb{R^m}$ 的 $\vec{0}$。
-2. 它的列空间 $Col(A)$是 $codomain\ \mathbb{R^m}$ 的一个子空间，可以记作 $span(\left[\vec{a}_1, \vec{a}_2, \cdots, \vec{a}_n\right])$，代表映射T的值域 $range$ 。  
+2. 它的列空间 $Col(A)$是 $codomain\ \mathbb{R^m}$ 的一个子空间，可以记作 $span(\left[\vec{a}_1, \vec{a}_2, \cdots, \vec{a}_n\right])$，代表映射T的在 $codomain\ \mathbb{R^m}$ 的最大可达范围（值域）。  
   
 通过探讨映射 $T$ 是否是单射，得出：当 $T$ 是单射时，有
 * $rank\ A = n$
 * $A$ 的列向量组线性无关
 * $A\vec{x} = \vec{0}$ 只有0解  
+  
 这三个相互等价的条件。此时 $Nul(A) = set(\vec{0})$ 。
   
 通过探讨映射 $T$ 是否是满射，得出：当 $T$ 是满射时，有
 * $rank\ A = m$
-* $A$ 的列向量组张成 $\mathbb{R^m}$（记住 $dim\ \mathbb{R^m} = m$）
+* $A$ 的列向量组张成 $\mathbb{R^m}$（记住 $dim\ \mathbb{R^m} = m$）  
+  
 这两个相互等价的条件。此时 $Col(A) = \mathbb{R^m}$ 。
   
 #### kernel和range
