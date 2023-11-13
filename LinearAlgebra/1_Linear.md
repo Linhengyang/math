@@ -209,19 +209,26 @@ A = P^{-1}U = LU
 * $H$ 对 $V$ 的加法和数乘封闭  
 
 由此顺利引入**向量组张成的子空间** $span(\mathcal{B})$ 的概念。  
+一个子空间 $H$ 的任一组**基**都是能互相表示(等价)的，而且能够张成 $H$ 的 $dimH$ 个向量，就是 $H$ 的一组基。
 
-考虑 $dim H = p$，向量 $\vec{x} \in subspace\ H \subset \mathbb{R^m}$ 被基 $\mathcal{B}$ 唯一表示时的权重，就是向量 $\vec{x}$ 在这个基下的**坐标向量**，简称**坐标** $\left[\vec{x}\right]_\mathcal{B} \in \mathbb{R^p}$。  
+### 同构/同构映射
+**同构映射**是指**保持结构的双射**，即：  
+考虑定了 $+$ 运算的群 $G$ 和定义了 $\times$ 运算的群 $F$，若 $one-one Mapping T:G \rightarrow F$，满足 $T(\vec{a} + \vec{b}) = T(\vec{a}) \times T(\vec{b})$。这里 $\vec{a}, \vec{b} \in G$，$T(\vec{a}), T(\vec{b}) \in F$。称 $T$ 是一个同构映射，群 $G$ 和 $F$ 同构，记作 $G\congF$。  
   
-考虑子空间 $dim H=p$，映射 $T:H \rightarrow \mathbb{R^p}, \mathcal{B}\ is\ a\ basis\ of\ H$，
+同理，线性空间之间的**同构**指同一个域上定义的两个线性空间之间存在保持向量加法和数乘的双射。  
+域F上两个有限维的线性空间同构的充分必要条件是它们的维数相同。  
+  
+#### 子空间和坐标空间之间的同构关系
+考虑 $dim H = p$，向量 $\vec{x} \in subspace\ H \subset \mathbb{R^m}$ 被其基 $\mathcal{B}$ 唯一表示时的权重，就是向量 $\vec{x}$ 在这个基下的**坐标向量**，简称**坐标** $\left[\vec{x}\right]_\mathcal{B} \in \mathbb{R^p}$。  
+  
+考虑映射 $T:H \rightarrow \mathbb{R^p}, \mathcal{B}\ is\ a\ basis\ of\ H$，
 ```math
 T(\vec{x}) = \left[\vec{x}\right]_{\mathcal{B}}
 ```
 即将一个 $H$ 中的向量映射到 基basis下的坐标向量。易证这是一个保持**加法**和**数乘**运算的**同构映射**。所以 $H$ “像是” $\mathbb{R^p}$，尽管 $H$ 中的元素的分量数目可能是超过 $p$的。  
-  
+    
 矩阵 $A$ 的**列空间**和**零空间**的**维度**和**基**，都已经知道怎么计算。  
   
-一个子空间 $H$ 的任一组**基**都是能互相表示(等价)的，而且能够张成 $H$ 的 $dimH$ 个向量，就是 $H$ 的一组基。
-
 矩阵 $A \in \mathbb{R^{m,n}}$ 的**行空间Row Space**：  
 行向量组张成的空间，是 $\mathbb{R^n}$ 的一个子空间。矩阵 $A$ 的echelon form $U$ 的非零行是它的一个**基**（注意这里是 $U$ 的非零行，跟列空间不同，列空间的基是从 $A$ 中选 $U$ 的主元所在列）。
 
