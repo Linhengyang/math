@@ -170,7 +170,7 @@ C\\I
 C\\I
 \end{bmatrix} = Q, \ \ Q \in \mathbb{R^{n, n-k}}
 ```
-考虑独热部分 $\mathbb{I_{n-k,n-k}}$，所以 $rank(Q) = n-k$，同时 $\vec{x}_{free}$ 取遍 $\mathbb{R^{n-k}}$，所以此时解集 $set$ (又称 $A$ 的零空间 $Nul(A)$ )是由 $Q$ 的列向量组 $\mathcal{Q}$ 张成的线性空间，即 $\mathbb{R}^{n}$ 的一个 $dim = n-k$的subspace。
+考虑独热部分 $I_{n-k,n-k}$，所以 $rank(Q) = n-k$，同时 $\vec{x}_{free}$ 取遍 $\mathbb{R^{n-k}}$，所以此时解集 $set$ (又称 $A$ 的零空间 $Nul(A)$ )是由 $Q$ 的列向量组 $\mathcal{Q}$ 张成的线性空间，即 $\mathbb{R}^{n}$ 的一个 $dim = n-k$的subspace。
 
 #### 非齐次
 特解+系数矩阵的零空间，即为非齐次线性方程组的解集。
