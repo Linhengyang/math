@@ -74,7 +74,7 @@ For\ \vec{x} \in \mathbb{R}^{n}, \mathbb{R}^{n}\ is\ domain,\ \mathbb{R}^{m}\ is
 ```math
 Mapping\ \ \ T:\mathbb{R^n}\rightarrow\mathbb{R^m},\\
 \vec{x}\ \rightarrow\ T(\vec{x}),\\
-we\ have\ image\ of\ \vec{x}\ as\ T(\vec{x}),\ \ set\{T(\vec{x}) \vert\ \forall \ \ \vec{x}\in\mathbb{R}^{n}\}\ as\ range\ of\ T
+we\ have\ image\ of\ \vec{x}\ as\ T(\vec{x}),\ \ set\{T(\vec{x}) \vert\ \forall \ \vec{x}\in\mathbb{R}^{n}\}\ as\ range\ of\ T
 ```
 当映射 T 保持加法和数乘运算时，即：  
 * $\forall\ \vec{u},\ \vec{v}\ \in\ domain,\ T(\vec{u}+\vec{v})=T(\vec{u})+T(\vec{v})$  
@@ -158,7 +158,7 @@ x_{pivot\_q} = \sum_{j=1}^{n-k} coef_{j}\ x_{free\_j}, q \in (1,\cdots,k)
 \vec{x}_{pivot}\\\vec{x}_{free}
 \end{bmatrix} = 
 \begin{bmatrix}
-C\ \vec{x}_{pivot}\\I\ \vec{x}_{free}
+C\ \vec{x}_{free}\\I\ \vec{x}_{free}
 \end{bmatrix} = 
 \begin{bmatrix}
 C\\I
