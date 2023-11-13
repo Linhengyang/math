@@ -189,7 +189,7 @@ A = P^{-1}U = LU
 其中 $L$ 是下三角单位矩阵，而 $U$ 是 $A$ 的echelon form 阶梯型。这就是矩阵 $A$ 的LU分解。
 
 ## 主干2综述
-主干2脉络中，主线是**子空间**的**基**。**基**的大小就是子空间的**维度**，向量 $\vec{x} \in subspace\ H \subset \mathbb{R^m}$ 被基 $\mathcal{B}$ 唯一表示时的权重，就是向量 $\vec{x}$ 在这个基下的**坐标**$\left[\vec{x}\right]_\mathcal{B} \in \mathbb{R^p}, if\ dimH = p$。  
+主干2脉络中，主线是**子空间**的**基**，**基**的大小（size，即所含向量个数）就是子空间的**维度**。考虑 $dim H = p$，向量 $\vec{x} \in subspace\ H \subset \mathbb{R^m}$ 被基 $\mathcal{B}$ 唯一表示时的权重，就是向量 $\vec{x}$ 在这个基下的**坐标** $\left[\vec{x}\right]_\mathcal{B} \in \mathbb{R^p}。  
   
 考虑映射 $T:H \rightarrow \mathbb{R^p}, dimH=p, \mathcal{B}\ is\ a\ basis\ of\ H$，那么有
 ```math
