@@ -1,11 +1,16 @@
-# 综述: 行列式/对角化(特征向量和特征值)/特征多项式
+# 综述: 行列式/特征向量和特征值/特征方程和特征多项式/相似和对角化
 贯穿全章节的计算手段主要是:
 * 行列式(determinant)
-* 求解特征值和特征向量(没有多项式观点)(eigenvalues & eigenvector without polynomial)
+    1. 行列式的完全展开
+    2. 行列式的代数余子式展开（递归展开 or 按一行/列展开）
+    3. 行列式的矩阵乘积展开
+* 求解特征值和特征向量(一点多项式观点)(eigenvalues & eigenvector)
     1. 已知矩阵和特征向量，求特征值
     2. 已知矩阵特征值，求特征向量和特征空间
-    3. 仅知矩阵 $A$，特征值和特征向量都未知，求解其特征值和特征向量(即求解特征方程)
+    3. 仅知矩阵 $A$，特征值和特征向量都未知，求解其特征值和特征向量(即求解特征方程 or 因式分解特征多项式)
 * 矩阵的对角化判断和计算
+    1. 对角化的3个充要条件
+    2. 计算对角化：求出所有不同特征值，然后求出每个特征值的特征空间的基
 
 正文：  
 这块内容首先介绍了**行列式**，然后介绍了**矩阵**的**特征向量**和**特征值**，然后接下来有两个线性代数这门课程的超级重点：
@@ -130,12 +135,12 @@ A\vec{x}=\lambda\vec{x}
 1. 在复数域上，一元n次多项式一定可以分解成一次因式，所以任何矩阵一定有复数域上的特征值。考虑重数的话，任何矩阵在复数域上都有n个特征值。
 2. 在数域K上，考虑重数的话，一元n次多项式最多有n个解，所以任何矩阵在数域K上最多有n个特征值（考虑重数），那么不考虑重数的话，不同的特征值数量只会更少。  
 
-### 相似矩阵
+## 相似和对角化
 在上一章Linear中已经讨论了矩阵**相似**的定义和意义。在这里重新复习一下：  
-#### 相似的定义
+### 相似的定义
 对于矩阵 $A,B \in \mathbb{R^{n,n}}$，如果存在**可逆矩阵** $P$，使得 $A = P\ B\ P^{-1}$ 成立，则称矩阵 $A$ 和 $B$ **相似**。  
 
-#### 相似矩阵的特征多项式/特征值/特征向量
+### 相似矩阵的特征多项式/特征值/特征向量
 结合相似和特征值/特征向量的定义，容易得到下面这些结论：
 1. **相似的矩阵有相同的特征多项式**。
 ```math
@@ -154,7 +159,7 @@ B\left[\vec{x}\right]_\mathcal{B} = \lambda \left[\vec{x}\right]_\mathcal{B}
 basis\ \mathcal{B}\ is\ column\ vectors\ of\ P
 ```
 
-### 对角化
+### 对角化的定义
 正如上一章Linear最后讨论地那样，如果矩阵 $A$ 有 n 个线性无关的特征向量，那么以这 n 个线性无关的特征向量作为 $\mathbb{R}^{n}$ 的**基**，矩阵 $A$ 的相似矩阵 $D$ 是一个**对角矩阵**，对角线上是 n 个特征向量对应的**特征值**，n个特征向量作为列向量组构成了矩阵 $P$，即：
 ```math
 \begin{cases}
@@ -166,30 +171,30 @@ A = PDP^{-1},\ \ D = diag\left(\lambda_1,\cdots\lambda_n\right)
   
 我们得到了一个对角化的充分条件，其实它也是对角化的一个必要条件。因为当 $A = PDP^{-1}$时，令 $P = \left[\vec{p_1},\cdots,\vec{p_n}\right]$。则有：
 ```math
-A\vec{p}_i = PDP^{-1}\vec{p}_i=\left[\vec{p_1},\cdots,\vec{p_n}\right]
-\left[
-\begin{matrix}
-\lambda_1,0,\cdots 0\\
-0,\lambda_2,\cdots 0\\
+A\vec{p}_i =
+PDP^{-1}\vec{p}_i = 
+\left[\vec{p_1},\cdots,\vec{p_n}\right]
+\begin{bmatrix}
+\lambda_1 & 0 & \cdots & 0\\
+0 & \lambda_2 & \cdots & 0\\
 \vdots\\
-0,0,\cdots \lambda_n\\
-\end{matrix}
-\right]
-\left[
-\begin{matrix}
-0\\
 \vdots\\
-1\\
-\vdots\\
-0
-\end{matrix}
-\right]
+0 & 0 & \cdots & \lambda_n\\
+\end{bmatrix}
+\ 
+\begin{bmatrix}
+0 \\
+\vdots \\
+1 \\
+\vdots \\
+0 \\
+\end{bmatrix}
 \begin{matrix}
 \ \\
 \ \\
 i_{th}\\
 \ \\
-\ 
+\ \\
 \end{matrix}=
 \lambda_i \vec{p}_i
 ```
@@ -237,7 +242,7 @@ i_{th}\\
 ### 可对角化的其他充要条件
 矩阵可对角化的充要条件1缺乏操作性，仅仅是从对角化定义出发得到的。现在来思考下，如何找到矩阵 $A \in M_n(K)$ 的 $n$ 个线性无关的特征向量。
 假如说，矩阵 $A$ 有 $m$ 个不同的特征值，分别是 $\lambda_1,\ \lambda_2,\ \cdots,\ \lambda_m$。  
-对于每一个特征值 $\lambda_i$，矩阵 $A$ 关于 $\lambda_i$ 的几何重数是 $r_i$，也就是说，特征值 $\lambda_i$ 可以贡献出 $r_i$ 个线性无关的特征向量。那么首先考虑，把这些**属于不同特征值的线性无关的特征向量**集合，取并集后是否依然线性无关呢？答案是是的，证明略。即：  
+对于每一个特征值 $\lambda_i$，矩阵 $A$ 关于 $\lambda_i$ 的几何重数是 $r_i$，也就是说，特征值 $\lambda_i$ 可以贡献出 $r_i$ 个线性无关的特征向量。那么首先考虑，把这些**属于不同特征值的线性无关的特征向量**集合，取并集后是否依然线性无关呢？答案是是的（证明放在最后补充）。即：  
   
 **属于不同特征值的、线性无关的特征向量集合，它们的并集仍然是线性无关的**  
   
@@ -254,7 +259,7 @@ i_{th}\\
 2. 矩阵 $A$ 的所有不同特征值的几何重数
 
 那么有时候会想要得到一个“对不同的特征值逐一检查”的方法，使得当矩阵 $A$ 不可对角化时，能提前发现。考虑到
-1. **特征值 $\lambda_i$ 的几何重数 小于等于 代数重数**（待证明）
+1. **特征值 $\lambda_i$ 的几何重数 小于等于 代数重数**（证明放在最后补充）
 2. **不同特征值的代数重数之和 小于等于 $n$**（特征值 $\lambda_i$ 的代数重数，是 $n$ 阶的特征多项式里，一次因式 $(\lambda - \lambda_i)$ 的重数，从而不同特征值的代数重数之和 小于等于 最高阶次 $n$）  
   
 那么对于矩阵 $A \in M_n(K)$，可以得到如下的等价结论：
@@ -277,3 +282,234 @@ i_{th}\\
 3. 矩阵 $A$ 的每个特征值的几何重数 等于 它的代数重数，且矩阵 $A$ 在数域 $K$ 上有 $n$ 个特征值（考虑重数）
 
 ---
+
+### 补充两个证明
+
+#### 矩阵 $A$ 的、属于不同特征值的、线性无关的特征向量集合，它们的并集仍然是线性无关的
+
+只需证明 两个不同特征值 的情况。多个不同特征值的情况用数学归纳法可马上得到。  
+  
+对于矩阵 $A$，它有两个不同的特征值 $\lambda_1$ 和 $\lambda_2$，因为不能同时为 $0$，考虑 $\lambda_1 \neq 0$ 。特征向量集合 $set\left(\vec{a}_1,\ \vec{a}_2,\ \cdots \vec{a}_p\right)$ 和 $set\left(\vec{b}_1,\ \vec{b}_2,\ \cdots \vec{b}_q\right)$ 分别是属于特征值 $\lambda_1$ 和 $\lambda_2$ 的线性无关的特征向量组成的集合。那么考虑等式
+```math
+k_1\vec{a}_1+k_2\vec{a}_2+\cdots+k_p\vec{a}_p+
+s_1\vec{b}_1+s_2\vec{b}_2+\cdots+s_q\vec{b}_q=\vec{0}
+\tag0
+```
+等价于
+```math
+k_1 \lambda_1 \vec{a}_1+k_2 \lambda_1 \vec{a}_2+\cdots+k_p \lambda_1 \vec{a}_p+
+s_1 \lambda_1 \vec{b}_1+s_2 \lambda_1 \vec{b}_2+\cdots+s_q \lambda_1 \vec{b}_q=\vec{0}
+\tag1
+```
+0式 两边左乘 矩阵 $A$，得到
+```math
+k_1A\vec{a}_1+k_2A\vec{a}_2+\cdots+k_pA\vec{a}_p+
+s_1A\vec{b}_1+s_2A\vec{b}_2+\cdots+s_qA\vec{b}_q=\vec{0}
+```
+即得
+```math
+k_1 \lambda_1 \vec{a}_1+k_2 \lambda_1 \vec{a}_2+\cdots+k_p \lambda_1 \vec{a}_p+
+s_1 \lambda_2 \vec{b}_1+s_2 \lambda_2 \vec{b}_2+\cdots+s_q \lambda_2 \vec{b}_q=\vec{0}
+\tag2
+```
+2式 - 1式，再根据 $\lambda_1 \neq \lambda_2$，可以马上得出 $s_1=s_2=\cdots =s_q=0$，然后可以马上得出 $k_1=k_2=\cdots =k_p=0$，于是 $set\left(\vec{a}_1,\ \vec{a}_2,\ \cdots \vec{a}_p,\ \vec{b}_1,\ \vec{b}_2,\ \cdots \vec{b}_q\right)$ 是线性无关的。QED.  
+
+#### 矩阵 $A$ 的每个特征值 $\lambda_i$ ，它的几何重数 小于等于 代数重数
+
+对于矩阵 $A$ 和它的一个特征值 $\lambda_i$，其几何重数为 $d$。那也就是说，矩阵 $A$ 关于特征值 $\lambda_i$ 的特征子空间的维数是 $d$。从该特征子空间中取 $d$ 个线性无关的向量 $set\left(\vec{e}_1,\vec{e}_2,\cdots \vec{e}_d\right)$，然后将它扩充为 $\mathbb{R}^d$ 的一个基
+```math
+\mathcal{B} = set\left(\vec{e}_1,\vec{e}_2,\cdots \vec{e}_d, \vec{b}_1,\vec{b}_2,\cdots \vec{b}_{n-d}\right)
+```
+那么坐标转移矩阵
+```math
+P_\mathcal{E \leftarrow B} = \left[\vec{e}_1,\vec{e}_2,\cdots \vec{e}_d, \vec{b}_1,\vec{b}_2,\cdots \vec{b}_{n-d}\right]
+```
+简写为 $P$。  
+  
+上述工作的目的是求出 矩阵 $A$ 以 $P$ 为坐标转移矩阵的相似矩阵 $X$，即求出矩阵 $X$ 满足 $A=PXP^{-1}$：  
+```math
+A = PXP^{-1}
+```
+等价于
+```math
+AP = PX
+```
+即
+```math
+A\left[\vec{e}_1,\vec{e}_2,\cdots \vec{e}_d, \vec{b}_1,\vec{b}_2,\cdots \vec{b}_{n-d}\right] = PX
+```
+即
+```math
+\left[A\vec{e}_1,A\vec{e}_2,\cdots A\vec{e}_d, A\vec{b}_1,A\vec{b}_2,\cdots A\vec{b}_{n-d}\right] = PX
+```
+即
+```math
+\left[\lambda_i\vec{e}_1,\lambda_i\vec{e}_2,\cdots \lambda_i\vec{e}_d, A\vec{b}_1,A\vec{b}_2,\cdots A\vec{b}_{n-d}\right] = PX
+```
+把未知矩阵 $X$ 写成列向量组的形式，即：
+```math
+X=
+\left[\vec{x}_1, \vec{x}_2, \cdots \vec{x}_d, \vec{x}_{d+1},\cdots \vec{x}_n
+\right]
+```
+代入得到：
+```math
+\left[\lambda_i\vec{e}_1,\lambda_i\vec{e}_2,\cdots \lambda_i\vec{e}_d, A\vec{b}_1,A\vec{b}_2,\cdots A\vec{b}_{n-d}\right]
+=
+\left[
+P\vec{x}_1,\ 
+P\vec{x}_2,\ 
+\cdots
+P\vec{x}_d,\ 
+\cdots 
+P\vec{x}_n
+\right]
+```
+考虑前 $d$ 列相等，得到：
+```math
+\lambda_i\vec{e}_j
+=
+P\vec{x}_j\ \ ,
+j=1,2,\cdots d
+```
+即
+```math
+\lambda_i\vec{e}_j
+=
+\left[\vec{e}_1,\vec{e}_2,\cdots \vec{e}_d, \vec{b}_1,\vec{b}_2,\cdots \vec{b}_{n-d}\right]\vec{x}_j\ \ ,
+j=1,2,\cdots d
+\tag{*}
+```
+方程（*）只有唯一一个解，即:
+```math
+\vec{x}_j=
+\lambda_i
+\left[
+\begin{matrix}
+0 \\
+\vdots\\
+1 \\
+\vdots\\
+0\\
+\end{matrix}
+\right]
+\begin{matrix}
+\ \\
+\ \\
+j_{th}\ row \\
+\ \\
+\ \\
+\end{matrix}
+\ \ \ ,j = 1,2,\cdots d
+```
+这是因为基
+```math
+set\left(\vec{e}_1,\vec{e}_2,\cdots \vec{e}_d, \vec{b}_1,\vec{b}_2,\cdots \vec{b}_{n-d}\right)
+```
+线性无关，所以只有一种线性表出 $\lambda_i\vec{e}_j$ 的系数权重。  
+这样，就得到了矩阵 $X$ 的部分（前 $d$ 列）表示，即：
+```math
+X = 
+\left[
+\left[
+\begin{matrix}
+\lambda_i \\
+0 \\
+\vec{0}\\
+0 \\
+0 \\
+\vec{0}\\
+0
+\end{matrix}
+\right],
+\left[
+\begin{matrix}
+0 \\
+\lambda_i \\
+0 \\
+\vec{0}\\
+0 \\
+\vec{0}\\
+0
+\end{matrix}
+\right],
+\cdots,
+\left[
+\begin{matrix}
+0 \\
+\vec{0}\\
+0 \\
+\lambda_i \\
+0 \\
+\vec{0}\\
+0
+\end{matrix}
+\right]
+\begin{matrix}
+\ \\
+\ \\
+\ \\
+d_{th} \\
+\ \\
+\ \\
+\end{matrix}
+\ \ \ ,
+\vec{x}_{d+1},
+\cdots
+\vec{x}_{n}
+\right]
+```
+整理一下，即：
+```math
+A = P
+\left[
+\begin{matrix}
+\lambda_i I_d & B \\
+0 & C
+\end{matrix}
+\right]
+P^{-1}
+```
+因为**相似的矩阵有相同的特征多项式**，所以得到：
+```math
+det(A-\lambda I) = 
+det(
+\left[
+\begin{matrix}
+\lambda_i I_d & B \\
+0 & C
+\end{matrix}
+\right]-\lambda I
+)=
+det(
+\left[
+\begin{matrix}
+(\lambda_i-\lambda) I_d & B \\
+0 & C-\lambda I_{n-d}
+\end{matrix}
+\right]
+)=
+det(
+(\lambda_i-\lambda) I_d
+)\ 
+det(
+C-\lambda I_{n-d}
+)=
+(\lambda_i-\lambda)^{d}\ det(
+C-\lambda I_{n-d}
+)
+```
+所以 $(\lambda_i-\lambda)^{d}$ 是 特征多项式 $det(A-\lambda I)$ 的子式，所以 $\lambda$ 的几何重数 $d \le r$，这里 $r$ 是 $\lambda$ 的代数重数，即一次因式 $(\lambda_i-\lambda)$ 在特征多项式 $det(A-\lambda I)$ 里的最高次幂。QED.  
+  
+从这个证明也可以看出，矩阵 $A$ 知道多少个特征向量，就能确定多少个对角线元素。容易证明：  
+对于一个不能彻底对角化的矩阵 $A$ 来说，如果能确定 $A$ 的 $m$ 个不同的特征值 $\lambda_1, \lambda_2,\cdots \lambda_m$，对应的几何重数 $r_1,r_2,\cdots r_m$，有 $r = n - (r_1+r_2+\cdots+r_m) > 0$，那么 $A$ 的**相似约当标准型**是：
+```math
+\begin{bmatrix}
+\lambda_1 I_{r_1} & 0 & \cdots & 0 & B_1\\
+0 & \lambda_2 I_{r_2} & \cdots & 0 & B_2\\
+\vdots & \ddots\\
+0 & 0 & \cdots & \lambda_m I_{r_m} & B_m\\
+\vec{0} & \vec{0} & \cdots & \vec{0} & C\\
+\end{bmatrix}
+```
+矩阵 $C$ 是一个 $r$ 行 $r$ 列 的矩阵，它的行列式就是 $A$ 的特征多项式因式中不能化成一次因式的部分。

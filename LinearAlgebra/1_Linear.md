@@ -40,7 +40,11 @@ A\vec{x}=\vec{b}
 有了**线性组合**的观点，就可以理解**生成/张成子空间**的概念，即向量组合的权重遍历数域。用**生成子空间**的观点去看矩阵方程，无非是 $\vec{b} \in span(\vec{a_1},\ \vec{a_2}\ \cdots \vec{a_n})$。  
 甚至可以用**线性组合**的观点重新看**matrix-vector product**，无非是矩阵列向量组的线性组合，权重是向量的元素。  
   
-**线性无关**和**线性相关**，即：线性组合成零向量时是否只有权重全0这一种方式。这里有一系列的命题和判断，包括**极大线性无关组**的概念。  
+**线性无关**和**线性相关**，即：向量组在线性组合成零向量时是否只有权重全0这一种方式。如果是，则称该向量组**线性无关**，否则就是**线性相关**。  
+这里有一系列的命题和判断，并引出**极大线性无关组**的概念。即：
+* 线性相关的向量组，其中至少有一个向量可以由其他向量线性表出
+* 考虑到单个非零向量是线性无关的，那么该向量组一定存在子集，使得子集本身线性无关，但只要多放进一个其他向量就线性相关。这类子集被称为该向量组的**极大线性无关组**
+* 向量组的所有**极大线性无关组**都是等价的，即极大线性无关组们可以互相线性表出
   
 ### 矩阵乘法
 用线性组合的观点理解矩阵乘法，即对于：
@@ -61,28 +65,49 @@ Col_j(A\ B)=A\ Col_j(B)
 Row_i(A\ B)=Row_i(A)\ B
 ```
 
+### 线性映射
+线性映射是一种保持了**加法**和**数乘**运算的映射，即：  
+```math
+For\ \vec{x} \in \mathbb{R}^{n}, \mathbb{R}^{n}\ is\ domain,\ \mathbb{R}^{m}\ is\ codomain
+```
+映射
+```math
+Mapping\ \ \ T:\mathbb{R^n}\rightarrow\mathbb{R^m},\\
+\vec{x}\ \rightarrow\ T(\vec{x}),\\
+we\ have\ image\ of\ \vec{x}\ as\ T(\vec{x}),\ \ set\{T(\vec{x}) \vert\ \forall \ \vec{x}\in\mathbb{R}^{n}\}\ as\ range\ of\ T
+```
+当映射 T 保持加法和数乘运算时，即：  
+* $\forall\ \vec{u},\ \vec{v}\ \in\ domain,\ T(\vec{u}+\vec{v})=T(\vec{u})+T(\vec{v})$  
+* $\forall\ c\ \in\ \mathbb{R},\ \vec{u}\ \in\ domain,\ T(c\cdot\vec{u})=c\cdot T(\vec{u})$  
+  
+那么此时 T 是一个**线性映射**。  
+  
+可以证明，任何一个线性映射 T 一定和一个矩阵 $A\in\mathbb{R}^{m,n}$ 一一对应，而且**映射的像就是矩阵乘以向量元素的结果**。也就是说，矩阵可以理解为线性映射。  
+
 ## 主干1综述
 用**线性映射**重新理解**矩阵**之后，可以根据映射的性质，很快给出系数矩阵相应的结论，具体来说，考虑线性映射
 ```math
 T:\mathbb{R^n}\rightarrow\mathbb{R^m}\ \ \ with\ \ \ matrix\ \ \ A\ \in\ \mathbb{R}^{m,n},\ A = \left[\vec{a}_1,\ \vec{a}_2,\cdots\vec{a}_n\right]
 ```
-那么
+（当前暂时用**向量组的极大线性无关组的向量个数**作为**秩**的定义），那么
 * T是满射，等价于 $A$ 的列向量组**张成（span）** $\mathbb{R}^{m}$，等价于 $A$ 的列向量组的秩等于 $m$。
 * T是单射，等价于 $A$ 的列向量组**线性无关**，等价于 $A$ 的列向量组的秩等于 $n$。
 * T是双射（有可逆映射），等价于 $A$ 的列向量组的秩等于 $n$ 等于 $m$，等价于 $A$ 是方阵，且列向量组线性无关。
-
-由此得到了**逆映射**/**可逆矩阵**/**逆矩阵**的概念。  
   
-
+由此：  
+我们可以用**复合映射**来重新理解**矩阵乘法**，这为我们求解矩阵方程 $A\vec{x}=\vec{b}$ 提供了一条思路：如果可以找到一个双射 $T:\mathbb{R^n}\rightarrow\mathbb{R^m}\ \ \ with\ \ \ matrix\ \ \ P\ \in\ \mathbb{R}^{m,n}$ ，此时矩阵方程 $A\vec{x}=\vec{b}$ 和 矩阵方程 $P\ A\vec{x}=P\ \vec{b}$ 等价。只要 $P\ A$ 的结构足够好（比如说是阶梯形矩阵），那么求解 $\vec{x}$ 就是很方便的事情。  
+综上，开始需要研究**逆映射**，即**可逆矩阵**和**逆矩阵**。具体地说，为了求解矩阵方程 $A\vec{x}=\vec{b}$，需要找到 $P\ A$ 为阶梯型矩阵的可逆矩阵 $P$。从最简单的可逆矩阵--初等矩阵入手。  
+  
+### 最简单的可逆矩阵：初等矩阵
 主干1脉络中, 主线是矩阵方程 $A\vec{x}=\vec{b}$ 的通用求解，其中 $A \in \mathbb{R^{m,n}}$。
 记系数矩阵 $A$ 的echelon form(阶梯型)是 $U$。  
-求解过程中, 初等行变换（左乘初等矩阵）的操作，将 $A$ 转化 $U$，甚至 $A$ 的reduced echelon form(简约阶梯型)形式。  
+求解过程中, 初等行变换的操作，将 $A$ 转化 $U$，甚至 $A$ 的reduced echelon form(简约阶梯型)形式。**初等行变换等价于对应的初等矩阵左乘**。  
   
 初等行变换非常重要，初等行变换中、后的所有矩阵都和原矩阵**行等价**。在这个操作变换中，矩阵有两个不变量：
 1. 矩阵的秩 $rankA$
 2. 矩阵的列向量组的序
   
-初等行变换有三型，都有其对应的**初等矩阵**(即由单位矩阵作一次相应的初等行变换的结果)
+初等行变换有三型，都有其对应的**初等矩阵**(即由单位矩阵作一次相应的初等行变换的结果矩阵)
 * replacement:即 $row(i)$ 换成 $row(i) + k * row(j),\ \ j \neq i$
 * interchange:即 $row(i)$ 和 $row(j),\ \ j \neq i$ 两行互换
 * scale by **r**:即 $row(i)$ 换成 $r * row(i),\ \ r \neq 0$
@@ -103,8 +128,13 @@ $$E_p\ \cdots\ E_1\ A=U$$
 
 第二步：解集结构  
 对比 $U$ 的非零行数量 $k$ 和 $n$
+* 当 $k \lt n$ 时，因为非零行都在零行上面，所以每一行非零行都有主元，同时有主元的行都是非零行，所以主元数量就是 $k$，所以 $U$ 的主元所在列的数量也是 $k$，echelon form $U$ 的主元所在列组成了 $A$ 的列向量组 $\mathcal{A}$ 的一个极大线性无关组，定义为 $A$ 的列向量组 $\mathcal{A}$ 的一个**基**，记为 $\mathcal{B}$。这里 $size\ of\ \mathcal{B} = k$。  
+---- 这里，定义向量组的**基**并给出了计算方法，即对矩阵作初等行变换至阶梯型，此时主元所在列的位置，就是原矩阵的列向量组的一个基的位置。  
+---- 这里，证明了一个不是很重要的结论：矩阵的列秩等于行秩，良定义为**矩阵的秩**。  
+---- 这里，引入概念**矩阵A的列空间Col(A)**，即矩阵 $A$ 的列向量组 $\mathcal{A}$ 生成的空间 $span\displaystyle \left(\mathcal{A}\right)$，是 $\mathbb{R}^{m}$ 的子空间。可以看出 $span\displaystyle \left(\mathcal{A}\right) \equiv span \left(\mathcal{B}\right)$。定义向量组的基 $\mathcal{B}$ 为它们所生成的**子空间的基**，并定义基的向量个数为**生成子空间的维度**，记为 $dim\ span\displaystyle \left(\mathcal{A}\right) = size\ of\ \mathcal{B}$。  
+  
+    有解，即说明 $\vec{b} \in span\left(\mathcal{A}\right) = span\left(\mathcal{B}\right)$。由于 $\mathcal{B}$ 是一个基，所以 $\vec{b}$ 被 $\mathcal{B}$表示方法是唯一的。而由于 $A$ 的列向量组在自由元所在列，也可以被 $\mathcal{B}$ 线性表示，于是向量 $\vec{b}$ 被 $\mathcal{A}$表示就不是唯一的（有点绕，具体分析看下文解集结构分析就行）。
 * 当 $k=n$ 时，说明矩阵 $A$ 列向量组 $\mathcal{A}$ 线性无关，它作为 $span\left(\mathcal{A}\right)$ 的一个基（basis），对于任何 $\vec{b} \in span\left(\mathcal{A}\right)$，在此 basis 下有唯一表示，即 $A\vec{x}=\vec{b}$ 只有唯一解，即 $\vec{b}$ 在 $A$ 的列向量组 $\mathcal{A}$ 下的坐标 $\displaystyle \left[\vec{b}\right]_\mathcal{A}\in\mathbb{R^n}$。从 $U\ \vec{x}=P\ \vec{b}$ 也可以看出，echelon form $U$ 的每一列都是主元所在列，所以 $\vec{x}$ 只有唯一解。
-* 当 $k \lt n$ 时，因为矩阵的行秩等于列秩，所以 $U$ 的主元所在列数量也是 $k$。echelon form $U$ 的主元所在列组成了 $A$ 的列向量组 $\mathcal{A}$ 的一个basis，记为 $\mathcal{B}$，则有 $span\displaystyle \left(\mathcal{A}\right) \equiv span \left(\mathcal{B}\right)$，是 $\mathbb{R^m}$ 的一个 $dim = k$ 的子空间。有解的意思即指 $\vec{b} \in span\left(\mathcal{A}\right)$。向量 $\vec{b}$ 被 $\mathcal{B}$表示是唯一的，而由于 $A$ 的列向量组在自由元所在列，也可以被 $\mathcal{B}$ 线性表示，于是向量 $\vec{b}$ 被 $\mathcal{A}$表示就不是唯一的（有点绕，具体分析看下文就行），解集结构分析如下：
 
 #### 齐次  
 首先考虑齐次线性方程组 $$A\vec{x}=\vec{0}$$
@@ -128,7 +158,7 @@ x_{pivot\_q} = \sum_{j=1}^{n-k} coef_{j}\ x_{free\_j}, q \in (1,\cdots,k)
 \vec{x}_{pivot}\\\vec{x}_{free}
 \end{bmatrix} = 
 \begin{bmatrix}
-C\ \vec{x}_{pivot}\\I\ \vec{x}_{free}
+C\ \vec{x}_{free}\\I\ \vec{x}_{free}
 \end{bmatrix} = 
 \begin{bmatrix}
 C\\I
@@ -140,80 +170,104 @@ C\\I
 C\\I
 \end{bmatrix} = Q, \ \ Q \in \mathbb{R^{n, n-k}}
 ```
-考虑独热部分，所以 $rank(Q) = n-k$，同时 $\vec{x}_{free}$ 取遍 $\mathbb{R^{n-k}}$，所以此时解集 $set$ (又称 $A$ 的零空间 $Nul(A)$ )是由 $Q$ 的列向量组 $\mathcal{Q}$ 张成的线性空间，即 $\mathbb{R}^{n}$ 的一个 $dim = n-k$的subspace。
+考虑独热部分 $I_{n-k,n-k}$，所以 $rank(Q) = n-k$，同时 $\vec{x}_{free}$ 取遍 $\mathbb{R^{n-k}}$，所以此时解集 $set$ 是由 $Q$ 的列向量组 $\mathcal{Q}$ 张成的线性空间，即 $\mathbb{R}^{n}$ 的一个 $dim = n-k$的subspace。  
+---- 这里，引入概念**矩阵A的零空间Nul(A)**，即矩阵 $A$ 对应的矩阵方程 $A\vec{x}=\vec{b}$ 的解集。通过上述证明，可以得出矩阵 $A$ 的零空间 $Nul(A)$ 是 $\mathbb{R}^{n}$ 的一个 $dim = n - rank(A)$ 的subspace，它的基是矩阵方程 $A\vec{x}=\vec{b}$ 的 $n-k$ 个线性无关的解。
 
 #### 非齐次
 特解+系数矩阵的零空间，即为非齐次线性方程组的解集。
 
 ---
 ### LU分解  
-当矩阵 $A$ 转化为 echelon form $U$ 的初等行变换操作中，没有「两行互换」时，初等矩阵 $E_p,\cdots,E_1$ 都是下三角单位矩阵（主对角线元素都是1），从而 $P = E_p\ \cdots\ E_1$ 以及 $P^{-1}$都是下三角单位矩阵，将其记作 $L$，即得到
+矩阵 $A$ 转化为 echelon form $U$ 的初等行变换操作中，因为所有的「replacement」都是用主对角线上的非零元素去消除下方元素，所以对应的初等矩阵都是下三角单位矩阵（主对角线元素都是1）。此时，若矩阵的主对角线元素全部都是非零的，那么全程不需要「interchange」操作，则化简过程中所有的初等矩阵 $E_p,\cdots,E_1$ 都是下三角单位矩阵，从而 $P = E_p\ \cdots\ E_1$ 以及 $P^{-1}$ 都是下三角单位矩阵，将 $P^{-1}$ 记作 $L$，即得到
 ```math
-A = LU
+E_p\ \cdots\ E_1 A = PA = U
 ```
-其中 $L$ 是下三角单位矩阵，而 $U$ 是 $A$ 的echelon form。
+即得：
+```math
+A = P^{-1}U = LU
+```
+其中 $L$ 是下三角单位矩阵，而 $U$ 是 $A$ 的echelon form 阶梯型。这就是矩阵 $A$ 的LU分解。
 
 ## 主干2综述
-主干2脉络中，主线是**子空间**的**基**。**基**的大小就是子空间的**维度**，向量 $\vec{x} \in subspace\ H \subset \mathbb{R^m}$ 被基 $\mathcal{B}$ 唯一表示时的权重，就是向量 $\vec{x}$ 在这个基下的**坐标**$\left[\vec{x}\right]_\mathcal{B} \in \mathbb{R^p}, if\ dimH = p$。  
+主干2脉络中，主线是**子空间**的**基**，**基**的大小（size，即所含向量个数）就是子空间的**维度**。用**基**唯一表示时的权重即为**坐标**。  
   
-考虑映射 $T:H \rightarrow \mathbb{R^p}, dimH=p, \mathcal{B}\ is\ a\ basis\ of\ H$，那么有
+### 线性空间
+完整的**线性空间**定义：定义在**域** $F$ 上的非空集合 $V$，：
+* 定了**向量加法**，$V \times V \righarrow V $，满足
+    - $V$ 中存在零元素
+    - $V$ 可定义关于向量加法的负元素
+    - 向量加法具有结合律
+    - 向量加法具有交换率
+* 定了**数量乘法**，$F \times V \righarrow V $，满足
+    - $F$ 的乘法单位元，使得数量乘法映射成为恒等映射
+    - 对向量加法满足分配律
+    - 对域 $F$ 的加法满足分配律
+    - 对域 $F$ 的乘法满足结合律
+  
+完整的 $V$ 的**子空间** $H$ 的定义:
+* 包含 $V$ 的 $0$ 向量  
+* $H$ 对 $V$ 的加法和数乘封闭  
+
+由此顺利引入**向量组张成的子空间** $span(\mathcal{B})$ 的概念。  
+一个子空间 $H$ 的任一组**基**都是能互相表示(等价)的，而且能够张成 $H$ 的 $dimH$ 个向量，就是 $H$ 的一组基。
+
+### 同构/同构映射
+**同构映射**是指**保持结构的双射**，即：  
+考虑定义了 $+$ 运算的群 $G$ 和定义了 $\times$ 运算的群 $F$，有 $\vec{a}, \vec{b} \in G, T(\vec{a}), T(\vec{b}) \in F$。若 $one-one \  Mapping \  T:G \rightarrow F$，满足 $T(\vec{a} + \vec{b}) = T(\vec{a}) \times T(\vec{b})$，称 $T$ 是一个同构映射，群 $G$ 和 $F$ 同构，记作 $G \cong F$。  
+  
+同理，线性空间之间的**同构**指：同一个域上定义的两个线性空间之间，存在保持向量加法和数乘的双射。  
+  
+线性空间同构的充要条件：
+* 域F上两个有限维的线性空间 $G$ 和 $F$，则 $G$ 和 $F$ 同构 $\leftrightarrow$ $G$ 和 $F$ 维数相同。   
+  
+#### 子空间和坐标空间之间的同构关系
+考虑 $dim H = p$，向量 $\vec{x} \in subspace\ H \subset \mathbb{R^m}$ 被其基 $\mathcal{B}$ 唯一表示时的权重，就是向量 $\vec{x}$ 在这个基下的**坐标向量**，简称**坐标** $\left[\vec{x}\right]_\mathcal{B} \in \mathbb{R^p}$。  
+  
+考虑映射 $T:H \rightarrow \mathbb{R^p}, \mathcal{B}\ is\ a\ basis\ of\ H$，
 ```math
 T(\vec{x}) = \left[\vec{x}\right]_{\mathcal{B}}
 ```
-即将一个 $H$ 中的向量映射到 基basis下的坐标向量。易证这是一个保持**加法**和**数乘**运算的**同构映射**。所以 $H$ “像是” $\mathbb{R^p}$，尽管 $H$ 中的元素的分量数目可能是超过 $p$的。  
-  
-矩阵 $A$ 的**列空间**和**零空间**的**维度**和**基**，都已经知道怎么计算。  
-  
-一个子空间 $H$ 的任一组**基**都是能互相表示(等价)的，而且能够张成 $H$ 的 $dimH$ 个向量，就是 $H$ 的一组基。
-  
-### 线性空间
-完整的**线性空间** $V$ 的定义(同时需要一个**域**F)：
-* 一个非空集合 $V$，两个运算（加法和数乘）
-* 运算满足十条法则  
-  
-完整的**子空间** $H$ 的定义:
-* 包含 $0$ 向量
-* 对 $V$ 的加法和数乘封闭  
+即将一个 $H$ 中的向量映射到 基basis下的坐标向量。易证这是一个保持**加法**和**数乘**运算的**同构映射**，即 $H \cong \mathbb{R^p}$。形象地理解，有 $H$ “像是” $\mathbb{R^p}$，尽管 $H$ 中的元素的分量数目可能是超过 $p$的。  
+    
+### 矩阵的零空间和列空间/线性映射的kernel和range
+在前述中已经介绍了矩阵 $A$ 的**列空间Col(A)**和**零空间Nul(A)**。  
+在这里，引入概念矩阵 $A \in \mathbb{R^{m,n}}$ 的**行空间Row(A)**，即 $A$ 的行向量组张成的空间，是 $\mathbb{R^n}$ 的一个子空间。
+矩阵 $A$ 的echelon form $U$ 的非零行是它的一个**基**（注意这里是 $U$ 的非零行，跟列空间不同，列空间的基是从 $A$ 中选 $U$ 的主元所在列）。  
 
-由此也引入了**向量组张成的子空间** $span(\mathcal{B})$ 的概念。  
-  
-矩阵 $A \in \mathbb{R^{m,n}}$ 的**行空间Row Space**：  
-行向量组张成的空间，是 $\mathbb{R^n}$ 的一个子空间。矩阵 $A$ 的echelon form $U$ 的非零行是它的一个**基**（注意这里是 $U$ 的非零行，跟列空间不同，列空间的基是从 $A$ 中选 $U$ 的主元所在列）。
+矩阵 $A$ 的**零空间**和**列空间**的**维度**和**基**，都已经知道怎么计算：
+* 零空间 Nul(A)：求解矩阵方程 $A\vec{x} = \vec{0}$，等价于 $U\vec{x} = \vec{0}$，把主元和自由元都用自由元表示，表示的系数矩阵的列向量组就是 Nul(A) 的一个基，自由元个数 $n - rank(A)$ 就是 Nul(A) 的维度。  
+* 列空间 Col(A)：对 $A$ 作初等行变换至阶梯型矩阵 echelon form $U$，主元所在列（从 $A$ 中找）就是 Col(A) 的一个基，非零行数量等于 $rank(A)$ 就是 Col(A) 的维度。  
 
----
-在这里把矩阵 $A$ 的**零空间Null Space** $Nul(A)$ 和列空间**Col Space** $Col(A)$重新理解一遍（其实没什么变化）。  
-
-但是如果从映射的视角出发：  
-考虑映射 $T:\mathbb{R^n} \rightarrow \mathbb{R^m},\ with\ matrix\ A \in \mathbb{R^{m,n}}$，那么
-1. 它的零空间 $Nul(A)$是 $domain\ \mathbb{R^n}$ 的一个子空间，代表这个子空间中的向量在映射 $T$ 下都被映射到了 $codomain\ \mathbb{R^m}$ 的 $\vec{0}$。
-2. 它的列空间 $Col(A)$是 $codomain\ \mathbb{R^m}$ 的一个子空间，可以记作 $span(\left[\vec{a}_1, \vec{a}_2, \cdots, \vec{a}_n\right])$，代表映射T的值域 $range$ 。  
+如果从**线性映射**的视角出发：  
+考虑线性映射 $T:\mathbb{R^n} \rightarrow \mathbb{R^m},\ with\ matrix\ A \in \mathbb{R^{m,n}}$，那么
+1. 零空间 $Nul(A)$是 $domain\ \mathbb{R^n}$ 的一个子空间，代表这个子空间中的向量在映射 $T$ 下都被映射到了 $codomain\ \mathbb{R^m}$ 的 $\vec{0}$。
+2. 列空间 $Col(A)$是 $codomain\ \mathbb{R^m}$ 的一个子空间，可以记作 $span(\left[\vec{a}_1, \vec{a}_2, \cdots, \vec{a}_n\right])$，代表映射T的在 $codomain\ \mathbb{R^m}$ 的最大可达范围（值域）。  
   
-通过探讨映射 $T$ 是否是单射，可以得出：
-* $rank\ A = n$
-* $A$ 的列向量组线性无关
-* $A\vec{x} = \vec{0}$ 只有0解  
-
-这三个相互等价的条件时，映射 $T$ 是单射，即 $Nul(A) = set(\vec{0})$ 。
+* 通过探讨映射 $T$ 是否是单射，得出：当 $T$ 是单射时，有
+    - $rank\ A = n$
+    - $A$ 的列向量组线性无关
+    - $A\vec{x} = \vec{0}$ 只有0解  
+    
+  这三个相互等价的条件。此时 $Nul(A) = set(\vec{0})$ 。
   
-通过探讨映射 $T$ 是否是满射，可以得出：
-* $rank\ A = m$
-* $A$ 的列向量组张成 $\mathbb{R^m}$（记住 $dim\ \mathbb{R^m} = m$）
+* 通过探讨映射 $T$ 是否是满射，得出：当 $T$ 是满射时，有
+    - $rank\ A = m$
+    - $A$ 的列向量组张成 $\mathbb{R^m}$（记住 $dim\ \mathbb{R^m} = m$）  
+    
+  这两个相互等价的条件。此时 $Col(A) = \mathbb{R^m}$ 。
   
-这两个相互等价的条件时，映射 $T$ 是满射，即 $Col(A) = \mathbb{R^m}$ 。
-  
-#### 线性映射
-如果将线性映射的概念从**数值向量空间**之间的映射，推广到**线性空间**之间的映射 $T$，那么相应地，
+#### kernel和range
+如果将线性映射的概念从**数值向量空间**之间的映射，推广到广义**线性空间**之间的映射 $T$，那么相应地，
 * 把 $T$ 的“零空间” $Nul(T)$ 定义为 $T$ 的**kernel**，是**domain**的子空间：映射 $T$ 把kernel中的元素 $\vec{v}$ 映射到codomain的 $\vec{0}$ 元素
 * 把 $T$ 的“列空间” $Col(T)$ 定义为 $T$ 的**range**，是**codomain**的子空间：对于range中的元素 $\vec{u}$，能从domain中找到对应元素 $\vec{v}$，使得 $T(\vec{v})=\vec{u}$
   
----  
 
-#### 基/坐标/维度/秩
+### 基/坐标/维度/秩
 对于无限维线性空间，线性代数中不作过多研究，仅需知道它的维度定义为无限。 
   
-对于**有限维线性空间**，即可以由有限个向量张成的**线性空间**下，**线性组合**、**线性相关/无关**、**张成span**、**极大线性无关组**的定义都如出一辙，从而**基**和**坐标**的定义和性质也如出一辙：  
+对于**有限维线性空间**，即可以由有限个向量张成的**线性空间**，关于其向量的**线性组合**、**线性相关/无关**、**张成span**、**极大线性无关组**的定义都和上述如出一辙，从而**基**和**坐标**的定义和性质也相同：  
   
-考虑线性空间 $V$ 的一个基
+考虑线性空间 $V$ 的一个**基**
 ```math
 \mathcal{B} = \left[\vec{b}_1,\cdots,\vec{b}_n\right]
 ```
@@ -221,16 +275,16 @@ T(\vec{x}) = \left[\vec{x}\right]_{\mathcal{B}}
 ```math
 \vec{x} = \sum_{i=1}^{n}c_i\ \vec{b}_i
 ```
-把权重按序表示成列向量 $\left[c_1,\cdots,c_n\right]^T$，即是 $\vec{x}$ 相对基 $base\ \mathcal{B}$ 的坐标，写作
+把权重按序表示成列向量 $\left[c_1,\cdots,c_n\right]^T$，即是 $\vec{x}$ 相对基 $base\ \mathcal{B}$ 的**坐标**，写作
 $\left[\vec{x}\right]_\mathcal{B} \in \mathbb{R^n}$。  
   
-坐标映射coordinates-mapping
+#### 坐标映射coordinates-mapping
 ```math
 T:V \rightarrow \mathbb{R^n},\ T(\vec{x})=\left[\vec{x}\right]_\mathcal{B}
 ```
-是一个双射线性映射，也是一个关于加法和数乘的**同构**映射，线性空间 $V$ 和 $\mathbb{R^n}$ 同构。同构意味着坐标映射保持加法和数乘运算，即意味着保持线性相关/无关的关系。
+是一个关于向量加法和数乘的**同构映射**，线性空间 $V$ 和 $\mathbb{R^n}$ 同构。同构意味着坐标映射保持加法和数乘运算，即意味着**线性相关/线性无关等关系在同构空间中也是保持的**。
 
----
+## 回到n维数值向量空间：看坐标转换及其相关的意义
 
 当 $V = \mathbb{R^n}$ 时，根据「坐标是一个列向量，**基**以**坐标**为权重作**线性组合**得到原向量」的原则，可得此时这是一个matrix-vector product运算：
 ```math
