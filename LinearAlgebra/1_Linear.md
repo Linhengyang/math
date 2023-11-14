@@ -234,27 +234,25 @@ T(\vec{x}) = \left[\vec{x}\right]_{\mathcal{B}}
 在这里，引入概念矩阵 $A \in \mathbb{R^{m,n}}$ 的**行空间Row(A)**，即 $A$ 的行向量组张成的空间，是 $\mathbb{R^n}$ 的一个子空间。
 矩阵 $A$ 的echelon form $U$ 的非零行是它的一个**基**（注意这里是 $U$ 的非零行，跟列空间不同，列空间的基是从 $A$ 中选 $U$ 的主元所在列）。  
 
-矩阵 $A$ 的**列空间**和**零空间**的**维度**和**基**，都已经知道怎么计算：
-* 对 $A$ 作初等行变换至阶梯型矩阵 echelon form $U$，主元所在列（从 $A$ 中找）就是 Col(A) 的一个基，非零行数量等于 $rank(A)$ 就是 Col(A) 的维度。
-* 求解矩阵方程 $A\vec{x} = \vec{0}$，等价于 $U\vec{x} = \vec{0}$，把主元和自由元都用自由元表示，表示的系数矩阵的列向量组就是 Nul(A) 的一个基，自由元个数 $n - rank(A)$ 就是 Nul(A) 的维度。  
+矩阵 $A$ 的**零空间**和**列空间**的**维度**和**基**，都已经知道怎么计算：
+* 零空间 Nul(A)：求解矩阵方程 $A\vec{x} = \vec{0}$，等价于 $U\vec{x} = \vec{0}$，把主元和自由元都用自由元表示，表示的系数矩阵的列向量组就是 Nul(A) 的一个基，自由元个数 $n - rank(A)$ 就是 Nul(A) 的维度。  
+* 列空间 Col(A)：对 $A$ 作初等行变换至阶梯型矩阵 echelon form $U$，主元所在列（从 $A$ 中找）就是 Col(A) 的一个基，非零行数量等于 $rank(A)$ 就是 Col(A) 的维度。  
 
-如果从线性映射的视角出发：  
+如果从**线性映射**的视角出发：  
 考虑线性映射 $T:\mathbb{R^n} \rightarrow \mathbb{R^m},\ with\ matrix\ A \in \mathbb{R^{m,n}}$，那么
-1. 它的零空间 $Nul(A)$是 $domain\ \mathbb{R^n}$ 的一个子空间，代表这个子空间中的向量在映射 $T$ 下都被映射到了 $codomain\ \mathbb{R^m}$ 的 $\vec{0}$。
-2. 它的列空间 $Col(A)$是 $codomain\ \mathbb{R^m}$ 的一个子空间，可以记作 $span(\left[\vec{a}_1, \vec{a}_2, \cdots, \vec{a}_n\right])$，代表映射T的在 $codomain\ \mathbb{R^m}$ 的最大可达范围（值域）。  
+1. 零空间 $Nul(A)$是 $domain\ \mathbb{R^n}$ 的一个子空间，代表这个子空间中的向量在映射 $T$ 下都被映射到了 $codomain\ \mathbb{R^m}$ 的 $\vec{0}$。
+2. 列空间 $Col(A)$是 $codomain\ \mathbb{R^m}$ 的一个子空间，可以记作 $span(\left[\vec{a}_1, \vec{a}_2, \cdots, \vec{a}_n\right])$，代表映射T的在 $codomain\ \mathbb{R^m}$ 的最大可达范围（值域）。  
   
-通过探讨映射 $T$ 是否是单射，得出：当 $T$ 是单射时，有
-* $rank\ A = n$
-* $A$ 的列向量组线性无关
-* $A\vec{x} = \vec{0}$ 只有0解  
+* 通过探讨映射 $T$ 是否是单射，得出：当 $T$ 是单射时，有
+    - $rank\ A = n$
+    - $A$ 的列向量组线性无关
+    - $A\vec{x} = \vec{0}$ 只有0解  
+  这三个相互等价的条件。此时 $Nul(A) = set(\vec{0})$ 。
   
-这三个相互等价的条件。此时 $Nul(A) = set(\vec{0})$ 。
-  
-通过探讨映射 $T$ 是否是满射，得出：当 $T$ 是满射时，有
-* $rank\ A = m$
-* $A$ 的列向量组张成 $\mathbb{R^m}$（记住 $dim\ \mathbb{R^m} = m$）  
-  
-这两个相互等价的条件。此时 $Col(A) = \mathbb{R^m}$ 。
+* 通过探讨映射 $T$ 是否是满射，得出：当 $T$ 是满射时，有
+    - $rank\ A = m$
+    - $A$ 的列向量组张成 $\mathbb{R^m}$（记住 $dim\ \mathbb{R^m} = m$）  
+  这两个相互等价的条件。此时 $Col(A) = \mathbb{R^m}$ 。
   
 #### kernel和range
 如果将线性映射的概念从**数值向量空间**之间的映射，推广到广义**线性空间**之间的映射 $T$，那么相应地，
