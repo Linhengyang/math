@@ -247,11 +247,13 @@ T(\vec{x}) = \left[\vec{x}\right]_{\mathcal{B}}
     - $rank\ A = n$
     - $A$ 的列向量组线性无关
     - $A\vec{x} = \vec{0}$ 只有0解  
+    
   这三个相互等价的条件。此时 $Nul(A) = set(\vec{0})$ 。
   
 * 通过探讨映射 $T$ 是否是满射，得出：当 $T$ 是满射时，有
     - $rank\ A = m$
-    - $A$ 的列向量组张成 $\mathbb{R^m}$（记住 $dim\ \mathbb{R^m} = m$）
+    - $A$ 的列向量组张成 $\mathbb{R^m}$（记住 $dim\ \mathbb{R^m} = m$）  
+    
   这两个相互等价的条件。此时 $Col(A) = \mathbb{R^m}$ 。
   
 #### kernel和range
