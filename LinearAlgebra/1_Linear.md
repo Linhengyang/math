@@ -251,8 +251,8 @@ T(\vec{x}) = \left[\vec{x}\right]_{\mathcal{B}}
   
 * 通过探讨映射 $T$ 是否是满射，得出：当 $T$ 是满射时，有
     - $rank\ A = m$
-    - $A$ 的列向量组张成 $\mathbb{R^m}$（记住 $dim\ \mathbb{R^m} = m$）  
-这两个相互等价的条件。此时 $Col(A) = \mathbb{R^m}$ 。
+    - $A$ 的列向量组张成 $\mathbb{R^m}$（记住 $dim\ \mathbb{R^m} = m$）
+  这两个相互等价的条件。此时 $Col(A) = \mathbb{R^m}$ 。
   
 #### kernel和range
 如果将线性映射的概念从**数值向量空间**之间的映射，推广到广义**线性空间**之间的映射 $T$，那么相应地，
