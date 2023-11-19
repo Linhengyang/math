@@ -269,8 +269,8 @@ T(\vec{x}) = \left[\vec{x}\right]_{\mathcal{B}}
 
 #### 基定理 Base theorem
 考虑 $\mathbb{R^{n}}$ 的线性子空间 $H$，有 $rank(H) = k$，则有：
-* 任一个**线性无关**的向量组 $\left\{\vec{h_{1}},\vec{h_{2}},\cdot,\vec{h_{k}} \right\}$ 是 $H$ 的一个**基**  
-* 任一个向量组 $\left\{\vec{h_{1}},\vec{h_{2}},\cdot,\vec{h_{k}} \right\}$ ，若它可以**张成** $H$，则它是 $H$ 的一个**基**
+* 任一个**线性无关**的向量组 $\left\\{\vec{h_1},\vec{h_2},\cdots, \vec{h_k} \right\\}$ 是 $H$ 的一个**基**  
+* 任一个向量组 $\left\\{\vec{h_1},\vec{h_2},\cdots, \vec{h_k} \right\\}$ ，若它可以**张成** $H$，则它是 $H$ 的一个**基**
 
 #### 坐标/坐标映射 coordinates-mapping
 考虑线性空间 $V$ 的一个**基**
