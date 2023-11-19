@@ -265,8 +265,14 @@ T(\vec{x}) = \left[\vec{x}\right]_{\mathcal{B}}
 ### 基/坐标/维度/秩
 对于无限维线性空间，线性代数中不作过多研究，仅需知道它的维度定义为无限。 
   
-对于**有限维线性空间**，即可以由有限个向量张成的**线性空间**，关于其向量的**线性组合**、**线性相关/无关**、**张成span**、**极大线性无关组**的定义都和上述如出一辙，从而**基**和**坐标**的定义和性质也相同：  
-  
+对于**有限维线性空间**，即可以由有限个向量张成的**线性空间**，关于其向量的**线性组合**、**线性相关/无关**、**张成span**、**极大线性无关组**的定义都和上述如出一辙，从而**基**和**坐标**的定义和性质也相同：即通过极大线性无关组定义向量组的基，然后通过向量组的基定义张成子空间的基。  
+
+#### 基定理 Base theorem
+考虑 $\mathbb{R^{n}}$ 的线性子空间 $H$，有 $rank(H) = k$，则有：
+* 任一个**线性无关**的向量组 $\left{\vec{h_{1}},\vec{h_{2}},\cdot,\vec{h_{k}} \right}$ 是 $H$ 的一个**基**  
+* 任一个向量组 $\left{\vec{h_{1}},\vec{h_{2}},\cdot,\vec{h_{k}} \right}$ ，若它可以**张成** $H$，则它是 $H$ 的一个**基**
+
+#### 坐标/坐标映射 coordinates-mapping
 考虑线性空间 $V$ 的一个**基**
 ```math
 \mathcal{B} = \left[\vec{b}_1,\cdots,\vec{b}_n\right]
@@ -278,7 +284,7 @@ T(\vec{x}) = \left[\vec{x}\right]_{\mathcal{B}}
 把权重按序表示成列向量 $\left[c_1,\cdots,c_n\right]^T$，即是 $\vec{x}$ 相对基 $base\ \mathcal{B}$ 的**坐标**，写作
 $\left[\vec{x}\right]_\mathcal{B} \in \mathbb{R^n}$。  
   
-#### 坐标映射coordinates-mapping
+考虑线性空间 $V$ 到 $\mathbb{R^n}$ 的**坐标映射**
 ```math
 T:V \rightarrow \mathbb{R^n},\ T(\vec{x})=\left[\vec{x}\right]_\mathcal{B}
 ```
