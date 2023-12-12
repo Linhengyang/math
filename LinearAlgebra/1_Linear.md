@@ -342,7 +342,16 @@ Consider\ \mathcal{B}\ as\ set(\vec{b}_1,\cdots,\vec{b}_n),\ P_\mathcal{C \lefta
 前面给出过一个结论，即：任何一个线性映射 $T:\mathbb{R^n} \rightarrow \mathbb{R^m}$ 一定和一个矩阵 $A\in\mathbb{R}^{m,n}$ 一一对应，而且**映射的像就是矩阵乘以向量元素的结果**。现在使用**坐标**的角度，来证明这个结论。注意定义坐标不需要当前这个结论，所以并没有循环论证。  
   
 考虑一个从 $V$ 到 $W$ 的线性映射 $T: V \rightarrow W$，有 $\vec{x} \rightarrow T(\vec{x})$。这里 $dimV = n$，基 $\mathcal{B} = \\{\vec{b_1},\vec{b_2}, \cdots, \vec{b_n}\\}$ 是 $V$ 的一个基， 基 $\mathcal{C} = \\{\vec{c_1},\vec{c_2}, \cdots, \vec{c_m}\\}$ 是 $W$ 的一个基。  
-考虑 $x = r_1\vec{b_1}+r_2\vec{b_2}+\cdots+r_n\vec{b_n}$, 有坐标向量 $\\[\vec{x}\\]_\matchcal{B} = \\[r_1,r_2,\cdots \r_n\\]^{T}$。线性映射后的像image有 $T(\vec{x}) = T(r_1\vec{b_1}+r_2\vec{b_2}+\cdots+r_n\vec{b_n}) = r_1T(\vec{b_1})+r_2T(\vec{b_2})+\cdots+r_nT(\vec{b_n})$。考虑像image在基 $\mathcal{C}$ 下的坐标向量，由于坐标映射是线性的，可得 $\left[T(\vec{x})\right]_\matchcal{C} = r1\left[T(\vec{b_1})\right]_\matchcal{C}+r_2\left[T(\vec{b_2})\right]_\mathcal{C}+\cdots+r_n\left[T(\vec{b_n})\right]_\mathcal{C}$。
+考虑 $x = r_1\vec{b_1}+r_2\vec{b_2}+\cdots+r_n\vec{b_n}$, 其坐标向量为：
+```math
+$\left[\vec{x}\right]_\matchcal{B} = \begin{bmatrix}
+r_1\\
+r_2\\
+\vdots
+\r_n
+\end{bmatrix}
+```
+线性映射后的像image有 $T(\vec{x}) = T(r_1\vec{b_1}+r_2\vec{b_2}+\cdots+r_n\vec{b_n}) = r_1T(\vec{b_1})+r_2T(\vec{b_2})+\cdots+r_nT(\vec{b_n})$。考虑像image在基 $\mathcal{C}$ 下的坐标向量，由于坐标映射是线性的，可得 $\left[T(\vec{x})\right]_\matchcal{C} = r1\left[T(\vec{b_1})\right]_\matchcal{C}+r_2\left[T(\vec{b_2})\right]_\mathcal{C}+\cdots+r_n\left[T(\vec{b_n})\right]_\mathcal{C}$。
   
 ### 映射/矩阵的相似
 **坐标**概念的建立，有一个很大的意义在于，原**线性空间** $V,\ dimV = n$ 中的向量可能不方便用数字表示，无法参与进一步的分析（比如研究 $V$ 到自身的线性映射）。但是如果去研究与之**同构**的 $\mathbb{R^n}$，即**坐标向量**和**坐标空间**，就方便了。特别地，如果研究从 $V$ 到 $V$ 的线性映射，就可以转而研究从坐标空间 $\mathbb{R^n}$ 到 $\mathbb{R^n}$ 的线性映射，即一个形状为(n,n)的方阵。  
