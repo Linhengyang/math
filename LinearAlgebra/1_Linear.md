@@ -362,6 +362,15 @@ r_2\\
 r_n
 \end{bmatrix}
 ```
+令：
+```math
+\left[\left[T(\vec{b_1})\right]_\mathcal{C}, \left[T(\vec{b_2})\right]_\mathcal{C}, \cdots, \left[T(\vec{b_n})\right]_\mathcal{C}\right] = M \in R^{m,n}
+```
+可得
+```math
+\left[T(\vec{x})\right]_\mathcal{C} = M \left[\vec{x}\right]_mathcal{B}
+```
+综上：线性映射意味着一个 $n$ 维线性空间（定义域空间）到 $m$ 维线性空间（陪域空间）的映射。同步地，向量 $\vec{x}$ 在定义域空间的基下的坐标 $[\vec{x}]_mathcal{B}$，左乘一个 $m$ 行 $n$ 列的矩阵 $M$，得到像image $T(\vec{x})$ 在陪域空间的的坐标 $[T(\vec{x})_mathcal{C}]$。这里对应的系数矩阵是**定义域线性空间的基的基向量映射到陪域空间后，它们的像image在陪域空间的基下的坐标**。
   
 ### 映射/矩阵的相似
 **坐标**概念的建立，有一个很大的意义在于，原**线性空间** $V,\ dimV = n$ 中的向量可能不方便用数字表示，无法参与进一步的分析（比如研究 $V$ 到自身的线性映射）。但是如果去研究与之**同构**的 $\mathbb{R^n}$，即**坐标向量**和**坐标空间**，就方便了。特别地，如果研究从 $V$ 到 $V$ 的线性映射，就可以转而研究从坐标空间 $\mathbb{R^n}$ 到 $\mathbb{R^n}$ 的线性映射，即一个形状为(n,n)的方阵。  
