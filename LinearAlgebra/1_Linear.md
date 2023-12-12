@@ -353,8 +353,14 @@ r_n
 ```
 线性映射 $T$ 的像image有 $T(\vec{x}) = T(r_1\vec{b_1}+r_2\vec{b_2}+\cdots+r_n\vec{b_n}) = r_1T(\vec{b_1})+r_2T(\vec{b_2})+\cdots+r_nT(\vec{b_n})$。考虑其在基 $\mathcal{C}$ 下的坐标向量，由于坐标映射是线性的，可得：
 ```math
-\left[T(\vec{x})\right]_\matchcal{C} = \left[r_1T(\vec{b_1})+r_2T(\vec{b_2})+\cdots+r_nT(\vec{b_n})\right]_\mathcal{C}
-r1\left[T(\vec{b_1})\right]_\matchcal{C}+r_2\left[T(\vec{b_2})\right]_\mathcal{C}+\cdots+r_n\left[T(\vec{b_n})\right]_\mathcal{C}
+\left[T(\vec{x})\right]_\mathcal{C} = \left[r_1T(\vec{b_1})+r_2T(\vec{b_2})+\cdots+r_nT(\vec{b_n})\right]_\mathcal{C} = 
+r1\left[T(\vec{b_1})\right]_\mathcal{C}+r_2\left[T(\vec{b_2})\right]_\mathcal{C}+\cdots+r_n\left[T(\vec{b_n})\right]_\mathcal{C} = 
+\left[\left[T(\vec{b_1})\right]_\mathcal{C}, \left[T(\vec{b_2})\right]_\mathcal{C}, \cdots, \left[T(\vec{b_n})\right]_\mathcal{C}\right] \begin{bmatrix}
+r_1\\
+r_2\\
+\vdots\\
+r_n
+\end{bmatrix}
 ```
   
 ### 映射/矩阵的相似
