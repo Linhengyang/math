@@ -371,6 +371,7 @@ r_n
 \left[T(\vec{x})\right]_\mathcal{C} = M \left[\vec{x}\right]_\mathcal{B}
 ```
 综上，线性映射意味着一个 $n$ 维线性空间（定义域空间）到 $m$ 维线性空间（陪域空间）的映射。
+同步地作映射，向量 $\vec{x}$ 在定义域空间的基下的坐标
 $\left[\vec{x}\right]_\mathcal{B}$
 ```
 同步地作映射，向量 $\vec{x}$ 在定义域空间的基下的坐标 $\left[\vec{x}\right]_\mathcal{B}$ 左乘一个 $m$ 行 $n$ 列的系数矩阵 $M$，得到像image $T(\vec{x})$ 在陪域空间的基下的坐标 $\left[T(\vec{x})\right]_\mathcal{C}$ 了。这里对应的系数矩阵是**定义域线性空间的基向量映射到陪域空间后，它们的像image在陪域空间的基下的坐标**。
