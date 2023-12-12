@@ -344,10 +344,10 @@ Consider\ \mathcal{B}\ as\ set(\vec{b}_1,\cdots,\vec{b}_n),\ P_\mathcal{C \lefta
 考虑一个从 $V$ 到 $W$ 的线性映射 $T: V \rightarrow W$，有 $\vec{x} \rightarrow T(\vec{x})$。这里 $dimV = n$，基 $\mathcal{B} = \\{\vec{b_1},\vec{b_2}, \cdots, \vec{b_n}\\}$ 是 $V$ 的一个基， 基 $\mathcal{C} = \\{\vec{c_1},\vec{c_2}, \cdots, \vec{c_m}\\}$ 是 $W$ 的一个基。  
 考虑 $x = r_1\vec{b_1}+r_2\vec{b_2}+\cdots+r_n\vec{b_n}$, 其坐标向量为：
 ```math
-$\left[\vec{x}\right]_\matchcal{B} = \begin{bmatrix}
+\left[\vec{x}\right]_\matchcal{B} = \begin{bmatrix}
 r_1\\
 r_2\\
-\vdots
+\vdots\\
 \r_n
 \end{bmatrix}
 ```
