@@ -338,7 +338,7 @@ Consider\ \mathcal{B}\ as\ set(\vec{b}_1,\cdots,\vec{b}_n),\ P_\mathcal{C \lefta
   
 
 ## 后述
-### 线性映射和矩阵为什么
+### 线性映射为什么是矩阵
 前面给出过一个结论，即：任何一个线性映射 $T:\mathbb{R^n} \rightarrow \mathbb{R^m}$ 一定和一个矩阵 $A\in\mathbb{R}^{m,n}$ 一一对应，而且**映射的像就是矩阵乘以向量元素的结果**。现在使用**坐标**的角度，来证明这个结论。注意定义坐标不需要当前这个结论，所以并没有循环论证。  
   
 考虑一个从 $V$ 到 $W$ 的线性映射 $T: V \rightarrow W$，有 $\vec{x} \rightarrow T(\vec{x})$。这里 $dimV = n$，基 $\mathcal{B} = \\{\vec{b_1},\vec{b_2}, \cdots, \vec{b_n}\\}$ 是 $V$ 的一个基， 基 $\mathcal{C} = \\{\vec{c_1},\vec{c_2}, \cdots, \vec{c_m}\\}$ 是 $W$ 的一个基。  
@@ -378,7 +378,7 @@ M \left[\vec{x}\right]_\mathcal{B} = \left[ T(\vec{x}) \right]_\mathcal{C}
 ```
 这里对应的系数矩阵是**定义域线性空间的基向量映射到陪域空间后，它们的像image在陪域空间的基下的坐标**。
   
-### 映射/矩阵的相似
+### 为什么映射/矩阵有相似
 **坐标**概念的建立，有一个很大的意义在于，原**线性空间** $V,\ dimV = n$ 中的向量可能不方便用数字表示，无法参与进一步的分析（比如研究 $V$ 到自身的线性映射）。但是如果去研究与之**同构**的 $\mathbb{R^n}$，即**坐标向量**和**坐标空间**，就方便了。特别地，如果研究从 $V$ 到 $V$ 的线性映射，就可以转而研究从坐标空间 $\mathbb{R^n}$ 到 $\mathbb{R^n}$ 的线性映射，即一个形状为(n,n)的方阵。  
   
 甚至有时候，一个**基** $\mathcal{B}$ 得到的坐标空间 $\mathbb{R^n}\_{\mathcal{B}}$ 可能还「不够好」，我们会换一个**基** $\mathcal{C}$，即换一个坐标空间 $\mathbb{R^n}\_{\mathcal{C}}$。  
