@@ -85,7 +85,7 @@ we\ have\ image\ of\ \vec{x}\ as\ T(\vec{x}),\ \ set\{T(\vec{x}) \vert\ \forall 
   
 那么此时 T 是一个**线性映射**。  
   
-可以证明，任何一个线性映射 T 一定和一个矩阵 $A\in\mathbb{R}^{m,n}$ 一一对应，而且**映射的像就是矩阵乘以向量元素的结果**。也就是说，矩阵可以理解为线性映射。  
+可以证明，任何一个线性映射 $T:\mathbb{R^n} \rightarrow \mathbb{R^m}$ 一定和一个矩阵 $A\in\mathbb{R}^{m,n}$ 一一对应，而且**映射的像就是矩阵乘以向量元素的结果**。也就是说，矩阵可以理解为线性映射。  
 
 ## 主干1综述
 用**线性映射**重新理解**矩阵**之后，可以根据映射的性质，很快给出系数矩阵相应的结论，具体来说，考虑线性映射
@@ -102,8 +102,8 @@ T:\mathbb{R^n}\rightarrow\mathbb{R^m}\ \ \ with\ \ \ matrix\ \ \ A\ \in\ \mathbb
 综上，开始需要研究**逆映射**，即**可逆矩阵**和**逆矩阵**。具体地说，为了求解矩阵方程 $A\vec{x}=\vec{b}$，需要找到 $P\ A$ 为阶梯型矩阵的可逆矩阵 $P$。从最简单的可逆矩阵--初等矩阵入手。  
   
 ### 可逆矩阵/逆映射
-对于矩阵 $A \in \mathbb{R^n}$，如果存在矩阵 $B \in \mathbb{R^n}$，使得 $B \dot A = I$，那么称矩阵 $B$ 是矩阵 $A$ 的**逆矩阵**。  
-如果矩阵 $A$ 的逆矩阵存在，那么它是唯一的，记为 $A^{-1}$，有 $A^{-1} \dot A = A \dot A^{-1} = I$。  
+对于矩阵 $A \in \mathbb{R^n}$，如果存在矩阵 $B \in \mathbb{R^n}$，使得 $B A = I$，那么称矩阵 $B$ 是矩阵 $A$ 的**逆矩阵**。  
+如果矩阵 $A$ 的逆矩阵存在，那么它是唯一的，记为 $A^{-1}$，有 $A^{-1} A = A A^{-1} = I$。  
 逆矩阵代表逆映射，意味着原矩阵代表的线性映射可逆，意味着它是双射，即：矩阵 $A$ 可逆 等价于 $rank(A) = n$。  
   
 ### 最简单的可逆矩阵：初等矩阵
@@ -225,6 +225,9 @@ A = P^{-1}U = LU
   
 同理，线性空间之间的**同构**指：同一个域上定义的两个线性空间之间，存在保持向量加法和数乘的双射。  
   
+思考：线性映射也能保持运算，那么线性映射是同构映射吗？
+答：不是。同构映射要求该映射是「双射」  
+  
 线性空间同构的充要条件：
 * 域F上两个有限维的线性空间 $G$ 和 $F$，则 $G$ 和 $F$ 同构 $\leftrightarrow$ $G$ 和 $F$ 维数相同。   
   
@@ -240,7 +243,7 @@ T(\vec{x}) = \left[\vec{x}\right]_{\mathcal{B}}
 ### 矩阵的零空间和列空间/线性映射的kernel和range
 在前述中已经介绍了矩阵 $A$ 的**列空间Col(A)**和**零空间Nul(A)**。  
 在这里，引入概念矩阵 $A \in \mathbb{R^{m,n}}$ 的**行空间Row(A)**，即 $A$ 的行向量组张成的空间，是 $\mathbb{R^n}$ 的一个子空间。
-矩阵 $A$ 的echelon form $U$ 的非零行是它的一个**基**（注意这里是 $U$ 的非零行，跟列空间不同，列空间的基是从 $A$ 中选 $U$ 的主元所在列）。  
+矩阵 $A$ 的echelon form $U$ 的非零行是它的一个**基**（注意这里是 $U$ 的非零行，跟列空间不同，列空间的基是从 $A$ 中选 $U$ 的主元所在列。原因也很简单：因为 $U$ 是 $A$ 作初等行变换得到的，所以它们的行向量组互相等价，所以 $U$ 的一个基也是 $A$ 的基）。  
 
 矩阵 $A$ 的**零空间**和**列空间**的**维度**和**基**，都已经知道怎么计算：
 * 零空间 Nul(A)：求解矩阵方程 $A\vec{x} = \vec{0}$，等价于 $U\vec{x} = \vec{0}$，把主元和自由元都用自由元表示，表示的系数矩阵的列向量组就是 Nul(A) 的一个基，自由元个数 $n - rank(A)$ 就是 Nul(A) 的维度。  
@@ -296,7 +299,7 @@ $\left[\vec{x}\right]_\mathcal{B} \in \mathbb{R^n}$。
 ```math
 T:V \rightarrow \mathbb{R^n},\ T(\vec{x})=\left[\vec{x}\right]_\mathcal{B}
 ```
-是一个关于向量加法和数乘的**同构映射**，线性空间 $V$ 和 $\mathbb{R^n}$ 同构。同构意味着坐标映射保持加法和数乘运算，即意味着**线性相关/线性无关等关系在同构空间中也是保持的**。
+是一个关于向量加法和数乘的**同构映射**，线性空间 $V$ 和 $\mathbb{R^n}$ 同构。同构意味着坐标映射保持加法和数乘运算，即意味着**线性相关/线性无关等关系在同构空间中也是保持的**。这里要提一句，只有同构映射才能保持线性相关/线性无关等性质，因为同构映射保证是双射。普通的线性映射下，线性相关/线性无关等性质并不能保持。
 
 #### 回到n维数值向量空间：看坐标转换及其相关的意义
 
@@ -335,7 +338,47 @@ Consider\ \mathcal{B}\ as\ set(\vec{b}_1,\cdots,\vec{b}_n),\ P_\mathcal{C \lefta
   
 
 ## 后述
-### 映射/矩阵的相似
+### 线性映射为什么是矩阵
+前面给出过一个结论，即：任何一个线性映射 $T:\mathbb{R^n} \rightarrow \mathbb{R^m}$ 一定和一个矩阵 $A\in\mathbb{R}^{m,n}$ 一一对应，而且**映射的像就是矩阵乘以向量元素的结果**。现在使用**坐标**的角度，来证明这个结论。注意定义坐标不需要当前这个结论，所以并没有循环论证。  
+  
+考虑一个从 $V$ 到 $W$ 的线性映射 $T: V \rightarrow W$，有 $\vec{x} \rightarrow T(\vec{x})$。这里 $dimV = n$，基 $\mathcal{B} = \\{\vec{b_1},\vec{b_2}, \cdots, \vec{b_n}\\}$ 是 $V$ 的一个基， 基 $\mathcal{C} = \\{\vec{c_1},\vec{c_2}, \cdots, \vec{c_m}\\}$ 是 $W$ 的一个基。  
+考虑 $x = r_1\vec{b_1}+r_2\vec{b_2}+\cdots+r_n\vec{b_n}$, 其坐标向量为：
+```math
+\left[\vec{x}\right]_\mathcal{B} = \begin{bmatrix}
+r_1\\
+r_2\\
+\vdots\\
+r_n
+\end{bmatrix}
+```
+线性映射 $T$ 的像image有 $T(\vec{x}) = T(r_1\vec{b_1}+r_2\vec{b_2}+\cdots+r_n\vec{b_n}) = r_1T(\vec{b_1})+r_2T(\vec{b_2})+\cdots+r_nT(\vec{b_n})$。考虑其在基 $\mathcal{C}$ 下的坐标向量，由于坐标映射是线性的，可得：
+```math
+\left[T(\vec{x})\right]_\mathcal{C} = \left[r_1T(\vec{b_1})+r_2T(\vec{b_2})+\cdots+r_nT(\vec{b_n})\right]_\mathcal{C} = 
+r1\left[T(\vec{b_1})\right]_\mathcal{C}+r_2\left[T(\vec{b_2})\right]_\mathcal{C}+\cdots+r_n\left[T(\vec{b_n})\right]_\mathcal{C} = 
+\left[\left[T(\vec{b_1})\right]_\mathcal{C}, \left[T(\vec{b_2})\right]_\mathcal{C}, \cdots, \left[T(\vec{b_n})\right]_\mathcal{C}\right] \begin{bmatrix}
+r_1\\
+r_2\\
+\vdots\\
+r_n
+\end{bmatrix}
+```
+令：
+```math
+\left[\left[T(\vec{b_1})\right]_\mathcal{C}, \left[T(\vec{b_2})\right]_\mathcal{C}, \cdots, \left[T(\vec{b_n})\right]_\mathcal{C}\right] = M \in \mathcal{R}^{m,n}
+```
+可得
+```math
+\left[T(\vec{x})\right]_\mathcal{C} = M \left[\vec{x}\right]_\mathcal{B}
+```
+综上，线性映射意味着一个 $n$ 维线性空间（定义域空间）到 $m$ 维线性空间（陪域空间）的映射。
+同步地作映射，向量 $\vec{x}$ 在定义域空间的基下的坐标
+$\left[\vec{x}\right]_\mathcal{B}$ 左乘一个 $m$ 行 $n$ 列的系数矩阵 $M$ 后，得到像image $T(\vec{x})$ 在陪域空间的基下的坐标，即：
+```math
+M \left[\vec{x}\right]_\mathcal{B} = \left[ T(\vec{x}) \right]_\mathcal{C}
+```
+这里对应的系数矩阵是**定义域线性空间的基向量映射到陪域空间后，它们的像image在陪域空间的基下的坐标**。
+  
+### 为什么映射/矩阵有相似
 **坐标**概念的建立，有一个很大的意义在于，原**线性空间** $V,\ dimV = n$ 中的向量可能不方便用数字表示，无法参与进一步的分析（比如研究 $V$ 到自身的线性映射）。但是如果去研究与之**同构**的 $\mathbb{R^n}$，即**坐标向量**和**坐标空间**，就方便了。特别地，如果研究从 $V$ 到 $V$ 的线性映射，就可以转而研究从坐标空间 $\mathbb{R^n}$ 到 $\mathbb{R^n}$ 的线性映射，即一个形状为(n,n)的方阵。  
   
 甚至有时候，一个**基** $\mathcal{B}$ 得到的坐标空间 $\mathbb{R^n}\_{\mathcal{B}}$ 可能还「不够好」，我们会换一个**基** $\mathcal{C}$，即换一个坐标空间 $\mathbb{R^n}\_{\mathcal{C}}$。  
