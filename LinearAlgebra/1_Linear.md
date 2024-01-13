@@ -341,7 +341,7 @@ Consider\ \mathcal{B}\ as\ set(\vec{b}_1,\cdots,\vec{b}_n),\ P_\mathcal{C \lefta
 ### 线性映射为什么是矩阵
 前面给出过一个结论，即：任何一个线性映射 $T:\mathbb{R^n} \rightarrow \mathbb{R^m}$ 一定和一个矩阵 $A\in\mathbb{R}^{m,n}$ 一一对应，而且**映射的像就是矩阵乘以向量元素的结果**。现在使用**坐标**的角度，来证明这个结论。注意定义坐标不需要当前这个结论，所以并没有循环论证。  
   
-考虑一个从 $V$ 到 $W$ 的线性映射 $T: V \rightarrow W$，有 $\vec{x} \rightarrow T(\vec{x})$。这里 $dimV = n$，基 $\mathcal{B} = \\{\vec{b_1},\vec{b_2}, \cdots, \vec{b_n}\\}$ 是 $V$ 的一个基， 基 $\mathcal{C} = \\{\vec{c_1},\vec{c_2}, \cdots, \vec{c_m}\\}$ 是 $W$ 的一个基。  
+考虑一个从 $V$ 到 $W$ 的线性映射 $T: V \rightarrow W$，有 $\vec{x} \rightarrow T(\vec{x})$。这里 $dimV = n$，基 $\mathcal{B} = \\{\vec{b_1},\vec{b_2}, \cdots, \vec{b_n}\\}$ 是 $V$ 的一个基；还有 $dimW = m$，基 $\mathcal{C} = \\{\vec{c_1},\vec{c_2}, \cdots, \vec{c_m}\\}$ 是 $W$ 的一个基。  
 考虑 $x = r_1\vec{b_1}+r_2\vec{b_2}+\cdots+r_n\vec{b_n}$, 其坐标向量为：
 ```math
 \left[\vec{x}\right]_\mathcal{B} = \begin{bmatrix}
