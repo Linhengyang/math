@@ -39,9 +39,9 @@ b_{n}\\
 A\vec{x}=\vec{b}
 ```
 ### 线性组合
-用**线性组合**的观点去看线性方程组，无非 $\vec{b}$ 是 $A$ 的列向量组的线性组合。  
-有了**线性组合**的观点，就可以理解**生成/张成子空间**的概念，即向量组合的权重遍历数域。用**生成子空间**的观点去看矩阵方程，无非是 $\vec{b} \in span(\vec{a_1},\ \vec{a_2}\ \cdots \vec{a_n})$。  
-甚至可以用**线性组合**的观点重新看**matrix-vector product**，无非是矩阵列向量组的线性组合，权重是向量的元素。  
+用**线性组合**的观点去看线性方程组：即 $\vec{b}$ 是 $A$ 的列向量组的线性组合。  
+有了**线性组合**的观点，就可以理解**生成/张成子空间**的概念，即向量组合的权重遍历数域。用**生成子空间**的观点去看矩阵方程：即 $\vec{b} \in span(\vec{a_1},\ \vec{a_2}\ \cdots \vec{a_n})$。  
+甚至可以用**线性组合**的观点重新看**matrix-vector product**：即矩阵列向量组的线性组合，权重是向量的元素。  
   
 **线性无关**和**线性相关**，即：向量组在线性组合成零向量时是否只有权重全0这一种方式。如果是，则称该向量组**线性无关**，否则就是**线性相关**。  
 这里有一系列的命题和判断，并引出**极大线性无关组**的概念。即：
@@ -136,7 +136,7 @@ $$E_p\ \cdots\ E_1\ A=U$$
 
 第二步：解集结构  
 对比 $U$ 的非零行数量 $k$ 和 $n$
-* 当 $k \lt n$ 时，因为非零行都在零行上面，所以每一行非零行都有主元，同时有主元的行都是非零行，所以主元数量就是 $k$，所以 $U$ 的主元所在列的数量也是 $k$，echelon form $U$ 的主元所在列组成了 $A$ 的列向量组 $\mathcal{A}$ 的一个极大线性无关组，定义为 $A$ 的列向量组 $\mathcal{A}$ 的一个**基**，记为 $\mathcal{B}$。这里 $size\ of\ \mathcal{B} = k$。  
+* 当 $k \lt n$ 时，因为非零行都在零行上面，所以每一行非零行都有主元，同时有主元的行都是非零行，所以主元数量就是 $k$，所以 $U$ 的主元所在列的数量也是 $k$，echelon form $U$ 的主元所在列指明了 $U$ 的极大线性无关组的位置。考虑到初等行变换不改变列与列之间的线形关系，以及 $U$ 和 $A$ 的列向量组之间的顺序相同，于是这些位置在 $A$ 的列也组成了 $A$ 的列向量组 $\mathcal{A}$ 的一个极大线性无关组，定义为 $A$ 的列向量组 $\mathcal{A}$ 的一个**基**，记为 $\mathcal{B}$。这里 $size\ of\ \mathcal{B} = k$。  
 ---- 这里，定义向量组的**基**并给出了计算方法，即对矩阵作初等行变换至阶梯型，此时主元所在列的位置，就是原矩阵的列向量组的一个基的位置。  
 ---- 这里，证明了一个不是很重要的结论：矩阵的列秩等于行秩，良定义为**矩阵的秩**。  
 ---- 这里，引入概念**矩阵A的列空间Col(A)**，即矩阵 $A$ 的列向量组 $\mathcal{A}$ 生成的空间 $span\displaystyle \left(\mathcal{A}\right)$，是 $\mathbb{R}^{m}$ 的子空间。可以看出 $span\displaystyle \left(\mathcal{A}\right) \equiv span \left(\mathcal{B}\right)$。定义向量组的基 $\mathcal{B}$ 为它们所生成的**子空间的基**，并定义基的向量个数为**生成子空间的维度**，记为 $dim\ span\displaystyle \left(\mathcal{A}\right) = size\ of\ \mathcal{B}$。  
@@ -179,7 +179,7 @@ C\\I
 \end{bmatrix} = Q, \ \ Q \in \mathbb{R^{n, n-k}}
 ```
 考虑独热部分 $I_{n-k,n-k}$，所以 $rank(Q) = n-k$，同时 $\vec{x}_{free}$ 取遍 $\mathbb{R^{n-k}}$，所以此时解集 $set$ 是由 $Q$ 的列向量组 $\mathcal{Q}$ 张成的线性空间，即 $\mathbb{R}^{n}$ 的一个 $dim = n-k$的subspace。  
----- 这里，引入概念**矩阵A的零空间Nul(A)**，即矩阵 $A$ 对应的矩阵方程 $A\vec{x}=\vec{b}$ 的解集。通过上述证明，可以得出矩阵 $A$ 的零空间 $Nul(A)$ 是 $\mathbb{R}^{n}$ 的一个 $dim = n - rank(A)$ 的subspace，它的基是矩阵方程 $A\vec{x}=\vec{b}$ 的 $n-k$ 个线性无关的解。
+---- 这里，引入概念**矩阵A的零空间Nul(A)**，即矩阵 $A$ 对应的矩阵方程 $A\vec{x}=\vec{b}$ 的解集。通过上述证明，可以得出矩阵 $A$ 的零空间 $Nul(A)$ 是 $\mathbb{R}^{n}$ 的一个 $dim = n - rank(A)$ 的subspace，它的基是矩阵方程 $A\vec{x}=\vec{b}$ 的 $n-rank(A)$ 个线性无关的解。
 
 #### 非齐次
 特解+系数矩阵的零空间，即为非齐次线性方程组的解集。
@@ -216,14 +216,14 @@ A = P^{-1}U = LU
 * 包含 $V$ 的 $0$ 向量  
 * $H$ 对 $V$ 的加法和数乘封闭  
 
-由此顺利引入**向量组张成的子空间** $span(\mathcal{B})$ 的概念。  
+由此顺利引入**向量组张成的子空间** $span(\mathcal{B})$ 的概念，因为 $V$ 的向量张成的子集正好满足子空间的定义。  
 一个子空间 $H$ 的任一组**基**都是能互相表示(等价)的，而且能够张成 $H$ 的 $dimH$ 个向量，就是 $H$ 的一组基。
 
 ### 同构/同构映射
 **同构映射**是指**保持结构的双射**，即：  
 考虑定义了 $+$ 运算的群 $G$ 和定义了 $\times$ 运算的群 $F$，有 $\vec{a}, \vec{b} \in G, T(\vec{a}), T(\vec{b}) \in F$。若 $one-one \  Mapping \  T:G \rightarrow F$，满足 $T(\vec{a} + \vec{b}) = T(\vec{a}) \times T(\vec{b})$，称 $T$ 是一个同构映射，群 $G$ 和 $F$ 同构，记作 $G \cong F$。  
   
-同理，线性空间之间的**同构**指：同一个域上定义的两个线性空间之间，存在保持向量加法和数乘的双射。  
+同理，线性空间之间的**同构**指：**同一个域上定义的两个线性空间之间，存在保持向量加法和数乘的双射。**  
   
 思考：线性映射也能保持运算，那么线性映射是同构映射吗？
 答：不是。同构映射要求该映射是「双射」  
@@ -299,7 +299,10 @@ $\left[\vec{x}\right]_\mathcal{B} \in \mathbb{R^n}$。
 ```math
 T:V \rightarrow \mathbb{R^n},\ T(\vec{x})=\left[\vec{x}\right]_\mathcal{B}
 ```
-是一个关于向量加法和数乘的**同构映射**，线性空间 $V$ 和 $\mathbb{R^n}$ 同构。同构意味着坐标映射保持加法和数乘运算，即意味着**线性相关/线性无关等关系在同构空间中也是保持的**。这里要提一句，只有同构映射才能保持线性相关/线性无关等性质，因为同构映射保证是双射。普通的线性映射下，线性相关/线性无关等性质并不能保持。
+是一个关于向量加法和数乘的**同构映射**，线性空间 $V$ 和 $\mathbb{R^n}$ 同构。同构意味着坐标映射保持加法和数乘运算，即意味着**线性相关/线性无关等关系在同构空间中也是保持的**。这里要提一句，只有同构映射才能保持线性相关/线性无关等性质，因为同构映射保证是双射。普通的线性映射下，线性相关/线性无关等性质并不能保持。  
+  
+**坐标映射**有点像是**线性组合**的逆运算：后者以**基**线性合成出向量，前者线性分解向量找到权重得到坐标。  
+
 
 #### 回到n维数值向量空间：看坐标转换及其相关的意义
 
@@ -341,7 +344,7 @@ Consider\ \mathcal{B}\ as\ set(\vec{b}_1,\cdots,\vec{b}_n),\ P_\mathcal{C \lefta
 ### 线性映射为什么是矩阵
 前面给出过一个结论，即：任何一个线性映射 $T:\mathbb{R^n} \rightarrow \mathbb{R^m}$ 一定和一个矩阵 $A\in\mathbb{R}^{m,n}$ 一一对应，而且**映射的像就是矩阵乘以向量元素的结果**。现在使用**坐标**的角度，来证明这个结论。注意定义坐标不需要当前这个结论，所以并没有循环论证。  
   
-考虑一个从 $V$ 到 $W$ 的线性映射 $T: V \rightarrow W$，有 $\vec{x} \rightarrow T(\vec{x})$。这里 $dimV = n$，基 $\mathcal{B} = \\{\vec{b_1},\vec{b_2}, \cdots, \vec{b_n}\\}$ 是 $V$ 的一个基， 基 $\mathcal{C} = \\{\vec{c_1},\vec{c_2}, \cdots, \vec{c_m}\\}$ 是 $W$ 的一个基。  
+考虑一个从 $V$ 到 $W$ 的线性映射 $T: V \rightarrow W$，有 $\vec{x} \rightarrow T(\vec{x})$。这里 $dimV = n$，基 $\mathcal{B} = \\{\vec{b_1},\vec{b_2}, \cdots, \vec{b_n}\\}$ 是 $V$ 的一个基；还有 $dimW = m$，基 $\mathcal{C} = \\{\vec{c_1},\vec{c_2}, \cdots, \vec{c_m}\\}$ 是 $W$ 的一个基。  
 考虑 $x = r_1\vec{b_1}+r_2\vec{b_2}+\cdots+r_n\vec{b_n}$, 其坐标向量为：
 ```math
 \left[\vec{x}\right]_\mathcal{B} = \begin{bmatrix}
@@ -351,7 +354,7 @@ r_2\\
 r_n
 \end{bmatrix}
 ```
-线性映射 $T$ 的像image有 $T(\vec{x}) = T(r_1\vec{b_1}+r_2\vec{b_2}+\cdots+r_n\vec{b_n}) = r_1T(\vec{b_1})+r_2T(\vec{b_2})+\cdots+r_nT(\vec{b_n})$。考虑其在基 $\mathcal{C}$ 下的坐标向量，由于坐标映射是线性的，可得：
+线性映射 $T$ 的像image有 $T(\vec{x}) = T(r_1\vec{b_1}+r_2\vec{b_2}+\cdots+r_n\vec{b_n}) = r_1T(\vec{b_1})+r_2T(\vec{b_2})+\cdots+r_nT(\vec{b_n})$。考虑其在基 $\mathcal{C}$ 下的坐标向量，由于坐标映射保持加法和数乘，可得：
 ```math
 \left[T(\vec{x})\right]_\mathcal{C} = \left[r_1T(\vec{b_1})+r_2T(\vec{b_2})+\cdots+r_nT(\vec{b_n})\right]_\mathcal{C} = 
 r1\left[T(\vec{b_1})\right]_\mathcal{C}+r_2\left[T(\vec{b_2})\right]_\mathcal{C}+\cdots+r_n\left[T(\vec{b_n})\right]_\mathcal{C} = 
@@ -378,22 +381,22 @@ M \left[\vec{x}\right]_\mathcal{B} = \left[ T(\vec{x}) \right]_\mathcal{C}
 ```
 这里对应的系数矩阵是**定义域线性空间的基向量映射到陪域空间后，它们的像image在陪域空间的基下的坐标**。
   
-### 为什么映射/矩阵有相似
-**坐标**概念的建立，有一个很大的意义在于，原**线性空间** $V,\ dimV = n$ 中的向量可能不方便用数字表示，无法参与进一步的分析（比如研究 $V$ 到自身的线性映射）。但是如果去研究与之**同构**的 $\mathbb{R^n}$，即**坐标向量**和**坐标空间**，就方便了。特别地，如果研究从 $V$ 到 $V$ 的线性映射，就可以转而研究从坐标空间 $\mathbb{R^n}$ 到 $\mathbb{R^n}$ 的线性映射，即一个形状为(n,n)的方阵。  
+### 为什么变换/方阵有相似
+**坐标**概念的建立，有一个很大的意义在于，原**线性空间** $V,\ dimV = n$ 中的向量可能不方便用数字表示，无法参与进一步的分析（比如研究 $V$ 到自身的线性变换）。但是如果去研究与之**同构**的 $\mathbb{R^n}$，即**坐标向量**和**坐标空间**，就方便了。特别地，如果研究从 $V$ 到 $V$ 的线性变换，就可以转而研究从坐标空间 $\mathbb{R^n}$ 到 $\mathbb{R^n}$ 的线性变换，即一个形状为(n,n)的方阵。  
   
 甚至有时候，一个**基** $\mathcal{B}$ 得到的坐标空间 $\mathbb{R^n}\_{\mathcal{B}}$ 可能还「不够好」，我们会换一个**基** $\mathcal{C}$，即换一个坐标空间 $\mathbb{R^n}\_{\mathcal{C}}$。  
   
-更具体地说，一个线性映射 $T:\mathbb{R^n}\_{\mathcal{B}}\rightarrow\mathbb{R^n}\_{\mathcal{B}},\ matrix\ T\in \mathbb{R^{n,n}}$，与另一个线性映射 $S:\mathbb{R^n}\_{\mathcal{C}}\rightarrow\mathbb{R^n}\_{\mathcal{C}},\ matrix\ S\in \mathbb{R^{n,n}}$，是 $V$ 的两个不同基下的**坐标空间**里各自的线性映射，但其实它们都是 $V$ 到 $V$ 上的一个线性映射在不同**同构**的坐标空间里的“翻版”，此谓两个映射**相似**，或者说两个**矩阵相似**。  
+更具体地说，一个线性变换 $T:\mathbb{R^n}\_{\mathcal{B}}\rightarrow\mathbb{R^n}\_{\mathcal{B}},\ matrix\ T\in \mathbb{R^{n,n}}$，与另一个线性变换 $S:\mathbb{R^n}\_{\mathcal{C}}\rightarrow\mathbb{R^n}\_{\mathcal{C}},\ matrix\ S\in \mathbb{R^{n,n}}$，是 $V$ 的两个不同基下的**坐标空间**里各自的线性变换，但其实它们都是 $V$ 到 $V$ 上的一个线性变换在不同基下**同构**的坐标空间里的“翻版”，此谓两个变换**相似**，或者说两个**矩（方）阵相似**。  
   
 用数学来表示，即：  
 ```math
 V(dimV = n,\ base\ \mathcal{B}\ \&\ \mathcal{C}),\ V\cong\mathbb{R^n}_{\mathcal{B}},\ V\cong\mathbb{R^n}_{\mathcal{C}}
 ```
-现在，有一个 $V$ 到 $V$ 的线性映射
+现在，有一个 $V$ 到 $V$ 的线性变换
 ```math
 F:V\rightarrow V,\ \ F(\vec{x})=\vec{y},\ \vec{x}\in V,\ \vec{y} \in V
 ```
-考虑 $F$ 在两个坐标空间的“翻版”，即如下两个线性映射：
+考虑 $F$ 在两个坐标空间的“翻版”，即如下两个线性变换：
 ```math
 F_\mathcal{B}:\mathbb{R^n}_{\mathcal{B}}\rightarrow\mathbb{R^n}_{\mathcal{B}},\ matrix\ T\in \mathbb{R^{n,n}},\ T\left[\vec{x}\right]_\mathcal{B} = \left[\vec{y}\right]_\mathcal{B}
 ```
@@ -429,11 +432,11 @@ T = P\ S\ P^{-1}
 ```math
 \mathbb{R^n}_\mathcal{B},\ with\ \ basis\ \ \mathcal{B} = set\left(\vec{b_1}, \cdots,\vec{b_n}\right)
 ```
-在这个坐标空间中，有一个线性映射 $A$
+在这个坐标空间中，有一个线性变换 $A$
 ```math
 A:\mathbb{R^n}_\mathcal{B}\rightarrow\mathbb{R^n}_\mathcal{B},\ \left[\vec{x}\right]_\mathcal{B}\rightarrow A\left[\vec{x}\right]_\mathcal{B}
 ```
-如果对**向量坐标** $\left[\vec{e}\right]_{\mathcal{B}}$ 和实数 $\lambda \in \mathbb{R}$ 有下式成立：
+如果对**非零向量坐标** $\left[\vec{e}\right]_{\mathcal{B}}$ 和实数 $\lambda \in \mathbb{R}$ 有下式成立：
 ```math
 A\left[\vec{e}\right]_{\mathcal{B}} = \lambda \left[\vec{e}\right]_{\mathcal{B}}
 ```
@@ -463,29 +466,29 @@ A\left[\vec{x}\right]_\mathcal{B} = P_{\mathcal{B}\leftarrow \mathcal{C}}A'\left
 ```
 也就是说，在各自坐标空间下，线性映射 $A$ 和 $A'$ 的结果只差一个坐标转移。  
   
-如果说，矩阵 $A$ 的 n 个特征向量 $set\left(\vec{e_1},\cdots,\vec{e_n}\right)$ 和特征值 $set\left(\lambda_1,\cdots,\lambda_n\right)$ 都已知，即
+假设已知矩阵 $A$ 的一对特征向量 $\vec{e}$ 和特征值 $\lambda$，即
 ```math
-A \left[\vec{e_i}\right]_\mathcal{B} = \lambda_i \left[\vec{e_i}\right]_\mathcal{B},\ i = 1,\cdots,n\tag{2.1}
+A \left[\vec{e}\right]_\mathcal{B} = \lambda \left[\vec{e}\right]_\mathcal{B}\ \tag{2.1}
 ```
 (2.1)代入(1)式，得到
 ```math
-\lambda_i \left[\vec{e_i}\right]_\mathcal{B} = A \left[\vec{e_i}\right]_\mathcal{B}=P_{\mathcal{B}\leftarrow \mathcal{C}}A'\left[\vec{e_i}\right]_\mathcal{C}
+\lambda \left[\vec{e}\right]_\mathcal{B} = A \left[\vec{e}\right]_\mathcal{B}=P_{\mathcal{B}\leftarrow \mathcal{C}}A'\left[\vec{e}\right]_\mathcal{C}
 ```
 即
 ```math
-P_{\mathcal{B}\leftarrow \mathcal{C}}^{-1}\lambda_i \left[\vec{e_i}\right]_\mathcal{B} = A'\left[\vec{e_i}\right]_\mathcal{C}
+P_{\mathcal{B}\leftarrow \mathcal{C}}^{-1}\lambda \left[\vec{e}\right]_\mathcal{B} = A'\left[\vec{e}\right]_\mathcal{C}
 ```
 即
 ```math
-\lambda_i P_{\mathcal{B}\leftarrow \mathcal{C}}^{-1} \left[\vec{e_i}\right]_\mathcal{B} = A'\left[\vec{e_i}\right]_\mathcal{C}
+\lambda P_{\mathcal{B}\leftarrow \mathcal{C}}^{-1} \left[\vec{e}\right]_\mathcal{B} = A'\left[\vec{e}\right]_\mathcal{C}
 ```
 即
 ```math
-A'\left[\vec{e_i}\right]_\mathcal{C}=\lambda_i \left[\vec{e_i}\right]_\mathcal{C},\ i = 1,\cdots,n\tag{2.2}
+A'\left[\vec{e}\right]_\mathcal{C}=\lambda \left[\vec{e}\right]_\mathcal{C},\ \tag{2.2}
 ```
-(2.2)和(2.1)式对比，说明了一个很有意思的道理：「转换坐标空间之后，**原特征向量在新基下的坐标向量，依旧是原矩阵的相似矩阵的特征向量，且对应的特征值不变**」。  
+(2.2)和(2.1)式对比，说明了一个很有意思的道理：「转换坐标空间之后，**原特征向量在新基下的坐标向量，是原矩阵的相似矩阵的特征向量，且对应的特征值不变**」。也就是说，特征向量和特征值是矩阵**本证**的性质，跟坐标系（基）的选取无关。    
 
-重点来了，假如说，现在 $A$ 有 **n 个特征向量 $set\left(\vec{e_1},\cdots,\vec{e_n}\right)$ 能组成一个基**的时候，即考虑同构坐标空间 $\mathbb{R^n}_{\mathcal{E}}\ \ with\ \ basis\ \ set\left(\vec{e_1},\cdots,\vec{e_n}\right)$ ，将基 $\mathcal{E}$ 代入(2.2)式，这时有
+重点来了，假如说，现在 $A$ 有 **n 个特征向量 $set\left(\vec{e_1},\cdots,\vec{e_n}\right)$ 且能组成一个基**，即考虑同构坐标空间 $\mathbb{R^n}_{\mathcal{E}}\ \ with\ \ basis\ \ set\left(\vec{e_1},\cdots,\vec{e_n}\right)$ ，将基 $\mathcal{E}$ 代入(2.2)式，这时有
 ```math
 A'\left[\vec{e_i}\right]_\mathcal{E}=\lambda_i \left[\vec{e_i}\right]_\mathcal{E},\ i = 1,\cdots,n\tag{3}
 ```
