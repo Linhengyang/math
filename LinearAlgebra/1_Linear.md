@@ -432,7 +432,7 @@ T = P\ S\ P^{-1}
 ```math
 \mathbb{R^n}_\mathcal{B},\ with\ \ basis\ \ \mathcal{B} = set\left(\vec{b_1}, \cdots,\vec{b_n}\right)
 ```
-在这个坐标空间中，有一个线性映射 $A$
+在这个坐标空间中，有一个线性变换 $A$
 ```math
 A:\mathbb{R^n}_\mathcal{B}\rightarrow\mathbb{R^n}_\mathcal{B},\ \left[\vec{x}\right]_\mathcal{B}\rightarrow A\left[\vec{x}\right]_\mathcal{B}
 ```
@@ -466,27 +466,27 @@ A\left[\vec{x}\right]_\mathcal{B} = P_{\mathcal{B}\leftarrow \mathcal{C}}A'\left
 ```
 也就是说，在各自坐标空间下，线性映射 $A$ 和 $A'$ 的结果只差一个坐标转移。  
   
-如果说，矩阵 $A$ 的 n 个特征向量 $set\left(\vec{e_1},\cdots,\vec{e_n}\right)$ 和特征值 $set\left(\lambda_1,\cdots,\lambda_n\right)$ 都已知，即
+假设已知矩阵 $A$ 的一对特征向量 $\vec{e}$ 和特征值 $\lambda$，即
 ```math
-A \left[\vec{e_i}\right]_\mathcal{B} = \lambda_i \left[\vec{e_i}\right]_\mathcal{B},\ i = 1,\cdots,n\tag{2.1}
+A \left[\vec{e}\right]_\mathcal{B} = \lambda \left[\vec{e}\right]_\mathcal{B}\ \tag{2.1}
 ```
 (2.1)代入(1)式，得到
 ```math
-\lambda_i \left[\vec{e_i}\right]_\mathcal{B} = A \left[\vec{e_i}\right]_\mathcal{B}=P_{\mathcal{B}\leftarrow \mathcal{C}}A'\left[\vec{e_i}\right]_\mathcal{C}
+\lambda \left[\vec{e}\right]_\mathcal{B} = A \left[\vec{e_i}\right]_\mathcal{B}=P_{\mathcal{B}\leftarrow \mathcal{C}}A'\left[\vec{e}\right]_\mathcal{C}
 ```
 即
 ```math
-P_{\mathcal{B}\leftarrow \mathcal{C}}^{-1}\lambda_i \left[\vec{e_i}\right]_\mathcal{B} = A'\left[\vec{e_i}\right]_\mathcal{C}
+P_{\mathcal{B}\leftarrow \mathcal{C}}^{-1}\lambda \left[\vec{e}\right]_\mathcal{B} = A'\left[\vec{e}\right]_\mathcal{C}
 ```
 即
 ```math
-\lambda_i P_{\mathcal{B}\leftarrow \mathcal{C}}^{-1} \left[\vec{e_i}\right]_\mathcal{B} = A'\left[\vec{e_i}\right]_\mathcal{C}
+\lambda P_{\mathcal{B}\leftarrow \mathcal{C}}^{-1} \left[\vec{e}\right]_\mathcal{B} = A'\left[\vec{e}\right]_\mathcal{C}
 ```
 即
 ```math
-A'\left[\vec{e_i}\right]_\mathcal{C}=\lambda_i \left[\vec{e_i}\right]_\mathcal{C},\ i = 1,\cdots,n\tag{2.2}
+A'\left[\vec{e}\right]_\mathcal{C}=\lambda \left[\vec{e}\right]_\mathcal{C},\ \tag{2.2}
 ```
-(2.2)和(2.1)式对比，说明了一个很有意思的道理：「转换坐标空间之后，**原特征向量在新基下的坐标向量，依旧是原矩阵的相似矩阵的特征向量，且对应的特征值不变**」。  
+(2.2)和(2.1)式对比，说明了一个很有意思的道理：「转换坐标空间之后，**原特征向量在新基下的坐标向量，是原矩阵的相似矩阵的特征向量，且对应的特征值不变**」。  
 
 重点来了，假如说，现在 $A$ 有 **n 个特征向量 $set\left(\vec{e_1},\cdots,\vec{e_n}\right)$ 能组成一个基**的时候，即考虑同构坐标空间 $\mathbb{R^n}_{\mathcal{E}}\ \ with\ \ basis\ \ set\left(\vec{e_1},\cdots,\vec{e_n}\right)$ ，将基 $\mathcal{E}$ 代入(2.2)式，这时有
 ```math
