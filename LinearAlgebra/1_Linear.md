@@ -299,7 +299,10 @@ $\left[\vec{x}\right]_\mathcal{B} \in \mathbb{R^n}$。
 ```math
 T:V \rightarrow \mathbb{R^n},\ T(\vec{x})=\left[\vec{x}\right]_\mathcal{B}
 ```
-是一个关于向量加法和数乘的**同构映射**，线性空间 $V$ 和 $\mathbb{R^n}$ 同构。同构意味着坐标映射保持加法和数乘运算，即意味着**线性相关/线性无关等关系在同构空间中也是保持的**。这里要提一句，只有同构映射才能保持线性相关/线性无关等性质，因为同构映射保证是双射。普通的线性映射下，线性相关/线性无关等性质并不能保持。
+是一个关于向量加法和数乘的**同构映射**，线性空间 $V$ 和 $\mathbb{R^n}$ 同构。同构意味着坐标映射保持加法和数乘运算，即意味着**线性相关/线性无关等关系在同构空间中也是保持的**。这里要提一句，只有同构映射才能保持线性相关/线性无关等性质，因为同构映射保证是双射。普通的线性映射下，线性相关/线性无关等性质并不能保持。  
+  
+**坐标映射**有点像是**线性组合**的逆运算：后者以**基**线性合成出向量，前者线性分解向量找到权重得到坐标。  
+
 
 #### 回到n维数值向量空间：看坐标转换及其相关的意义
 
@@ -378,22 +381,22 @@ M \left[\vec{x}\right]_\mathcal{B} = \left[ T(\vec{x}) \right]_\mathcal{C}
 ```
 这里对应的系数矩阵是**定义域线性空间的基向量映射到陪域空间后，它们的像image在陪域空间的基下的坐标**。
   
-### 为什么映射/矩阵有相似
-**坐标**概念的建立，有一个很大的意义在于，原**线性空间** $V,\ dimV = n$ 中的向量可能不方便用数字表示，无法参与进一步的分析（比如研究 $V$ 到自身的线性映射）。但是如果去研究与之**同构**的 $\mathbb{R^n}$，即**坐标向量**和**坐标空间**，就方便了。特别地，如果研究从 $V$ 到 $V$ 的线性映射，就可以转而研究从坐标空间 $\mathbb{R^n}$ 到 $\mathbb{R^n}$ 的线性映射，即一个形状为(n,n)的方阵。  
+### 为什么变换/方阵有相似
+**坐标**概念的建立，有一个很大的意义在于，原**线性空间** $V,\ dimV = n$ 中的向量可能不方便用数字表示，无法参与进一步的分析（比如研究 $V$ 到自身的线性变换）。但是如果去研究与之**同构**的 $\mathbb{R^n}$，即**坐标向量**和**坐标空间**，就方便了。特别地，如果研究从 $V$ 到 $V$ 的线性变换，就可以转而研究从坐标空间 $\mathbb{R^n}$ 到 $\mathbb{R^n}$ 的线性变换，即一个形状为(n,n)的方阵。  
   
 甚至有时候，一个**基** $\mathcal{B}$ 得到的坐标空间 $\mathbb{R^n}\_{\mathcal{B}}$ 可能还「不够好」，我们会换一个**基** $\mathcal{C}$，即换一个坐标空间 $\mathbb{R^n}\_{\mathcal{C}}$。  
   
-更具体地说，一个线性映射 $T:\mathbb{R^n}\_{\mathcal{B}}\rightarrow\mathbb{R^n}\_{\mathcal{B}},\ matrix\ T\in \mathbb{R^{n,n}}$，与另一个线性映射 $S:\mathbb{R^n}\_{\mathcal{C}}\rightarrow\mathbb{R^n}\_{\mathcal{C}},\ matrix\ S\in \mathbb{R^{n,n}}$，是 $V$ 的两个不同基下的**坐标空间**里各自的线性映射，但其实它们都是 $V$ 到 $V$ 上的一个线性映射在不同**同构**的坐标空间里的“翻版”，此谓两个映射**相似**，或者说两个**矩阵相似**。  
+更具体地说，一个线性变换 $T:\mathbb{R^n}\_{\mathcal{B}}\rightarrow\mathbb{R^n}\_{\mathcal{B}},\ matrix\ T\in \mathbb{R^{n,n}}$，与另一个线性变换 $S:\mathbb{R^n}\_{\mathcal{C}}\rightarrow\mathbb{R^n}\_{\mathcal{C}},\ matrix\ S\in \mathbb{R^{n,n}}$，是 $V$ 的两个不同基下的**坐标空间**里各自的线性变换，但其实它们都是 $V$ 到 $V$ 上的一个线性变换在不同基下**同构**的坐标空间里的“翻版”，此谓两个变换**相似**，或者说两个**矩（方）阵相似**。  
   
 用数学来表示，即：  
 ```math
 V(dimV = n,\ base\ \mathcal{B}\ \&\ \mathcal{C}),\ V\cong\mathbb{R^n}_{\mathcal{B}},\ V\cong\mathbb{R^n}_{\mathcal{C}}
 ```
-现在，有一个 $V$ 到 $V$ 的线性映射
+现在，有一个 $V$ 到 $V$ 的线性变换
 ```math
 F:V\rightarrow V,\ \ F(\vec{x})=\vec{y},\ \vec{x}\in V,\ \vec{y} \in V
 ```
-考虑 $F$ 在两个坐标空间的“翻版”，即如下两个线性映射：
+考虑 $F$ 在两个坐标空间的“翻版”，即如下两个线性变换：
 ```math
 F_\mathcal{B}:\mathbb{R^n}_{\mathcal{B}}\rightarrow\mathbb{R^n}_{\mathcal{B}},\ matrix\ T\in \mathbb{R^{n,n}},\ T\left[\vec{x}\right]_\mathcal{B} = \left[\vec{y}\right]_\mathcal{B}
 ```
