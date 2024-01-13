@@ -486,7 +486,7 @@ P_{\mathcal{B}\leftarrow \mathcal{C}}^{-1}\lambda \left[\vec{e}\right]_\mathcal{
 ```math
 A'\left[\vec{e}\right]_\mathcal{C}=\lambda \left[\vec{e}\right]_\mathcal{C},\ \tag{2.2}
 ```
-(2.2)和(2.1)式对比，说明了一个很有意思的道理：「转换坐标空间之后，**原特征向量在新基下的坐标向量，是原矩阵的相似矩阵的特征向量，且对应的特征值不变**」。也就是说，特征向量和特征值是矩阵**本证**的性质，跟坐标系（基）的选取无关。    
+(2.2)和(2.1)式对比，说明了一个很有意思的道理：「转换坐标空间之后，**原特征向量在新基下的坐标向量，是原矩阵的相似矩阵的特征向量，且对应的特征值不变**」。也就是说，特征向量和特征值是矩阵**本征**的性质，跟坐标系（基）的选取无关。    
 
 重点来了，假如说，现在 $A$ 有 **n 个特征向量 $set\left(\vec{e_1},\cdots,\vec{e_n}\right)$ 且能组成一个基**，即考虑同构坐标空间 $\mathbb{R^n}_{\mathcal{E}}\ \ with\ \ basis\ \ set\left(\vec{e_1},\cdots,\vec{e_n}\right)$ ，将基 $\mathcal{E}$ 代入(2.2)式，这时有
 ```math
