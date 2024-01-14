@@ -99,7 +99,7 @@ r & if\ \ \ E\ \ \ is\ \ \ scale\ \ \ by\ \ \ r \neq 0
 这一块围绕着**特征向量**和**特征值**，给出很多冠以特征的名词概念。注意这里还不涉及相似和对角化。
   
 * **特征向量**：对于数域 $K$ 上的方阵 $A \in M_{n}(K)$，若**非零**向量 $\vec{x}$ 满足 $A\vec{x}=\lambda\vec{x},\ \ \lambda\in K$，则 $\vec{x}$ 是**矩阵 $A$ 关于特征值 $\lambda$ 的特征向量**（eigenvector of $A$ corresponding to $\lambda$）。
-* **特征值**：对于数域 $K$ 上的方阵 $A \in M_{n}(K)$，若 $A\vec{x}=\lambda\vec{x},\ \ \lambda\in K$ 存在**非零解** $\vec{x}$，则 $\lambda$ 是矩阵 $A$ 的**特征值**，$\vec{x}$ 是**矩阵 $A$ 关于特征值 $\lambda$ 的特征向量**（eigenvector of $A$ corresponding to $\lambda$）。
+* **特征值**：对于数域 $K$ 上的方阵 $A \in M_{n}(K)$，若 $A\vec{x}=\lambda\vec{x},\ \ \lambda\in K$ 存在**非零解** $\vec{x}$，则 $\lambda$ 是矩阵 $A$ 的**特征值**，且 $\vec{x}$ 是**矩阵 $A$ 关于特征值 $\lambda$ 的特征向量**（eigenvector of $A$ corresponding to $\lambda$）。
   
 从定义可以看出，特征值和特征向量是成对出现的。给定一个矩阵，求解它的**特征值**和**特征向量**成为了这块的主线。写出求解的矩阵方程，
 ```math
