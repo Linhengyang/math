@@ -49,8 +49,7 @@ A\vec{x}=\vec{b}
 ### 矩阵乘法
 用线性组合的观点理解矩阵乘法，即对于：
 ```math
-A \in \mathbb{R}^{m,n},\ \ \
-B \in \mathbb{R}^{n,p},\ B=\left[\vec{b}_{1},\ \vec{b}_{2},\ \cdots, \vec{b}_{n}\right]\\
+A \in \mathbb{R}^{m,n},\ \ \ B \in \mathbb{R}^{n,p},\ B=\left[\vec{b}_{1},\ \vec{b}_{2},\ \cdots, \vec{b}_{n}\right]\\
 ```
 有
 ```math
