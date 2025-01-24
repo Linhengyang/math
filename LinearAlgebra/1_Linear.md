@@ -53,11 +53,11 @@ A\vec{x}=\vec{b}
 用线性组合的观点理解矩阵乘法，即对于：
 ```math
 A \in \mathbb{R}^{m,n},\ 
-B \in \mathbb{R}^{n,p}, \ B=\begin{bmatrix}\vec{b}_{1},\ \vec{b}_{2} & \cdots & \vec{b}_{n}\end{bmatrix}
+B \in \mathbb{R}^{n,p}, \ B=\left[\vec{b}_{1},\ \vec{b}_{2} & \cdots & \vec{b}_{n}\right]
 ```
 有
 ```math
-AB = \left[A\vec{b}_{1},\ A\vec{b}_{2},\ \cdots, A\vec{b}_{n}\right]
+AB = \left[A\vec{b}_{1},\ A\vec{b}_{2} & \cdots & A\vec{b}_{n}\right]
 ```
 即**左矩阵分别与右矩阵的列向量作matrix-vector product**。即：
 ```math
