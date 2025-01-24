@@ -90,7 +90,7 @@ we\ have\ image\ of\ \vec{x}\ as\ T(\vec{x}),\ \ set\{T(\vec{x}) \vert\ \forall 
 ## 主干1综述
 用**线性映射**重新理解**矩阵**之后，可以根据映射的性质，很快给出系数矩阵相应的结论，具体来说，考虑线性映射
 ```math
-T:\mathbb{R^n}\rightarrow\mathbb{R^m}\ \ \ with\ \ \ matrix\ \ \ A\ \in\ \mathbb{R}^{m,n},\ A = \left[\vec{a}_1,\ \vec{a}_2,\cdots\vec{a}_n\right]
+T:\mathbb{R^n}\rightarrow\mathbb{R^m}\ \ \ with\ \ \ matrix\ \ \ A\ \in\ \mathbb{R}^{m,n},\ A = \begin{bmatrix}\vec{a}_1,\ \vec{a}_2  \cdots & \vec{a}_n\end{bmatrix}
 ```
 （当前暂时用**向量组的极大线性无关组的向量个数**作为**秩**的定义），那么
 * T是满射，等价于 $A$ 的列向量组**张成（span）** $\mathbb{R}^{m}$，等价于 $A$ 的列向量组的秩等于 $m$。
