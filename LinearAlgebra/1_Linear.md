@@ -459,7 +459,7 @@ P_{\mathcal{C}\leftarrow \mathcal{B}}  = P_{\mathcal{B}\leftarrow \mathcal{C}}^{
 利用前面的**相似**的概念，矩阵 $A$ 和 $A'$相似，那么可以得出坐标空间 $\mathbb{R^n}_{\mathcal{C}}$ 中的线性映射 $A'$，有：
 ```math
 A\left[\vec{x}\right]_\mathcal{B} = P_{\mathcal{B}\leftarrow \mathcal{C}}A'P_{\mathcal{B}\leftarrow \mathcal{C}}^{-1}\left[\vec{x}\right]_\mathcal{B}
-\eqref{eq:0}
+\quad(1)
 ```
 恒成立。把它写成另一个形式
 ```math
