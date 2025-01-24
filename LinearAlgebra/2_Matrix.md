@@ -309,13 +309,13 @@ i_{th}\\
 ```math
 k_1\vec{a}_1+k_2\vec{a}_2+\cdots+k_p\vec{a}_p+
 s_1\vec{b}_1+s_2\vec{b}_2+\cdots+s_q\vec{b}_q=\vec{0}
-\tag0
+\quad(0)
 ```
 等价于
 ```math
 k_1 \lambda_1 \vec{a}_1+k_2 \lambda_1 \vec{a}_2+\cdots+k_p \lambda_1 \vec{a}_p+
 s_1 \lambda_1 \vec{b}_1+s_2 \lambda_1 \vec{b}_2+\cdots+s_q \lambda_1 \vec{b}_q=\vec{0}
-\tag1
+\quad(1)
 ```
 0式 两边左乘 矩阵 $A$，得到
 ```math
@@ -326,7 +326,7 @@ s_1A\vec{b}_1+s_2A\vec{b}_2+\cdots+s_qA\vec{b}_q=\vec{0}
 ```math
 k_1 \lambda_1 \vec{a}_1+k_2 \lambda_1 \vec{a}_2+\cdots+k_p \lambda_1 \vec{a}_p+
 s_1 \lambda_2 \vec{b}_1+s_2 \lambda_2 \vec{b}_2+\cdots+s_q \lambda_2 \vec{b}_q=\vec{0}
-\tag2
+\quad(2)
 ```
 2式 - 1式，再根据 $\lambda_1 \neq \lambda_2$，可以马上得出 $s_1=s_2=\cdots =s_q=0$，然后可以马上得出 $k_1=k_2=\cdots =k_p=0$，于是 $set\left(\vec{a}_1,\ \vec{a}_2,\ \cdots \vec{a}_p,\ \vec{b}_1,\ \vec{b}_2,\ \cdots \vec{b}_q\right)$ 是线性无关的。QED.  
 
@@ -394,7 +394,7 @@ j=1,2,\cdots d
 =
 \left[\vec{e}_1,\vec{e}_2,\cdots \vec{e}_d, \vec{b}_1,\vec{b}_2,\cdots \vec{b}_{n-d}\right]\vec{x}_j\ \ ,
 j=1,2,\cdots d
-\tag{*}
+\quad(*)
 ```
 方程（*）只有唯一一个解，即:
 ```math
