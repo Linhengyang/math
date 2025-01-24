@@ -57,7 +57,7 @@ B=\begin{bmatrix}\vec{b}_{1},\ \vec{b}_{2} & \cdots & \vec{b}_{p}\end{bmatrix} \
 ```
 有
 ```math
-AB = \begin{bmatrix}A\vec{b}_{1},\ A\vec{b}_{2} & \cdots & A\vec{b}_{n}\end{bmatrix}
+AB = \begin{bmatrix}A\vec{b}_{1},\ A\vec{b}_{2} & \cdots & A\vec{b}_{p}\end{bmatrix}
 ```
 即**左矩阵分别与右矩阵的列向量作matrix-vector product**。即：
 ```math
