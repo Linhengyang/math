@@ -459,17 +459,19 @@ P_{\mathcal{C}\leftarrow \mathcal{B}}  = P_{\mathcal{B}\leftarrow \mathcal{C}}^{
 利用前面的**相似**的概念，矩阵 $A$ 和 $A'$相似，那么可以得出坐标空间 $\mathbb{R^n}_{\mathcal{C}}$ 中的线性映射 $A'$，有：
 ```math
 A\left[\vec{x}\right]_\mathcal{B} = P_{\mathcal{B}\leftarrow \mathcal{C}}A'P_{\mathcal{B}\leftarrow \mathcal{C}}^{-1}\left[\vec{x}\right]_\mathcal{B}
-\quad(1)
+\quad(0)
 ```
 恒成立。把它写成另一个形式
 ```math
-A\left[\vec{x}\right]_\mathcal{B} = P_{\mathcal{B}\leftarrow \mathcal{C}}A'\left[\vec{x}\right]_\mathcal{C}\tag1
+A\left[\vec{x}\right]_\mathcal{B} = P_{\mathcal{B}\leftarrow \mathcal{C}}A'\left[\vec{x}\right]_\mathcal{C}
+\quad(1)
 ```
 也就是说，在各自坐标空间下，线性映射 $A$ 和 $A'$ 的结果只差一个坐标转移。  
   
 假设已知矩阵 $A$ 的一对特征向量 $\vec{e}$ 和特征值 $\lambda$，即
 ```math
-A \left[\vec{e}\right]_\mathcal{B} = \lambda \left[\vec{e}\right]_\mathcal{B}\ \tag{2.1}
+A \left[\vec{e}\right]_\mathcal{B} = \lambda \left[\vec{e}\right]_\mathcal{B}
+\quad(2.1)
 ```
 (2.1)代入(1)式，得到
 ```math
@@ -485,13 +487,15 @@ P_{\mathcal{B}\leftarrow \mathcal{C}}^{-1}\lambda \left[\vec{e}\right]_\mathcal{
 ```
 即
 ```math
-A'\left[\vec{e}\right]_\mathcal{C}=\lambda \left[\vec{e}\right]_\mathcal{C},\ \tag{2.2}
+A'\left[\vec{e}\right]_\mathcal{C}=\lambda \left[\vec{e}\right]_\mathcal{C},
+\quad(2.2)
 ```
 (2.2)和(2.1)式对比，说明了一个很有意思的道理：「转换坐标空间之后，**原特征向量在新基下的坐标向量，是原矩阵的相似矩阵的特征向量，且对应的特征值不变**」。也就是说，特征向量和特征值是矩阵**本征**的性质，跟坐标系（基）的选取无关。    
 
 重点来了，假如说，现在 $A$ 有 **n 个特征向量 $set\left(\vec{e_1},\cdots,\vec{e_n}\right)$ 且能组成一个基**，即考虑同构坐标空间 $\mathbb{R^n}_{\mathcal{E}}\ \ with\ \ basis\ \ set\left(\vec{e_1},\cdots,\vec{e_n}\right)$ ，将基 $\mathcal{E}$ 代入(2.2)式，这时有
 ```math
-A'\left[\vec{e_i}\right]_\mathcal{E}=\lambda_i \left[\vec{e_i}\right]_\mathcal{E},\ i = 1,\cdots,n\tag{3}
+A'\left[\vec{e_i}\right]_\mathcal{E}=\lambda_i \left[\vec{e_i}\right]_\mathcal{E},\ i = 1,\cdots,n
+\quad(3)
 ```
 而基向量在基下的坐标是可求的，即
 ```math
@@ -511,7 +515,7 @@ A'\left[\vec{e_i}\right]_\mathcal{E}=\lambda_i \left[\vec{e_i}\right]_\mathcal{E
     1
     \end{matrix}\right]
 \end{cases}
-\tag4
+\quad(4)
 ```
 将(4)代入(3)式，得到了 n 个 n元一次方程组，共 $n^2$ 个方程，足够求出 $A'$ 。事实上，将 $A'$ 写作列向量组的形式 $\left[\vec{a'_1},\cdots,\vec{a'_n}\right]$，即得：
 ```math
@@ -580,7 +584,7 @@ P_{\mathcal{B}\leftarrow \mathcal{E}} = \left[\left[\vec{e_1}\right]_\mathcal{B}
 P = \left[\vec{e_1},\cdots,\vec{e_n}\right],\ \vec{e_i}\ \ are\ \ eigenvectors\ \ of\ \ A,\ i=1,\cdots,n\\
 A = PA'P^{-1},\ \ A' = diag\left(\lambda_1,\cdots\lambda_n\right)
 \end{cases}
-\tag5
+\quad(5)
 ```
   
 去掉一切推导归纳总结：如果 矩阵 $A$ 有 **n 个特征向量线性无关**（即能组成一个基），那么在这个**新基的坐标空间**中，矩阵 $A$ 的相似矩阵 $A'$ 是一个**对角矩阵**，对角线上是 n 个特征向量对应的特征值。n个特征向量作为列向量组构成的矩阵 $P$ 是新基到标准基的**坐标转移矩阵**，即上面的(5)式。  
